@@ -1,4 +1,4 @@
-## Hi there 👋
+## Hi I'm Will 👋
 
 <!--
 **willmruzek/willmruzek** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -14,3 +14,9 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+### 🔭 I’m currently working on
+
+- BloomingtonArts.Today - A curated arts calendar for Bloomington, Indiana with fast filtering and search.
+  * Production: https://bloomingtonarts.today
+  * Repository: Coming soon
