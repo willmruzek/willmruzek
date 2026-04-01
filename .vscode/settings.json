@@ -1,0 +1,5 @@
+{
+  "chat.tools.terminal.autoApprove": {
+    "/pnpm --filter @willmruzek/resume run (validate|print|build)/": true
+  }
+}
