@@ -1,0 +1,246 @@
+name: Will Mruzek
+headline: Software Engineer w/ 13+ years experience
+email: will@willmruzek.com
+location: Eastern Time, USA
+
+summary: |
+  I'm Will Mruzek, a software consultant and engineer with 13+ years of experience. I've worked with startups and established companies like Syncari, Reforge, and Intuit Credit Karma. Previously, I've held full-time engineering roles at Humble Bundle, CloudPassage, Spredfast, and Duo Security (Cisco).
+
+  I frequently work in React, TypeScript, Next.js, Node.js, Postgres, GraphQL, and Tailwind. I'm passionate about developer tooling, developer and user experience, type-safety, and functional programming. I aim to craft code that's principled, predictable, and adaptable to change, while avoiding unnecessary complexity.
+
+  Outside of work, I sing, compose music, act, and write.
+
+top_skills:
+  - React
+  - TypeScript
+  - Next.js
+  - Node.js
+  - Postgres
+  - GraphQL
+  - Tailwind
+
+ai_tools:
+  - Github Copilot
+  - Cursor
+  - Zed
+  - Claude Sonnet
+  - Claude Opus
+  - GPT-5.4
+  - MCP
+  - Skills
+
+# you can see my set up [here](https://willmruzek.com/setup)
+
+experience:
+  - title: Independent Consultant
+    company: Self Employed
+    employment_type: Contract
+    start_date: Nov 2024
+    location: Remote
+    tech: []
+    projects:
+      - company: CreditKarma
+        via: Uplift.ltd
+        duration: 1.5 years
+        tech:
+          - React
+          - GraphQL/Apollo/URQL
+          - TypeScript
+          - Design system UI component library
+          - Front-end unit testing
+          - Microservices (Thrift)
+          - Scala
+        bullets: []
+
+  - title: Senior Software Engineer
+    company: Reforge
+    employment_type: Full-time
+    start_date: Aug 2023
+    end_date: Oct 2024
+    location: Remote
+    tech:
+      - React
+      - TypeScript
+      - Next.js
+      - GraphQL
+      - Ruby on Rails
+      - Tailwind
+      - Sanity CMS
+      - Vercel
+    bullets:
+      - Revamped the Artifacts home feed by combining Sanity CMS content with GraphQL queries to produce a sorted, filterable list of expert work examples
+      - Consolidated a standalone Next.js app (Artifacts) into the main React + Ruby on Rails app, homogenizing the tech stack for all app features
+
+  - title: Independent Consultant
+    company: Self Employed
+    employment_type: Contract
+    start_date: Jul 2016
+    end_date: Nov 2023
+    tech: []
+    projects:
+      - company: Reforge
+        via: Uplift.ltd
+        duration: 4 months
+        bullets:
+          - See above
+
+      - company: CreditKarma
+        via: Uplift.ltd
+        duration: 2 years
+        tech:
+          - React
+          - GraphQL/Apollo/URQL
+          - TypeScript
+          - Design system UI component library
+          - Front-end unit testing
+          - Microservices (Thrift)
+          - Scala
+        bullets:
+          - Implemented green-field web and mobile experience to help millions track their income and better understand their taxes
+          - Extended multiple frontend React apps and TS/JS libraries, supporting both infrastructure and product changes
+          - Improved accessibility in site navigation, including keyboard navigation support
+          - "Evaluated Apollo vs. URQL; URQL was adopted as the default GraphQL client across the org for its smaller API and bundle size"
+
+      - company: Zathom
+        via: Uplift.ltd
+        duration: 1 year and 6 months
+        tech:
+          - React
+          - GraphQL/Apollo
+          - XState
+          - TS
+          - Styled-Components
+          - AWS Amplify
+          - AWS AppSync
+          - AWS Cognito
+          - AWS DynamoDB
+          - AWS Lambda
+        bullets:
+          - Rapidly iterated on product concepts for a creator social network targeting writers, supporting a fast-moving founder in PMF exploration
+          - Built out writing tools and game-like experiences that encouraged good storytelling and cross-user engagement
+          - Mentored junior engineer in React, GraphQL, and AWS infrastructure
+
+      - company: Syncari
+        via: Uplift.ltd
+        duration: 3 months
+        tech:
+          - React
+          - TypeScript
+          - Java
+          - Spring Boot
+        bullets: []
+
+      - company: Skybound Digital
+        duration: 1 year
+        tech:
+          - Laravel
+          - PHP
+          - React
+          - Redux
+          - JS
+          - SASS
+          - MySQL
+        bullets:
+          - Built and maintained a customer- and bizops-facing portal to facilitate the selection of keywords for SEO campaigns
+          - Integrated third-party APIs like Stripe for payments and bank transfers
+
+  - title: Senior Software Engineer
+    company: Duo Security
+    page_break: true
+    start_date: Nov 2018
+    end_date: Jun 2019
+    location: Austin, Texas
+    tech:
+      - React
+      - jQuery
+      - Python
+    bullets:
+      - Led the migration of shared table and filter UI across the admin interface from a jQuery-based implementation to React
+      - Built a testing framework for validating the new table infrastructure, accelerating UI development
+      - Modified internal and customer-facing backend APIs in Python
+
+  - title: Senior Software Engineer
+    company: "Spredfast\u2122"
+    start_date: Jun 2017
+    end_date: Nov 2018
+    location: Austin, Texas
+    tech:
+      - Javascript
+      - Flow
+      - React
+      - Redux
+      - ImmutableJS
+      - SASS
+      - Webpack
+      - SocketIO
+      - Jasmine
+    bullets:
+      - Maintained and extended a support-over-social-media application, integrating React and social streams into the UI
+      - Improved code quality and developer tooling while sustaining 95% test coverage and strong static typing with Flow
+      - Maintained the shared UI component library used across multiple products, ensuring consistency and reusability across the organization
+      - Mentored engineers on architecture, feature development, and typed JavaScript best practices
+
+  - title: Front End Software Engineer
+    company: CloudPassage
+    start_date: Sep 2014
+    end_date: Jul 2015
+    location: San Francisco, California
+    tech:
+      - AngularJS
+      - SASS
+      - Gulp
+      - Babel
+      - ES6
+      - Webpack
+      - Ruby on Rails
+    bullets:
+      - "Architected and built zero-to-one a single-page application for the second generation of the company's main product"
+      - Built and extended custom AngularJS directives to support exhaustive reporting of cloud server instances
+      - Partnered with UX and DevOps to launch the product across multiple environments
+      - Maintained legacy Ruby on Rails application during the migration to the new frontend
+
+  - title: Software Engineer
+    company: Humble Bundle
+    start_date: Dec 2013
+    end_date: Sep 2014
+    location: San Francisco, California
+    tech:
+      - AngularJS
+      - Backbone.js
+      - Python
+      - Jinja
+      - Javascript
+      - jQuery
+      - SASS
+      - Grunt
+      - RequireJS / r.js
+    bullets:
+      - Built and unit tested a partner-facing AngularJS dashboard for managing store and widget products
+      - Architected an internal JSON-to-HTML system that enabled product ops to draft and publish bundle promotion pages without recurring engineering support
+      - Modernized the front-end workflow with SASS, Grunt, RequireJS / r.js, and component-based architecture
+
+  - title: Software Engineer
+    company: Glerb
+    start_date: May 2013
+    end_date: Dec 2013
+    location: Bloomington, Indiana
+    tech:
+      - Javascript
+      - BackboneJS
+      - MarionetteJS
+      - jQuery
+      - PHP
+      - CakePHP
+      - MySQL
+      - HTML
+      - CSS
+    bullets:
+      - Built a spaced-repetition application for helping users memorize information efficiently
+      - Migrated front-end Javascript to a modular architecture with MarionetteJS maintaining current functionality
+      - Implemented deploy pipeline to AppFog PaaS, streamlining and easing the release process
+
+education:
+  school: Indiana University Bloomington
+  degree: Bachelor of Arts, Communication and Culture
+  year: "2013"
+  grade: "3.81"

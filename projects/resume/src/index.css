@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Bitter', ui-serif, Georgia, serif;
+
+  /*
+   * Baseline grid: base unit = 6 (24px), half-unit = 3 (12px).
+   * Only grid-compliant spacing values are defined.
+   * Off-grid classes (e.g. mt-5, space-y-1) will not generate.
+   */
+  --spacing-*: initial;
+  --spacing-0: 0px;
+  --spacing-px: 1px;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;   /* 12px — half unit */
+  --spacing-4: 1rem;      /* 16px — fine-grained (indents, gaps) */
+  --spacing-6: 1.5rem;    /* 24px — 1 unit */
+  --spacing-9: 2.25rem;   /* 36px — 1.5 units */
+  --spacing-12: 3rem;     /* 48px — 2 units */
+
+  /*
+   * Line-height scale: only grid-aligned values.
+   * leading-6 (24px) is the standard body rhythm.
+   * leading-normal (1.5) is used for compact UI elements (contact info).
+   */
+  --line-height-*: initial;
+  --line-height-6: 1.5rem;      /* 24px — body rhythm */
+  --line-height-normal: 1.5;    /* compact UI elements */
+}

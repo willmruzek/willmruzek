@@ -1,0 +1,10 @@
+cd projects/resume
+pnpm run print
+
+if git diff --quiet public/resume.pdf 2>/dev/null; then
+  echo "resume.pdf unchanged"
+else
+  echo "resume.pdf changed — committing"
+  git add public/resume.pdf
+  git commit --no-verify -m "chore: regenerate resume.pdf"
+fi
