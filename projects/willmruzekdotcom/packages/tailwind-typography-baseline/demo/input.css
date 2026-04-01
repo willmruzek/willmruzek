@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import "../baseline-grid.css";
+
+/* Responsive baseline sizing for demo */
+@media (min-width: 1024px) {
+  :root {
+    --tw-baseline-unit: 28;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --tw-baseline-unit: 32;
+  }
+}
+
+/* Additional demo styles */
+.lead {
+  font-size: 1.25em;
+  line-height: 1.6;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  color: var(--tw-baseline-text-secondary);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Syntax highlighting for code blocks (optional enhancement) */
+code[class*="language-"] {
+  color: #383a42;
+}
+
+.dark code[class*="language-"] {
+  color: #abb2bf;
+}

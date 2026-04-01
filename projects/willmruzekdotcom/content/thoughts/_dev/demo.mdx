@@ -1,0 +1,219 @@
+---
+title: "Designing a new blog theme in public — Part 1"
+description: "A comprehensive guide to getting started with Nextra for building static sites"
+author: "Will Mruzek"
+date: "2025-08-07"
+tags: ["nextra", "next.js", "documentation", "markdown"]
+featured: true
+slug: "post-01"
+---
+
+import { ImageZoom } from 'nextra/components'
+
+<ImageZoom
+  src="https://unsplash.com/photos/Y0DTcx1pGpc/download?ixid=M3wxMjA3fDB8MXxhbGx8NHx8fHx8fHx8MTc1NzU5MjA1Mnw&force=true&w=1920"
+  alt="asdf"
+  className="img-hero"
+/>
+
+## Designing a new blog theme in public: a real‑world post that exercises everything
+
+When I set out to refresh my blog’s theme, I needed a realistic post to pressure‑test typography, spacing, and components. This is that post: a narrative walkthrough that just happens to use every bit of Markdown (and a little MDX) you’ll run into in day‑to‑day writing.[^1]
+
+## Why a realistic test post?
+
+Good design starts with real content. Placeholder paragraphs don’t capture the nuance of emphasis, quotes, tables, images, or code. So let’s build a small story around refining this site.
+
+> “Design systems are only as good as the content they’re designed for.”
+>
+> I kept this in mind while iterating on the type scale, line lengths, and spacing.
+
+### Small decisions add up
+
+This paragraph lives under an H3 to validate hierarchy. It helps ensure the jump from H2 → H3 feels intentional, with adequate contrast and spacing.
+
+#### Micro‑typography matters
+
+Kerning, line‑height, and rhythm often decide whether a page feels polished. Even tiny headings deserve attention.
+
+##### Don’t forget the edge cases
+
+Fifth‑level headings appear in longer posts—think deep dives or API docs—so they should still be readable with _italics_ and **bold** where needed.
+
+###### The tiniest heading still needs care
+
+At H6 size, headings can collapse into body text. Confirm they remain distinct on small screens.
+
+## The stack at a glance
+
+Here’s a quick look at what powers this site, using a simple table to verify borders, alignment, and compact cells:
+
+| Feature       | Support | Notes                        |
+| :------------ | :-----: | ---------------------------- |
+| Headings      |   ✅    | H1–H6 with narrative context |
+| Inline styles |   ✅    | Italics/bold/strike/code     |
+| Lists         |   ✅    | Ordered, unordered, tasks    |
+| Tables        |   ✅    | Alignment and borders        |
+| Code fences   |   ✅    | TSX, bash, diff              |
+| Blockquotes   |   ✅    | Single + nested              |
+
+## Content typography checks
+
+Inline emphasis shows up all the time: _italics_ for tone, **bold** for weight, and even ~~strikethrough~~ to acknowledge a change of mind. Inline `code` marks identifiers like `Button` or `process.env.NODE_ENV`. Reference links like [Vercel][vercel] keep text clean, while an autolink like https://github.com is handy in notes. Abbreviations (<abbr title="HyperText Markup Language">HTML</abbr>), keyboard keys (<kbd>Cmd</kbd> + <kbd>K</kbd>), and even a touch of math 10<sup>2</sup> or chemistry H<sub>2</sub>O appear naturally. Sometimes you just need to <mark>highlight a phrase</mark>.
+
+> A quick aside in a quote helps establish voice and pacing.
+>
+> > And a nested quote confirms spacing doesn’t collapse.
+
+## Code in the wild
+
+Real posts often include code—components, commands, and diffs from a refactor.
+
+```tsx
+// Example React/TSX component
+export function Button({ children }: { children: React.ReactNode }) {
+  return (
+    <button className="rounded-md bg-zinc-900 px-3 py-1.5 text-white">
+      {children}
+    </button>
+  );
+}
+```
+
+```bash
+# Shell commands
+npm install
+npm run dev
+```
+
+```diff
+- const mode = 'development'
++ const mode = process.env.NODE_ENV ?? 'development'
+```
+
+```js {1,4-5}
+import { useState } from 'react'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+
+```js /useState/
+import { useState } from 'react'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+
+```js copy
+console.log('hello, world')
+```
+
+```js showLineNumbers
+import { useState } from 'react'
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+
+```js filename="example.js"
+console.log('hello, world')
+```
+
+```ansi
+[0m [0;32m✓[0m [0;2msrc/[0mindex[0;2m.test.ts (1)[0m
+  [0;2m Test Files [0m [0;1;32m1 passed[0;98m (1)[0m
+  [0;2m      Tests [0m [0;1;32m1 passed[0;98m (1)[0m
+  [0;2m   Start at [0m 23:32:41
+  [0;2m   Duration [0m 11ms
+  [42;1;39;0m PASS [0;32m Waiting for file changes...[0m
+         [0;2mpress [0;1mh[0;2m to show help, press [0;1mq[0;2m to quit
+```
+
+```ts twoslash
+// @errors: 2540
+interface Todo {
+  title: string
+}
+
+const todo: Readonly<Todo> = {
+  title: 'Delete inactive users'.toUpperCase()
+  //  ^?
+}
+
+todo.title = 'Hello'
+
+Number.parseInt('123', 10)
+//      ^|
+
+
+```
+
+
+## Lists you’ll actually use
+
+- Editorial tasks
+  - Outline the post
+    - Draft, revise, and proofread
+- Link an external resource [Docs](https://nextra.site)
+- Sprinkle `inline code` in bullets
+
+1. Publish plan
+2. Share to socials
+   1. Twitter/X
+   2. LinkedIn
+
+- [x] Review the design tokens
+- [ ] Test dark mode
+  - [ ] Verify contrast ratios
+
+## Details for the curious
+
+<details>
+  <summary>Why not just ship lorem ipsum?</summary>
+
+  Because real content flushes out real problems: heading rhythm, spacing
+  between code and lists, and how images sit with captions.
+
+  - Works with HTML inside MDX
+  - Great for progressive disclosure
+</details>
+
+<details>
+  <summary>Why not just ship lorem ipsum?</summary>
+
+  Because real content flushes out real problems: heading rhythm, spacing
+  between code and lists, and how images sit with captions.
+
+  - Works with HTML inside MDX
+  - Great for progressive disclosure
+</details>
+
+## Definitions you might skim
+
+<dl>
+  <dt>Type scale</dt>
+  <dd>A consistent set of font sizes that preserves hierarchy.</dd>
+  <dt>Rhythm</dt>
+  <dd>The vertical spacing system that keeps sections tidy.</dd>
+</dl>
+
+## Footnotes and references
+
+Footnotes keep tangents out of the main flow.[^longnote] Reference‑style links like [Vercel][vercel] keep text readable.
+
+---
+
+Wrapping up: the goal wasn’t to show off every obscure feature, but to ensure common elements render beautifully. As a tiny flourish, here’s an MDX expression rendering the current year: {new Date().getFullYear()}.
+
+[vercel]: https://vercel.com
+
+[^1]: This post doubles as a style guide and a content check.
+
+[^longnote]: Longer note to verify typography and spacing inside footnotes. It can include links like https://nextra.site and inline code like `const x = 1`.

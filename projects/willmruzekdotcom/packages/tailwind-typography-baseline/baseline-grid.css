@@ -1,0 +1,660 @@
+/**
+ * Tailwind v4 CSS Baseline Grid System
+ */
+
+@layer base {
+  :root {
+    --tw-baseline-unit: 24;
+    --tw-baseline-unit-value-px: calc(var(--tw-baseline-unit) * 1px);
+    --tw-baseline-scale: calc(var(--tw-baseline-unit) / 16);
+  }
+}
+
+@utility prose-baseline {
+  --tw-baseline-unit-px: var(--tw-baseline-unit-value-px);
+  --tw-baseline-unit-px-0_25x: calc(var(--tw-baseline-unit-value-px) * 0.25);
+  --tw-baseline-unit-px-0_5x: calc(var(--tw-baseline-unit-value-px) * 0.5);
+  --tw-baseline-unit-px-2x: calc(var(--tw-baseline-unit-value-px) * 2);
+  --tw-baseline-unit-px-2_25x: calc(var(--tw-baseline-unit-value-px) * 2.25);
+  --tw-baseline-unit-px-3x: calc(var(--tw-baseline-unit-value-px) * 3);
+
+  --tw-baseline-line-height-body: var(--tw-baseline-unit-value-px);
+  --tw-baseline-line-height-heading: var(--tw-baseline-unit-value-px);
+  --tw-baseline-line-height-heading-2x: var(--tw-baseline-unit-px-2x);
+  --tw-baseline-line-height-heading-3x: var(--tw-baseline-unit-px-3x);
+
+  /* Typography scale variables that match TW v4 values */
+  /* We can't use variables from TW itself and also support class prefixes */
+  /* Thankfully, these probably won't change */
+  --tw-font-xs: 0.75rem; /* 12px */
+  --tw-font-sm: 0.875rem; /* 14px */
+  --tw-font-base: 1rem; /* 16px */
+  --tw-font-lg: 1.125rem; /* 18px */
+  --tw-font-xl: 1.25rem; /* 20px */
+  --tw-font-2xl: 1.5rem; /* 24px */
+  --tw-font-3xl: 1.875rem; /* 30px */
+  --tw-font-4xl: 2.25rem; /* 36px */
+  --tw-font-5xl: 3rem; /* 48px */
+  --tw-font-6xl: 3.75rem; /* 60px */
+  --tw-font-7xl: 4.5rem; /* 72px */
+  --tw-font-8xl: 6rem; /* 96px */
+  --tw-font-9xl: 8rem; /* 128px */
+
+  /* Theming: Color scheme variables */
+  --tw-baseline-text-primary: #111827;
+  --tw-baseline-text-secondary: #374151;
+  --tw-baseline-text-muted: #6b7280;
+  --tw-baseline-border-subtle: #e5e7eb;
+  --tw-baseline-border-table: var(--tw-baseline-border-subtle);
+  --tw-baseline-bg-elevated: #f9fafb;
+  --tw-baseline-bg-code: #f3f4f6;
+  --tw-baseline-accent: #1f2937;
+
+  /* Table border configuration */
+  --tw-baseline-table-border-width: 1px;
+  --tw-baseline-table-line-height: calc(
+    var(--tw-baseline-unit-value-px) - var(--tw-baseline-table-border-width)
+  );
+  --tw-baseline-body-line-height: calc(var(--tw-baseline-unit) / 16);
+
+  --tw-baseline-font-body: var(--tw-font-base);
+  --tw-baseline-font-h1: var(--tw-font-2xl);
+  --tw-baseline-font-h2: var(--tw-font-xl);
+  --tw-baseline-font-h3: var(--tw-font-lg);
+  --tw-baseline-font-h4: var(--tw-font-base);
+  --tw-baseline-font-h5: var(--tw-font-base);
+  --tw-baseline-font-h6: var(--tw-font-base);
+  --tw-baseline-font-blockquote: var(--tw-font-base);
+  --tw-baseline-font-pre: var(--tw-font-base);
+  --tw-baseline-font-code: var(--tw-font-base);
+  --tw-baseline-font-table: var(--tw-font-base);
+  --tw-baseline-font-figcaption: var(--tw-font-base);
+
+  --tw-baseline-line-height-h1: var(--tw-baseline-unit-value-px);
+  --tw-baseline-line-height-h2: var(--tw-baseline-unit-value-px);
+  --tw-baseline-line-height-h3: var(--tw-baseline-unit-value-px);
+  --tw-baseline-line-height-h4: var(--tw-baseline-unit-value-px);
+  --tw-baseline-line-height-h5: var(--tw-baseline-unit-value-px);
+  --tw-baseline-line-height-h6: var(--tw-baseline-unit-value-px);
+  --tw-baseline-line-height-h1-after: var(--tw-baseline-unit-value-px);
+
+  & > :where(:not(.not-prose, .not-prose *)) {
+    font-size: var(--tw-font-sm);
+    line-height: var(--tw-baseline-body-line-height);
+  }
+
+  & :where(:not(.not-prose, .not-prose *)) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  & :where(h1):not(.not-prose, .not-prose *) {
+    font-size: var(--tw-baseline-font-h1);
+    line-height: var(--tw-baseline-line-height-heading);
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-line-height-h1-after);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    display: block;
+  }
+
+  & :where(h2):not(.not-prose, .not-prose *) {
+    font-size: var(--tw-baseline-font-h2);
+    line-height: var(--tw-baseline-line-height-h2);
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px);
+    padding: 0;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    display: block;
+  }
+
+  & :where(h3):not(.not-prose, .not-prose *) {
+    font-size: var(--tw-baseline-font-h3);
+    line-height: var(--tw-baseline-line-height-h3);
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px);
+    padding: 0;
+    font-weight: 600;
+    display: block;
+  }
+
+  & :where(h4):not(.not-prose, .not-prose *) {
+    font-size: var(--tw-baseline-font-h4);
+    line-height: var(--tw-baseline-line-height-h4);
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px);
+    padding: 0;
+    font-weight: 600;
+    display: block;
+  }
+
+  & :where(h5):not(.not-prose, .not-prose *) {
+    font-size: var(--tw-baseline-font-h5);
+    line-height: var(--tw-baseline-line-height-h5);
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px);
+    padding: 0;
+    font-weight: 600;
+    display: block;
+  }
+
+  & :where(h6):not(.not-prose, .not-prose *) {
+    font-size: var(--tw-baseline-font-h6);
+    line-height: var(--tw-baseline-line-height-h6);
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px);
+    padding: 0;
+    font-weight: 600;
+    display: block;
+  }
+
+  & :where(p):not(.not-prose, .not-prose *) {
+    font-size: var(--tw-baseline-font-body);
+    line-height: var(--tw-baseline-line-height-body);
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px);
+    position: relative;
+    color: var(--tw-baseline-text-secondary);
+  }
+
+  & :where(table):not(.not-prose, .not-prose *) {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px);
+    border-collapse: collapse;
+    font-size: var(--tw-baseline-font-table);
+    background-color: var(--tw-baseline-bg-elevated);
+  }
+
+  & :where(th):not(.not-prose, .not-prose *) {
+    padding: var(--tw-baseline-unit-px-0_5x) 1rem;
+    line-height: var(--tw-baseline-table-line-height);
+    border-bottom-width: var(--tw-baseline-table-border-width);
+    border-bottom-color: var(--tw-baseline-border-table);
+    box-sizing: border-box;
+    background-color: var(--tw-baseline-bg-elevated);
+    color: var(--tw-baseline-text-primary);
+    font-weight: 700;
+    text-align: left;
+  }
+
+  & :where(thead):not(.not-prose, .not-prose *) {
+    background-color: var(--tw-baseline-bg-elevated);
+  }
+
+  & :where(thead):not(.not-prose, .not-prose *) th {
+    border-bottom-width: calc(var(--tw-baseline-table-border-width) * 2);
+    border-bottom-color: var(--tw-baseline-border-table);
+  }
+
+  & :where(tfoot):not(.not-prose, .not-prose *) {
+    background-color: var(--tw-baseline-bg-elevated);
+  }
+
+  & :where(tfoot):not(.not-prose, .not-prose *) td,
+  & :where(tfoot):not(.not-prose, .not-prose *) th {
+    border-top-width: calc(var(--tw-baseline-table-border-width) * 2);
+    border-top-color: var(--tw-baseline-border-table);
+    border-bottom: none;
+    font-weight: 600;
+  }
+
+  & :where(caption):not(.not-prose, .not-prose *) {
+    font-size: var(--tw-baseline-font-body);
+    line-height: var(--tw-baseline-line-height-body);
+    padding: var(--tw-baseline-unit-px-0_5x) 0;
+    margin-bottom: var(--tw-baseline-unit-px-0_5x);
+    color: var(--tw-baseline-text-muted);
+    text-align: center;
+    font-style: italic;
+    caption-side: top;
+  }
+
+  & :where(ul):not(.not-prose, .not-prose *) {
+    list-style-type: disc;
+    padding-left: 1.625rem;
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px);
+    font-size: var(--tw-baseline-font-body);
+    line-height: var(--tw-baseline-line-height-body);
+  }
+
+  & :where(ol):not(.not-prose, .not-prose *) {
+    list-style-type: decimal;
+    padding-left: 1.625rem;
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px);
+    font-size: var(--tw-baseline-font-body);
+    line-height: var(--tw-baseline-line-height-body);
+  }
+
+  & ul:not(.not-prose, .not-prose *) li,
+  & ol:not(.not-prose, .not-prose *) li {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: var(--tw-baseline-line-height-body);
+    padding: 0;
+    color: var(--tw-baseline-text-secondary);
+  }
+
+  & ul:not(.not-prose, .not-prose *) > li:last-child,
+  & ol:not(.not-prose, .not-prose *) > li:last-child {
+    margin-bottom: 0;
+  }
+
+  & li:not(.not-prose, .not-prose *) :last-child {
+    margin-bottom: 0;
+  }
+
+  &
+    :where(ul li ul, ul li ol, ol li ul, ol li ol):not(
+      .not-prose,
+      .not-prose *
+    ) {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  & :where(ul li ul):not(.not-prose, .not-prose *) {
+    list-style-type: circle;
+  }
+
+  & :where(ul li ul li ul):not(.not-prose, .not-prose *) {
+    list-style-type: square;
+  }
+
+  & :where(ol li ol):not(.not-prose, .not-prose *) {
+    list-style-type: lower-alpha;
+  }
+
+  & :where(ol li ol li ol):not(.not-prose, .not-prose *) {
+    list-style-type: lower-roman;
+  }
+
+  & :where(blockquote):not(.not-prose, .not-prose *) {
+    font-weight: 500;
+    font-style: italic;
+    font-size: var(--tw-baseline-font-blockquote);
+    line-height: var(--tw-baseline-unit-value-px);
+    border-left-width: 0.25rem;
+    border-left-color: var(--tw-baseline-border-subtle);
+    border-bottom: none;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    padding-top: var(--tw-baseline-unit-px);
+    padding-bottom: var(--tw-baseline-unit-px);
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px);
+    padding-left: 1.5rem;
+    color: var(--tw-baseline-text-muted);
+
+    & :where(p):not(.not-prose, .not-prose *) {
+      margin-bottom: var(--tw-baseline-unit-px);
+      padding-top: 0;
+    }
+
+    & :where(p:last-child):not(.not-prose, .not-prose *) {
+      margin-bottom: 0;
+    }
+
+    & :where(blockquote):not(.not-prose, .not-prose *) {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: var(--tw-baseline-unit-px);
+      padding-bottom: var(--tw-baseline-unit-px);
+    }
+  }
+
+  & :where(tbody):not(.not-prose, .not-prose *) td {
+    vertical-align: baseline;
+    padding: var(--tw-baseline-unit-px-0_5x) 1rem;
+    line-height: var(--tw-baseline-table-line-height);
+    border-bottom-width: var(--tw-baseline-table-border-width);
+    border-bottom-color: var(--tw-baseline-border-table);
+    box-sizing: border-box;
+  }
+
+  & :where(tbody):not(.not-prose, .not-prose *) tr:last-child td {
+    border-bottom: none;
+  }
+
+  & :where(hr):not(.not-prose, .not-prose *) {
+    border: none;
+    height: 1px;
+    background-color: var(--tw-baseline-border-subtle);
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px);
+  }
+
+  & :where(pre):not(.not-prose, .not-prose *) {
+    overflow-x: auto;
+    font-weight: 400;
+    font-size: var(--tw-baseline-font-pre);
+    line-height: var(--tw-baseline-unit-value-px);
+    padding-top: var(--tw-baseline-unit-px);
+    padding-bottom: var(--tw-baseline-unit-px);
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px);
+    border-radius: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: var(--tw-baseline-bg-code);
+  }
+
+  & :where(code):not(pre code):not(.not-prose, .not-prose *) {
+    font-weight: 600;
+    font-size: var(--tw-baseline-font-code);
+    vertical-align: baseline;
+    background-color: var(--tw-baseline-bg-code);
+    color: var(--tw-baseline-accent);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    line-height: var(--tw-baseline-line-height-body);
+  }
+
+  & :where(strong):not(.not-prose, .not-prose *) {
+    font-weight: 600;
+    color: var(--tw-baseline-text-primary);
+    line-height: var(--tw-baseline-line-height-body);
+    display: inline-block;
+  }
+
+  & :where(em):not(.not-prose, .not-prose *) {
+    font-style: italic;
+    color: var(--tw-baseline-text-secondary);
+    line-height: var(--tw-baseline-line-height-body);
+    display: inline-block;
+  }
+
+  & :where(a):not(.not-prose, .not-prose *) {
+    color: var(--tw-baseline-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    line-height: var(--tw-baseline-line-height-body);
+
+    &:hover {
+      color: var(--tw-baseline-text-primary);
+      text-decoration-thickness: 2px;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--tw-baseline-accent);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  }
+
+  & :where(mark):not(.not-prose, .not-prose *) {
+    background-color: #fef3c7;
+    color: #92400e;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    line-height: var(--tw-baseline-line-height-body);
+  }
+
+  & :where(img):not(.not-prose, .not-prose *) {
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin-top: var(--tw-baseline-unit-px);
+    margin-bottom: var(--tw-baseline-unit-px);
+  }
+
+  & :where(figure):not(.not-prose, .not-prose *) {
+    padding-top: var(--tw-baseline-unit-px);
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px-2x);
+
+    & :where(figcaption):not(.not-prose, .not-prose *) {
+      font-size: var(--tw-baseline-font-figcaption);
+      line-height: var(--tw-baseline-unit-value-px);
+      margin-top: var(--tw-baseline-unit-px);
+      text-align: center;
+      padding-top: 0;
+      padding-bottom: 0;
+      color: var(--tw-baseline-text-muted);
+      font-style: italic;
+    }
+  }
+
+  & :where(dl):not(.not-prose, .not-prose *) {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px);
+  }
+
+  & :where(dt):not(.not-prose, .not-prose *) {
+    font-weight: 600;
+    font-size: var(--tw-baseline-font-body);
+    line-height: var(--tw-baseline-line-height-body);
+    margin-top: var(--tw-baseline-unit-px);
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  & :where(dd):not(.not-prose, .not-prose *) {
+    font-size: var(--tw-baseline-font-body);
+    line-height: var(--tw-baseline-line-height-body);
+    margin-top: 0;
+    margin-bottom: var(--tw-baseline-unit-px);
+    padding-left: 1.625rem;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  & :where(details):not(.not-prose, .not-prose *) {
+    border-radius: 6px;
+    margin-bottom: var(--tw-baseline-unit-px);
+    background-color: var(--tw-baseline-bg-elevated);
+    border: 1px solid var(--tw-baseline-border-subtle);
+    padding: var(--tw-baseline-unit-px);
+  }
+
+  & :where(details[open]):not(.not-prose, .not-prose *) {
+    padding: var(--tw-baseline-unit-px);
+  }
+
+  & :where(summary):not(.not-prose, .not-prose *) {
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 0;
+    line-height: var(--tw-baseline-unit-value-px);
+    padding: 0;
+    color: var(--tw-baseline-text-secondary);
+    user-select: none;
+    list-style: none;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+  }
+
+  & :where(details[open]):not(.not-prose, .not-prose *) summary {
+    margin-bottom: var(--tw-baseline-unit-px);
+    padding: 0;
+  }
+
+  & :where(summary):not(.not-prose, .not-prose *):hover {
+    color: var(--tw-baseline-text-primary);
+  }
+
+  & :where(summary):not(.not-prose, .not-prose *):focus-visible {
+    outline: 2px solid var(--tw-baseline-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  & :where(summary):not(.not-prose, .not-prose *)::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--tw-baseline-text-muted);
+    margin-right: 12px;
+    transition: transform 0.2s ease;
+    transform: rotate(-90deg);
+    flex-shrink: 0;
+  }
+
+  & :where(details[open]):not(.not-prose, .not-prose *) summary::before {
+    transform: rotate(0deg);
+    border-top-color: var(--tw-baseline-text-muted);
+  }
+
+  & :where(details):not(.not-prose, .not-prose *) > *:not(summary) {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    background: transparent;
+  }
+
+  & :where(details[open]):not(.not-prose, .not-prose *) > *:not(summary) {
+    max-height: 1000px;
+    opacity: 1;
+    padding: 0;
+    background: transparent;
+  }
+
+  & :where(summary):not(.not-prose, .not-prose *)::-webkit-details-marker {
+    display: none;
+  }
+
+  & :where(details):not(.not-prose, .not-prose *) > *:not(summary):last-child {
+    margin-bottom: 0;
+  }
+
+  & :where(details):not(.not-prose, .not-prose *) :where(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
+/* Type scale modifiers for prose-baseline */
+/* These modifiers must be used together with the base prose-baseline class: */
+/* e.g., class="prose-baseline prose-baseline-sm" or class="prose-baseline md:prose-baseline-lg" */
+
+@utility prose-baseline-sm {
+  --tw-baseline-font-body: var(--tw-font-sm);
+  --tw-baseline-body-line-height: calc(var(--tw-baseline-unit) / 14);
+  --tw-baseline-font-h1: var(--tw-font-xl);
+  --tw-baseline-font-h2: var(--tw-font-lg);
+  --tw-baseline-font-h3: var(--tw-font-base);
+  --tw-baseline-font-h4: var(--tw-font-sm);
+  --tw-baseline-font-h5: var(--tw-font-sm);
+  --tw-baseline-font-h6: var(--tw-font-sm);
+  --tw-baseline-font-blockquote: var(--tw-font-sm);
+  --tw-baseline-font-pre: var(--tw-font-sm);
+  --tw-baseline-font-code: var(--tw-font-sm);
+  --tw-baseline-font-table: var(--tw-font-sm);
+  --tw-baseline-font-figcaption: var(--tw-font-sm);
+}
+
+@utility prose-baseline-base {
+  --tw-baseline-font-body: var(--tw-font-base);
+  --tw-baseline-body-line-height: calc(var(--tw-baseline-unit) / 16);
+  --tw-baseline-font-h1: var(--tw-font-2xl);
+  --tw-baseline-font-h2: var(--tw-font-xl);
+  --tw-baseline-font-h3: var(--tw-font-lg);
+  --tw-baseline-font-h4: var(--tw-font-base);
+  --tw-baseline-font-h5: var(--tw-font-base);
+  --tw-baseline-font-h6: var(--tw-font-base);
+  --tw-baseline-font-blockquote: var(--tw-font-base);
+  --tw-baseline-font-pre: var(--tw-font-base);
+  --tw-baseline-font-code: var(--tw-font-base);
+  --tw-baseline-font-table: var(--tw-font-base);
+  --tw-baseline-font-figcaption: var(--tw-font-base);
+}
+
+@utility prose-baseline-lg {
+  --tw-baseline-font-body: var(--tw-font-lg);
+  --tw-baseline-body-line-height: calc(var(--tw-baseline-unit) / 18);
+  --tw-baseline-font-h1: var(--tw-font-3xl);
+  --tw-baseline-line-height-h1: var(--tw-baseline-line-height-heading-2x);
+  --tw-baseline-line-height-h1-after: var(--tw-baseline-line-height-heading-2x);
+  --tw-baseline-font-h2: var(--tw-font-2xl);
+  --tw-baseline-font-h3: var(--tw-font-xl);
+  --tw-baseline-font-h4: var(--tw-font-lg);
+  --tw-baseline-font-h5: var(--tw-font-lg);
+  --tw-baseline-font-h6: var(--tw-font-lg);
+  --tw-baseline-font-blockquote: var(--tw-font-lg);
+  --tw-baseline-font-pre: var(--tw-font-base);
+  --tw-baseline-font-code: var(--tw-font-base);
+  --tw-baseline-font-table: var(--tw-font-base);
+  --tw-baseline-font-figcaption: var(--tw-font-base);
+  --tw-baseline-line-height-h2: var(--tw-baseline-line-height-body);
+}
+
+@utility prose-baseline-xl {
+  --tw-baseline-font-body: var(--tw-font-xl);
+  --tw-baseline-body-line-height: calc(var(--tw-baseline-unit) / 20);
+  --tw-baseline-font-h1: var(--tw-font-4xl);
+  --tw-baseline-font-h2: var(--tw-font-3xl);
+  --tw-baseline-font-h3: var(--tw-font-2xl);
+  --tw-baseline-font-h4: var(--tw-font-xl);
+  --tw-baseline-font-h5: var(--tw-font-xl);
+  --tw-baseline-font-h6: var(--tw-font-xl);
+  --tw-baseline-font-blockquote: var(--tw-font-xl);
+  --tw-baseline-font-pre: var(--tw-font-lg);
+  --tw-baseline-font-code: var(--tw-font-lg);
+  --tw-baseline-font-table: var(--tw-font-lg);
+  --tw-baseline-font-figcaption: var(--tw-font-lg);
+}
+
+@utility prose-baseline-2xl {
+  --tw-baseline-font-body: var(--tw-font-2xl);
+  --tw-baseline-body-line-height: calc(var(--tw-baseline-unit) / 24);
+  --tw-baseline-font-h1: var(--tw-font-5xl);
+  --tw-baseline-font-h2: var(--tw-font-4xl);
+  --tw-baseline-font-h3: var(--tw-font-3xl);
+  --tw-baseline-font-h4: var(--tw-font-2xl);
+  --tw-baseline-font-h5: var(--tw-font-2xl);
+  --tw-baseline-font-h6: var(--tw-font-2xl);
+  --tw-baseline-font-blockquote: var(--tw-font-2xl);
+  --tw-baseline-font-pre: var(--tw-font-xl);
+  --tw-baseline-font-code: var(--tw-font-xl);
+  --tw-baseline-font-table: var(--tw-font-xl);
+  --tw-baseline-font-figcaption: var(--tw-font-xl);
+  --tw-baseline-line-height-h1: var(--tw-baseline-line-height-heading-3x);
+  --tw-baseline-line-height-h1-after: var(--tw-baseline-line-height-heading-3x);
+  --tw-baseline-line-height-h4: var(--tw-baseline-line-height-heading-2x);
+}
+
+/* Development/Visualization helper for baseline grid overlay */
+@utility prose-baseline-debug-grid {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1000;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 0, 0, 0.3) 0,
+      rgba(255, 0, 0, 0.3) 2px,
+      transparent 2px,
+      transparent var(--tw-baseline-unit-value-px)
+    );
+  }
+}

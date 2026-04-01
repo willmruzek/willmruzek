@@ -1,0 +1,19 @@
+{
+  "name": "tailwind-typography-baseline-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Demo page for tailwind-typography-baseline plugin",
+  "scripts": {
+    "dev": "tailwindcss -i input.css -o output.css --watch",
+    "build": "tailwindcss -i input.css -o output.css --minify",
+    "serve": "sirv . --port 8080 --dev"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.14",
+    "sirv": "^3.0.2",
+    "sirv-cli": "^2.0.2"
+  }
+}
