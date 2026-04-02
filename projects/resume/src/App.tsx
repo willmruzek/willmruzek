@@ -1,4 +1,8 @@
-import type { ResumeExperience, ResumeProject } from './data/resume.ts';
+import type {
+  ResumeClient,
+  ResumeEngagement,
+  ResumeExperience,
+} from './data/resume.ts';
 import { resume } from './data/resume.ts';
 
 const MONTHS = [
@@ -38,40 +42,73 @@ function formatDuration(
   return parts.join(' ');
 }
 
-function ProjectEntry({ project }: { project: ResumeProject }) {
+function EngagementMeta({
+  company,
+  via,
+  duration,
+}: Pick<ResumeEngagement, 'company' | 'via' | 'duration'>) {
   return (
-    <div className="mt-6">
-      <div className="flex items-baseline justify-between gap-x-4">
-        <div className="flex items-baseline gap-2">
-          <span className="font-medium text-slate-800">{project.company}</span>
-          {project.via && (
-            <span className="text-xs text-slate-500">
-              via{' '}
-              <a
-                href="https://www.uplift.ltd/"
-                target="_blank"
-                rel="noreferrer"
-                className="underline underline-offset-2"
-              >
-                {project.via}
-              </a>
-            </span>
-          )}
-        </div>
-        {project.duration && (
-          <span className="text-xs text-slate-500">{project.duration}</span>
+    <div className="flex items-baseline justify-between gap-x-4">
+      <div className="flex items-baseline gap-2">
+        <span className="font-medium text-slate-800">{company}</span>
+        {via && (
+          <span className="text-xs text-slate-500">
+            via{' '}
+            <a
+              href="https://www.uplift.ltd/"
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-2"
+            >
+              {via}
+            </a>
+          </span>
         )}
       </div>
-      {project.tech && (
+      {duration && <span className="text-xs text-slate-500">{duration}</span>}
+    </div>
+  );
+}
+
+function ClientEntry({ client }: { client: ResumeClient }) {
+  return (
+    <div className="mt-6">
+      <EngagementMeta
+        company={client.company}
+        via={client.via}
+        duration={client.duration}
+      />
+      {client.tech && (
         <p className="mt-3 border-l border-slate-800 pl-2 text-xs leading-6 text-slate-800">
-          {project.tech.join(', ')}
+          {client.tech.join(', ')}
         </p>
       )}
       <ul className="mt-3 list-disc space-y-2 pl-4 text-sm leading-6 text-slate-800">
-        {project.bullets.map((b, i) => (
+        {client.bullets.map((b, i) => (
           <li key={i}>{b}</li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+function OtherEngagementEntry({
+  engagement,
+}: {
+  engagement: ResumeEngagement;
+}) {
+  return (
+    <div className="mt-4">
+      <EngagementMeta
+        company={engagement.company}
+        via={engagement.via}
+        duration={engagement.duration}
+      />
+      {engagement.tech && (
+        <p className="mt-2 border-l border-slate-300 pl-2 text-xs leading-6 text-slate-700">
+          {engagement.tech.join(', ')}
+        </p>
+      )}
     </div>
   );
 }
@@ -104,13 +141,23 @@ function ExperienceEntry({ exp }: { exp: ResumeExperience }) {
           ))}
         </ul>
       )}
-      {exp.projects && exp.projects.length > 0 && (
+      {exp.clients && exp.clients.length > 0 && (
         <div className="mt-6 pl-4">
           <div className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
-            Projects
+            Clients
           </div>
-          {exp.projects.map((p, i) => (
-            <ProjectEntry key={i} project={p} />
+          {exp.clients.map((client, i) => (
+            <ClientEntry key={i} client={client} />
+          ))}
+        </div>
+      )}
+      {exp.otherEngagements && exp.otherEngagements.length > 0 && (
+        <div className="mt-6 pl-4">
+          <div className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-400">
+            Other Engagements
+          </div>
+          {exp.otherEngagements.map((engagement, i) => (
+            <OtherEngagementEntry key={i} engagement={engagement} />
           ))}
         </div>
       )}

@@ -9,8 +9,9 @@ const parseResume = compose(ResumeSchema.parse, yaml.load);
 export const resume = parseResume(rawYaml);
 
 export type {
+  ResumeClient,
   Resume,
   ResumeEducation,
+  ResumeEngagement,
   ResumeExperience,
-  ResumeProject,
 } from '../../schemas/resume.ts';

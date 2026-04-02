@@ -1,10 +1,13 @@
 import { z } from 'zod';
 
-export const ProjectSchema = z.object({
+export const EngagementSchema = z.object({
   company: z.string().min(1),
   via: z.string().min(1).optional(),
   duration: z.string().min(1).optional(),
   tech: z.array(z.string().min(1)).optional(),
+});
+
+export const ClientSchema = EngagementSchema.extend({
   bullets: z.array(z.string().min(1)),
 });
 
@@ -18,16 +21,27 @@ export const ExperienceSchema = z
     location: z.string().min(1).optional(),
     tech: z.array(z.string().min(1)).optional(),
     bullets: z.array(z.string().min(1)).optional(),
-    projects: z.array(ProjectSchema).optional(),
+    clients: z.array(ClientSchema).optional(),
+    other_engagements: z.array(EngagementSchema).optional(),
     page_break: z.boolean().optional(),
   })
-  .transform(({ employment_type, start_date, end_date, page_break, ...rest }) => ({
-    ...rest,
-    employmentType: employment_type,
-    startDate: start_date,
-    endDate: end_date,
-    pageBreak: page_break ?? false,
-  }));
+  .transform(
+    ({
+      employment_type,
+      start_date,
+      end_date,
+      other_engagements,
+      page_break,
+      ...rest
+    }) => ({
+      ...rest,
+      employmentType: employment_type,
+      startDate: start_date,
+      endDate: end_date,
+      otherEngagements: other_engagements,
+      pageBreak: page_break ?? false,
+    }),
+  );
 
 export const EducationSchema = z.object({
   school: z.string().min(1),
@@ -56,5 +70,6 @@ export const ResumeSchema = z
 
 export type Resume = z.infer<typeof ResumeSchema>;
 export type ResumeExperience = z.infer<typeof ExperienceSchema>;
-export type ResumeProject = z.infer<typeof ProjectSchema>;
+export type ResumeClient = z.infer<typeof ClientSchema>;
+export type ResumeEngagement = z.infer<typeof EngagementSchema>;
 export type ResumeEducation = z.infer<typeof EducationSchema>;

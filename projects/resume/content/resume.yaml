@@ -38,7 +38,7 @@ experience:
     start_date: Nov 2024
     location: Remote
     tech: []
-    projects:
+    clients:
       - company: CreditKarma
         via: Uplift.ltd
         duration: 1.5 years
@@ -46,11 +46,15 @@ experience:
           - React
           - GraphQL/Apollo/URQL
           - TypeScript
+          - XState
           - Design system UI component library
           - Front-end unit testing
           - Microservices (Thrift)
           - Scala
-        bullets: []
+        bullets:
+          - "Helped launch Intuit Credit Karma's first zero-to-one subscription product across desktop, mobile web, and in-app web experiences"
+          - "Built multistep flows with XState, enabling complex state management across the experience"
+          - "Led the migration of the main user profile app from React Router to Next.js and integrated it with Credit Karma's bespoke deployment infrastructure"
 
   - title: Senior Software Engineer
     company: Reforge
@@ -74,16 +78,11 @@ experience:
   - title: Independent Consultant
     company: Self Employed
     employment_type: Contract
+    location: Remote
     start_date: Jul 2016
     end_date: Nov 2023
     tech: []
-    projects:
-      - company: Reforge
-        via: Uplift.ltd
-        duration: 4 months
-        bullets:
-          - See above
-
+    clients:
       - company: CreditKarma
         via: Uplift.ltd
         duration: 2 years
@@ -120,16 +119,6 @@ experience:
           - Built out writing tools and game-like experiences that encouraged good storytelling and cross-user engagement
           - Mentored junior engineer in React, GraphQL, and AWS infrastructure
 
-      - company: Syncari
-        via: Uplift.ltd
-        duration: 3 months
-        tech:
-          - React
-          - TypeScript
-          - Java
-          - Spring Boot
-        bullets: []
-
       - company: Skybound Digital
         duration: 1 year
         tech:
@@ -143,9 +132,23 @@ experience:
         bullets:
           - Built and maintained a customer- and bizops-facing portal to facilitate the selection of keywords for SEO campaigns
           - Integrated third-party APIs like Stripe for payments and bank transfers
+    other_engagements:
+      - company: Reforge
+        via: Uplift.ltd
+        duration: 4 months
+
+      - company: Syncari
+        via: Uplift.ltd
+        duration: 3 months
+        tech:
+          - React
+          - TypeScript
+          - Java
+          - Spring Boot
 
   - title: Senior Software Engineer
     company: Duo Security
+    employment_type: Full-time
     page_break: true
     start_date: Nov 2018
     end_date: Jun 2019
@@ -161,6 +164,7 @@ experience:
 
   - title: Senior Software Engineer
     company: "Spredfast\u2122"
+    employment_type: Full-time
     start_date: Jun 2017
     end_date: Nov 2018
     location: Austin, Texas
@@ -182,6 +186,7 @@ experience:
 
   - title: Front End Software Engineer
     company: CloudPassage
+    employment_type: Full-time
     start_date: Sep 2014
     end_date: Jul 2015
     location: San Francisco, California
@@ -201,6 +206,7 @@ experience:
 
   - title: Software Engineer
     company: Humble Bundle
+    employment_type: Full-time
     start_date: Dec 2013
     end_date: Sep 2014
     location: San Francisco, California
@@ -221,6 +227,7 @@ experience:
 
   - title: Software Engineer
     company: Glerb
+    employment_type: Full-time
     start_date: May 2013
     end_date: Dec 2013
     location: Bloomington, Indiana
