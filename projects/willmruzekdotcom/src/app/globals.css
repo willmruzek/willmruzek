@@ -18,7 +18,7 @@
 @layer base {
   :root {
     /* Baseline Grid variables */
-    --tw-baseline-unit: 32;
+    --tw-baseline-unit: 26;
     /* --tw-baseline-unit-value-px is derived from --tw-baseline-unit and does not need to be re-declared. */
 
     /* Twoslash foundational variables */
@@ -72,7 +72,7 @@
 @layer utilities {
   /* Index page baseline override */
   .x\:index-page-baseline {
-    --tw-baseline-unit: 32;
+    --tw-baseline-unit: 26;
     --tw-baseline-unit-value-px: calc(var(--tw-baseline-unit) * 1px);
     --tw-baseline-scale: calc(var(--tw-baseline-unit) / 16);
   }

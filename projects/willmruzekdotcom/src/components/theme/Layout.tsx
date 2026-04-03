@@ -9,7 +9,10 @@ export const Footer: React.FC<{
   children?: React.ReactNode;
 }> = ({ children }) => {
   return (
-    <small className="x:mt-30 x:block x:print:hidden" data-pagefind-ignore="all">
+    <small
+      className="x:mt-30 x:block x:print:hidden"
+      data-pagefind-ignore="all"
+    >
       {children}
     </small>
   );
@@ -32,7 +35,7 @@ export const Layout: React.FC<{
       {banner}
       <div
         className={clsx(
-          "x:mx-auto x:max-w-[65ch] x:px-4 x:pb-32 x:[&_img]:mx-auto",
+          "x:mx-auto x:max-w-[65ch] x:px-4 x:pb-32 x:print:px-0 x:[&_img]:mx-auto",
           isBlogEnabled() ? "x:pt-20" : "x:pt-12",
         )}
         dir="ltr"

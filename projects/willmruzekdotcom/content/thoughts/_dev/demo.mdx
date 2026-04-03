@@ -8,7 +8,7 @@ featured: true
 slug: "post-01"
 ---
 
-import { ImageZoom } from 'nextra/components'
+import { ImageZoom } from "nextra/components";
 
 <ImageZoom
   src="https://unsplash.com/photos/Y0DTcx1pGpc/download?ixid=M3wxMjA3fDB8MXxhbGx8NHx8fHx8fHx8MTc1NzU5MjA1Mnw&force=true&w=1920"
@@ -92,38 +92,38 @@ npm run dev
 ```
 
 ```js {1,4-5}
-import { useState } from 'react'
+import { useState } from "react";
 
 function Counter() {
-  const [count, setCount] = useState(0)
-  return <button onClick={() => setCount(count + 1)}>{count}</button>
+  const [count, setCount] = useState(0);
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
 }
 ```
 
 ```js /useState/
-import { useState } from 'react'
+import { useState } from "react";
 
 function Counter() {
-  const [count, setCount] = useState(0)
-  return <button onClick={() => setCount(count + 1)}>{count}</button>
+  const [count, setCount] = useState(0);
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
 }
 ```
 
 ```js copy
-console.log('hello, world')
+console.log("hello, world");
 ```
 
 ```js showLineNumbers
-import { useState } from 'react'
+import { useState } from "react";
 
 function Counter() {
-  const [count, setCount] = useState(0)
-  return <button onClick={() => setCount(count + 1)}>{count}</button>
+  const [count, setCount] = useState(0);
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
 }
 ```
 
 ```js filename="example.js"
-console.log('hello, world')
+console.log("hello, world");
 ```
 
 ```ansi
@@ -139,22 +139,19 @@ console.log('hello, world')
 ```ts twoslash
 // @errors: 2540
 interface Todo {
-  title: string
+  title: string;
 }
 
 const todo: Readonly<Todo> = {
-  title: 'Delete inactive users'.toUpperCase()
+  title: "Delete inactive users".toUpperCase(),
   //  ^?
-}
+};
 
-todo.title = 'Hello'
+todo.title = "Hello";
 
-Number.parseInt('123', 10)
+Number.parseInt("123", 10);
 //      ^|
-
-
 ```
-
 
 ## Lists you’ll actually use
 
@@ -178,21 +175,23 @@ Number.parseInt('123', 10)
 <details>
   <summary>Why not just ship lorem ipsum?</summary>
 
-  Because real content flushes out real problems: heading rhythm, spacing
-  between code and lists, and how images sit with captions.
+Because real content flushes out real problems: heading rhythm, spacing
+between code and lists, and how images sit with captions.
 
-  - Works with HTML inside MDX
-  - Great for progressive disclosure
+- Works with HTML inside MDX
+- Great for progressive disclosure
+
 </details>
 
 <details>
   <summary>Why not just ship lorem ipsum?</summary>
 
-  Because real content flushes out real problems: heading rhythm, spacing
-  between code and lists, and how images sit with captions.
+Because real content flushes out real problems: heading rhythm, spacing
+between code and lists, and how images sit with captions.
 
-  - Works with HTML inside MDX
-  - Great for progressive disclosure
+- Works with HTML inside MDX
+- Great for progressive disclosure
+
 </details>
 
 ## Definitions you might skim

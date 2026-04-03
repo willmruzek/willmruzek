@@ -34,10 +34,10 @@ export function Navbar({ children, pageMap }: NavbarProps) {
       data-pagefind-ignore="all"
     >
       {filteredNavItems.map((nav) => (
-          <NavbarLink key={nav.route} href={nav.route}>
-            {nav.title}
-          </NavbarLink>
-        ))}
+        <NavbarLink key={nav.route} href={nav.route}>
+          {nav.title}
+        </NavbarLink>
+      ))}
       {children}
       <DarkModeToggle />
     </header>
