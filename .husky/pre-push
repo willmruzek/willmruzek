@@ -1,13 +1,3 @@
 cd projects/willmruzekdotcom
 
-pnpm run build
-
-pnpm run print
-
-if git diff --quiet public/static/WillMruzekResume.pdf 2>/dev/null; then
-  echo "WillMruzekResume.pdf unchanged"
-else
-  echo "WillMruzekResume.pdf changed — committing"
-  git add public/static/WillMruzekResume.pdf
-  git commit --no-verify -m "chore: regenerate WillMruzekResume.pdf"
-fi
+pnpm run prebuild
