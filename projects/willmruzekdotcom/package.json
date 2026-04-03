@@ -17,7 +17,7 @@
     "generate:og": "node ./scripts/generate-og.ts",
     "print": "node ./scripts/print.ts",
     "validate": "node ./scripts/validate.ts",
-    "prebuild": "npm run lint && npm run tsc && npm run format && npm run validate"
+    "prebuild": "pnpm run lint && next typegen && pnpm run tsc && pnpm run format && pnpm run validate"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.0.0",
