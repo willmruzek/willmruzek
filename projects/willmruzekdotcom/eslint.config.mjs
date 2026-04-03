@@ -1,7 +1,6 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
-import importPlugin from "eslint-plugin-import";
 
 // Resolve base directory for FlatCompat
 const __filename = fileURLToPath(import.meta.url);
@@ -37,9 +36,6 @@ const eslintConfig = [
 
   {
     files: ["**/*.{js,jsx,ts,tsx,mdx}"],
-    plugins: {
-      import: importPlugin,
-    },
     rules: {
       // Flag unused exports and missing exports
       // "import/no-unused-modules": [
