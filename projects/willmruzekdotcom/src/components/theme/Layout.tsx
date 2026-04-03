@@ -9,7 +9,7 @@ export const Footer: React.FC<{
   children?: React.ReactNode;
 }> = ({ children }) => {
   return (
-    <small className="x:mt-30 x:block" data-pagefind-ignore="all">
+    <small className="x:mt-30 x:block x:print:hidden" data-pagefind-ignore="all">
       {children}
     </small>
   );

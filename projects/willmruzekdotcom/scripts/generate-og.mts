@@ -27,8 +27,8 @@ const OUTPUT_ROOT = "public/og/thoughts";
 
 async function loadFonts() {
   return await Promise.all([
-    fs.readFile("public/fonts/AtkinsonHyperlegible-Regular.ttf"),
-    fs.readFile("public/fonts/AtkinsonHyperlegible-Bold.ttf"),
+    fs.readFile("public/static/fonts/AtkinsonHyperlegible-Regular.ttf"),
+    fs.readFile("public/static/fonts/AtkinsonHyperlegible-Bold.ttf"),
   ]);
 }
 

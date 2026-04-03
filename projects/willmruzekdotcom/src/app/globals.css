@@ -18,7 +18,7 @@
 @layer base {
   :root {
     /* Baseline Grid variables */
-    --tw-baseline-unit: 28;
+    --tw-baseline-unit: 32;
     /* --tw-baseline-unit-value-px is derived from --tw-baseline-unit and does not need to be re-declared. */
 
     /* Twoslash foundational variables */
@@ -44,10 +44,11 @@
   .dark {
     --twoslash-popup-bg: #000;
     --twoslash-border-color: #404040;
+    @apply x:print:bg-white x:print:text-gray-900 x:print:scheme-light;
   }
 
   html {
-    @apply x:scroll-pt-5 x:bg-white x:dark:bg-gray-900;
+    @apply x:scroll-pt-5 x:bg-white x:dark:bg-gray-900 x:print:bg-white x:print:scheme-light x:print:[-webkit-print-color-adjust:exact] x:print:[print-color-adjust:exact];
     font-family: var(--font-atkinson), sans-serif;
     font-weight: 400;
     transition:
@@ -56,7 +57,7 @@
   }
 
   body {
-    @apply x:bg-white x:text-gray-900 x:dark:bg-gray-900 x:dark:text-gray-100;
+    @apply x:bg-white x:text-gray-900 x:dark:bg-gray-900 x:dark:text-gray-100 x:print:bg-white x:print:text-gray-900;
     transition:
       background-color 0.3s ease-in-out,
       color 0.3s ease-in-out;
@@ -71,7 +72,7 @@
 @layer utilities {
   /* Index page baseline override */
   .x\:index-page-baseline {
-    --tw-baseline-unit: 40;
+    --tw-baseline-unit: 32;
     --tw-baseline-unit-value-px: calc(var(--tw-baseline-unit) * 1px);
     --tw-baseline-scale: calc(var(--tw-baseline-unit) / 16);
   }
@@ -129,7 +130,7 @@
     :not(pre) > &:not([class*="twoslash-"]) {
       @apply x:p-[.12em_.25em];
       @apply x:rounded-[.375em];
-      @apply x:border x:border-black/[0.04] x:bg-black/[0.03] x:text-[.9em] x:break-words;
+      @apply x:border x:border-black/4 x:bg-black/3 x:text-[.9em] x:wrap-break-word;
       @apply x:dark:border-white/10 x:dark:bg-white/10;
     }
   }

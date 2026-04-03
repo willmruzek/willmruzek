@@ -28,13 +28,12 @@ export function Navbar({ children, pageMap }: NavbarProps) {
   return (
     <header
       className={clsx(
-        "x:flex x:items-center x:justify-end x:gap-3",
+        "x:flex x:items-center x:justify-end x:gap-3 x:print:hidden",
         isBlogEnabled() ? "x:mb-18" : "x:mb-12",
       )}
       data-pagefind-ignore="all"
     >
-      {blogEnabled &&
-        filteredNavItems.map((nav) => (
+      {filteredNavItems.map((nav) => (
           <NavbarLink key={nav.route} href={nav.route}>
             {nav.title}
           </NavbarLink>

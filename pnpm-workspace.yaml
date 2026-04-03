@@ -1,2 +1,4 @@
 packages:
   - projects/*
+patchedDependencies:
+  nextra@4.6.0: projects/willmruzekdotcom/patches/nextra@4.6.0.patch

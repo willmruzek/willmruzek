@@ -13,7 +13,7 @@ import type React from "react";
 
 // TODO: Use next/font/google when it when next updated to @capsizecss/metrics@3.5.0
 const atkinsonHyperlegible = localFont({
-  src: "../../public/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf",
+  src: "../../public/static/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf",
   variable: "--font-atkinson",
   fallback: ["system-ui", "-apple-system", "sans-serif"],
 });

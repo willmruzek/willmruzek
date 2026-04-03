@@ -4,14 +4,15 @@ import { IndexWrapper } from "@/components/theme/IndexWrapper";
 
 export const generateStaticParams = generateStaticParamsFor("mdxPath");
 
-function isNextAsset(params: Awaited<Props["params"]>): boolean {
-  return params?.mdxPath?.[0] === "_next";
+function isNextInternal(params: Awaited<Props["params"]>): boolean {
+  const first = params?.mdxPath?.[0];
+  return first === "_next" || first === "__tsd";
 }
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
 
-  if (isNextAsset(params)) return {};
+  if (isNextInternal(params)) return {};
 
   const { metadata } = await importPage(params.mdxPath);
   return metadata;
@@ -24,7 +25,7 @@ type Props = {
 export default async function Page(props: Props) {
   const params = await props.params;
 
-  if (isNextAsset(params)) return null;
+  if (isNextInternal(params)) return null;
 
   const { default: MDXContent, metadata } = await importPage(params.mdxPath);
 

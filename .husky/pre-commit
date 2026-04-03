@@ -1,2 +1,1 @@
-cd projects/resume
-pnpm exec tsc --build
+pnpm --filter @willmruzek/willmruzekdotcom run tsc

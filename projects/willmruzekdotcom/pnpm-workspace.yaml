@@ -1,2 +1,0 @@
-patchedDependencies:
-  nextra@4.6.0: patches/nextra@4.6.0.patch
