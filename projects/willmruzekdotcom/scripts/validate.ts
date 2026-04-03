@@ -1,4 +1,3 @@
-#!/usr/bin/env tsx
 /**
  * Validates resume.yaml against the Zod schema.
  *
@@ -12,7 +11,7 @@ import url from "node:url";
 
 import yaml from "js-yaml";
 
-import { ResumeSchema } from "../src/lib/resume-schema";
+import { ResumeSchema } from "../src/lib/resume-schema.ts";
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 

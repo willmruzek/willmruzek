@@ -14,10 +14,10 @@
     "tsc": "tsc",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "generate:og": "./scripts/generate-og.mts",
+    "generate:og": "node ./scripts/generate-og.ts",
     "print": "node ./scripts/print.ts",
     "validate": "node ./scripts/validate.ts",
-    "prebuild": "npm run lint"
+    "prebuild": "npm run lint && npm run tsc && npm run format && npm run validate"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.0.0",

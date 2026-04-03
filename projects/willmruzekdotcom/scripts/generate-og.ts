@@ -1,4 +1,3 @@
-#!/usr/bin/env tsx
 /**
  * OG image generator using Satori (HTML -> SVG) and Resvg (SVG -> PNG)
  * - Scans for posts
