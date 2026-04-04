@@ -60,7 +60,7 @@ export const AskSiteChat: React.FC = () => {
               : "x:pointer-events-none x:translate-y-2 x:opacity-0",
           )}
         >
-          <div className="x:flex x:max-h-[50vh] x:flex-col x:rounded-3xl x:border x:border-neutral-200 x:bg-white/90 x:shadow-sm x:backdrop-blur-sm x:dark:border-zinc-700 x:dark:bg-zinc-900/50">
+          <div className="x:flex x:max-h-[50vh] x:flex-col x:rounded-3xl x:border x:border-neutral-200/60 x:bg-white/50 x:shadow-sm x:backdrop-blur-md x:dark:border-zinc-700/40 x:dark:bg-zinc-900/50">
             {/* Panel header */}
             <div className="x:flex x:shrink-0 x:items-center x:justify-end x:px-4 x:pt-3">
               <button
@@ -86,13 +86,12 @@ export const AskSiteChat: React.FC = () => {
                   <div
                     className={
                       message.role === "user"
-                        ? "x:max-w-[80%] x:rounded-2xl x:rounded-br-sm x:bg-zinc-100 x:px-3 x:py-2 x:text-zinc-900 x:dark:bg-zinc-800 x:dark:text-zinc-100"
-                        : "x:max-w-[90%] x:prose x:prose-sm x:text-zinc-800 x:dark:prose-invert x:dark:text-zinc-200"
+                        ? "x:max-w-[80%] x:rounded-2xl x:rounded-br-sm x:bg-zinc-600 x:px-3 x:py-2 x:text-zinc-100 x:dark:bg-zinc-950"
+                        : "x:prose x:prose-sm x:max-w-[90%] x:text-zinc-800 x:dark:text-zinc-200 x:dark:prose-invert"
                     }
                   >
                     {message.parts.map((part, i) => {
                       if (part.type === "text") {
-                        console.debug("[AskSiteChat] raw message:", part.text);
                         return message.role === "user" ? (
                           <p
                             key={`${message.id}-${i}`}
