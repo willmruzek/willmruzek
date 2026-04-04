@@ -5,6 +5,9 @@
 
 @import "tailwind-typography-baseline/baseline-grid.css";
 
+/* Typography plugin — scoped via x:prose class, only used in AskSiteChat */
+@plugin "@tailwindcss/typography";
+
 /* Third-party styles */
 @import "nextra/styles/default.css";
 @import "nextra/styles/subheading-anchor.css";

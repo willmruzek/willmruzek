@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { useChat } from "@ai-sdk/react";
 import clsx from "clsx";
+import Markdown from "react-markdown";
 
 export const AskSiteChat: React.FC = () => {
   const { messages, sendMessage, status } = useChat();
@@ -86,18 +87,23 @@ export const AskSiteChat: React.FC = () => {
                     className={
                       message.role === "user"
                         ? "x:max-w-[80%] x:rounded-2xl x:rounded-br-sm x:bg-zinc-100 x:px-3 x:py-2 x:text-zinc-900 x:dark:bg-zinc-800 x:dark:text-zinc-100"
-                        : "x:max-w-[90%] x:text-zinc-800 x:dark:text-zinc-200"
+                        : "x:max-w-[90%] x:prose x:prose-sm x:text-zinc-800 x:dark:prose-invert x:dark:text-zinc-200"
                     }
                   >
                     {message.parts.map((part, i) => {
                       if (part.type === "text") {
-                        return (
+                        console.debug("[AskSiteChat] raw message:", part.text);
+                        return message.role === "user" ? (
                           <p
                             key={`${message.id}-${i}`}
                             className="x:leading-relaxed x:whitespace-pre-wrap"
                           >
                             {part.text}
                           </p>
+                        ) : (
+                          <Markdown key={`${message.id}-${i}`}>
+                            {part.text}
+                          </Markdown>
                         );
                       }
                       return null;
