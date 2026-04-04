@@ -73,7 +73,7 @@ export const AskSiteChat: React.FC = () => {
             </div>
 
             {/* Messages */}
-            <div className="x:flex-1 x:space-y-4 x:overflow-y-auto x:px-4 x:py-3 x:text-sm">
+            <div className="x:flex-1 x:space-y-7 x:overflow-y-auto x:px-4 x:py-3 x:text-sm">
               {messages.map((message) => (
                 <div
                   key={message.id}
