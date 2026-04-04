@@ -44,29 +44,46 @@ function waitForServer(url: string, timeout = 30_000): Promise<void> {
   });
 }
 
+async function isPortInUse(url: string): Promise<boolean> {
+  try {
+    const res = await fetch(url);
+    return res.ok || res.status >= 400; // any HTTP response means something is listening
+  } catch {
+    return false;
+  }
+}
+
 async function main() {
   fs.mkdirSync(OUT_DIR, { recursive: true });
 
-  const startServerCmd: [string, string[]] = [
-    "pnpm",
-    ["exec", "next", "dev", "--port", String(PORT)],
-  ];
+  const alreadyRunning = await isPortInUse(URL);
+  let server: cp.ChildProcess | null = null;
 
-  console.log("Starting Next.js dev server…");
-  console.log(startServerCmd.flat().join(" "));
-  const server = cp.spawn(...startServerCmd, {
-    cwd: path.resolve(__dirname, ".."),
-    stdio: "pipe",
-    env: { ...process.env, NODE_ENV: "development" },
-  });
+  if (alreadyRunning) {
+    console.log(`Server already running at ${URL}, reusing it.`);
+  } else {
+    const startServerCmd: [string, string[]] = [
+      "pnpm",
+      ["exec", "next", "dev", "--port", String(PORT)],
+    ];
 
-  server.stderr?.on("data", (data: Buffer) => {
-    const msg = data.toString();
-    if (msg.includes("Error")) console.error(msg);
-  });
+    console.log("Starting Next.js dev server…");
+    console.log(startServerCmd.flat().join(" "));
+    server = cp.spawn(...startServerCmd, {
+      cwd: path.resolve(__dirname, ".."),
+      stdio: "pipe",
+      env: { ...process.env, NODE_ENV: "development" },
+    });
+
+    server.stderr?.on("data", (data: Buffer) => {
+      const msg = data.toString();
+      if (msg.includes("Error")) console.error(msg);
+    });
+
+    await waitForServer(URL);
+  }
 
   try {
-    await waitForServer(URL);
     console.log("Server ready. Generating PDF…");
 
     const browser = await chromium.launch();
@@ -90,7 +107,7 @@ async function main() {
     await browser.close();
     console.log(`PDF saved to ${OUT_PATH}`);
   } finally {
-    server.kill();
+    server?.kill();
   }
 }
 
