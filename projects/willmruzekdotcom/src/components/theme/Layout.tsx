@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import { ThemeProvider } from "next-themes";
 import { ViewTransitions } from "next-view-transitions";
+
+import { AskSiteChat } from "@/components/AskSiteChat";
 import { isBlogEnabled } from "@/lib/feature-config";
 
 import type React from "react";
@@ -43,6 +45,7 @@ export const Layout: React.FC<{
       >
         <ViewTransitions>{children}</ViewTransitions>
       </div>
+      <AskSiteChat />
     </ThemeProvider>
   );
 };
