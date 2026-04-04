@@ -21,7 +21,7 @@
 @layer base {
   :root {
     /* Baseline Grid variables */
-    --tw-baseline-unit: 26;
+    --tw-baseline-unit: 27;
     /* --tw-baseline-unit-value-px is derived from --tw-baseline-unit and does not need to be re-declared. */
 
     /* Twoslash foundational variables */
