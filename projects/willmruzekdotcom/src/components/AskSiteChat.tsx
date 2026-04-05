@@ -142,7 +142,7 @@ export const AskSiteChat: React.FC = () => {
               if (hasMessages) setIsOpen(true);
             }}
             disabled={isStreaming}
-            className="x:flex-1 x:rounded-full x:border x:border-neutral-200 x:bg-white x:px-5 x:py-3.5 x:text-base x:text-zinc-900 x:placeholder-zinc-400 x:shadow-sm x:transition-colors x:outline-none x:focus:border-zinc-300 x:disabled:bg-zinc-100 x:disabled:text-zinc-400 x:disabled:placeholder-zinc-300 x:dark:border-zinc-700 x:dark:bg-zinc-900/90 x:dark:text-zinc-100 x:dark:placeholder-zinc-500 x:dark:focus:border-zinc-500 x:dark:disabled:bg-zinc-800 x:dark:disabled:text-zinc-500 x:dark:disabled:placeholder-zinc-600"
+            className="x:flex-1 x:rounded-full x:border x:border-neutral-200 x:bg-white x:px-5 x:py-3.5 x:text-base x:text-zinc-900 x:placeholder-zinc-400 x:shadow-sm x:transition-colors x:outline-none x:focus:border-zinc-300 x:disabled:bg-zinc-100 x:disabled:text-zinc-400 x:disabled:placeholder-zinc-300 x:dark:border-zinc-700 x:dark:bg-zinc-900 x:dark:text-zinc-100 x:dark:placeholder-zinc-500 x:dark:focus:border-zinc-500 x:dark:disabled:bg-zinc-800 x:dark:disabled:text-zinc-500 x:dark:disabled:placeholder-zinc-600"
           />
           <button
             type="submit"

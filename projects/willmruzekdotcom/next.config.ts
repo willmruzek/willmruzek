@@ -8,6 +8,18 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  turbopack: {
+    rules: {
+      "*.yml": {
+        loaders: ["yaml-loader"],
+        as: "*.js",
+      },
+      "*.yaml": {
+        loaders: ["yaml-loader"],
+        as: "*.js",
+      },
+    },
+  },
 };
 
 export default withNextra({

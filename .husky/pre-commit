@@ -1,9 +1,10 @@
-pnpm --filter @willmruzek/willmruzekdotcom run tsc
-pnpm --filter @willmruzek/willmruzekdotcom run print
-
-if git diff --quiet projects/willmruzekdotcom/public/static/WillMruzekResume.pdf 2>/dev/null; then
-  echo "WillMruzekResume.pdf unchanged"
+if git diff --cached --quiet HEAD -- projects/willmruzekdotcom/data/resume.yaml 2>/dev/null; then
+  echo "resume.yaml unchanged"
 else
-  echo "WillMruzekResume.pdf changed — staging"
+  echo "resume.yaml changed — staging"
+  echo "Updating WillMruzekResume.pdf"
+
+  pnpm --filter @willmruzek/willmruzekdotcom run print
+
   git add projects/willmruzekdotcom/public/static/WillMruzekResume.pdf
 fi

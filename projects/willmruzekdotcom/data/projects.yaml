@@ -1,0 +1,56 @@
+projects:
+  - name: "BloomingtonArts.Today"
+    url: "https://bloomingtonarts.today"
+    description:
+      - type: paragraph
+        text: >-
+          Bloomington Arts Today is a local guide to arts and culture events in
+          Bloomington. It helps people find things to do, from live music and
+          theater to gallery shows and community events. The goal is simple: make
+          it easier for the community to discover and enjoy local arts.
+    tech:
+      - TypeScript
+      - React 19
+      - Next.js 16
+      - Astro 5
+      - Tailwind CSS 4
+      - shadcn/ui
+      - TanStack Form
+      - Prisma 7
+      - PostgreSQL
+      - Zod
+      - React Email
+      - Resend
+      - Vitest
+      - ESLint
+      - pnpm
+      - Vercel
+  - name: "AI Life Tools"
+    source_url: "https://github.com/willmruzek/ai-life-tools"
+    description:
+      - type: paragraph
+        text: >-
+          AI Tools for Life is a set of practical AI-powered utilities for
+          everyday admin.
+      - type: list
+        items:
+          - YNAB - Uses AI to categorize unapproved transactions, pull in
+            Amazon order history for better purchase context, and suggest smarter
+            budget category structures based on real spending patterns.
+          - >-
+            Btown Animal Shelter - Monitors adoptable cat listings from
+            the Bloomington Animal Shelter and sends email digests so it is easier
+            to keep up with new arrivals.
+          - >-
+            Coming soon: An email tool to organize and clean up inboxes with IMAP.
+    tech:
+      - TypeScript
+      - Node.js
+      - OpenAI
+      - Vercel AI SDK
+      - YNAB API
+      - Firecrawl
+      - Vercel Serverless Functions
+      - React Email
+      - Postmark
+      - Zod

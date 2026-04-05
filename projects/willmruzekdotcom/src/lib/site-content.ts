@@ -37,9 +37,10 @@ async function collectBlogPosts(dir: string): Promise<string[]> {
  * Always includes published blog posts regardless of the ENABLE_BLOG feature flag.
  */
 export async function getSiteContent(): Promise<string> {
-  const [homepage, resume] = await Promise.all([
+  const [homepage, resume, projects] = await Promise.all([
     readFileOrEmpty(path.join(ROOT, "index.mdx")),
     readFileOrEmpty(path.join(DATA_ROOT, "resume.yaml")),
+    readFileOrEmpty(path.join(DATA_ROOT, "projects.yaml")),
   ]);
 
   const thoughtsDir = path.join(ROOT, "thoughts");
@@ -64,6 +65,7 @@ export async function getSiteContent(): Promise<string> {
   const sections = [
     "## Homepage / About\n\n" + homepage,
     "## Resume / Work History\n\n" + resume,
+    "## Projects / Side Projects\n\n" + projects,
     blogSection,
   ].filter(Boolean);
 

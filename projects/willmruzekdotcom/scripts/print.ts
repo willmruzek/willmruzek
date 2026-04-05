@@ -64,7 +64,7 @@ async function main() {
   } else {
     const startServerCmd: [string, string[]] = [
       "pnpm",
-      ["exec", "next", "dev", "--port", String(PORT)],
+      ["exec", "next", "dev", "--turbopack", "--port", String(PORT)],
     ];
 
     console.log("Starting Next.js dev server…");

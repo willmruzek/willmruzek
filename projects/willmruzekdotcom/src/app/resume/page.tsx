@@ -4,7 +4,7 @@ import { ResumeContent } from "@/components/resume/ResumeContent";
 import { getResume } from "@/lib/resume-data";
 
 export const metadata: Metadata = {
-  title: "Resume | Will Mruzek",
+  title: "Resume",
   description:
     "Software Engineer with 13+ years of experience in React, TypeScript, Next.js, Node.js, and more.",
 };

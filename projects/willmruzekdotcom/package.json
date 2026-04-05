@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint .",
     "tsc": "tsc",
@@ -42,6 +42,7 @@
     "react-markdown": "^10.1.0",
     "react-obfuscate-email": "^2.0.4",
     "tailwind-typography-baseline": "file:./packages/tailwind-typography-baseline",
+    "yaml-loader": "^0.9.0",
     "zod": "^4.0.15"
   },
   "devDependencies": {
