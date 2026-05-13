@@ -1,7 +1,12 @@
 import type { ResumeExperience } from "@/lib/resume-schema";
+import clsx from "clsx";
 
 import { ClientEntry } from "./ClientEntry";
 import { OtherEngagementEntry } from "./OtherEngagementEntry";
+import {
+  resumeMetaLineClassName,
+  resumeTechStackSurroundClassName,
+} from "./resumeMetaLine";
 
 const MONTHS = [
   "Jan",
@@ -45,38 +50,48 @@ export function ExperienceEntry({ exp }: { exp: ResumeExperience }) {
   const dateRange = `${exp.startDate} – ${exp.endDate ?? "Present"} · ${duration}`;
 
   return (
-    <div
-      className={`x:break-inside-avoid${exp.pageBreak ? "x:break-before-page" : ""}`}
-    >
-      <div className="x:flex x:flex-wrap x:items-baseline x:justify-between x:gap-x-4">
-        <div>
-          <span className="x:font-semibold x:text-gray-900 x:dark:text-gray-100">
+    <div className={clsx(exp.pageBreak && "x:break-before-page")}>
+      <div className="x:flex x:flex-wrap x:items-baseline x:justify-between x:gap-x-4 x:leading-(--resume-baseline-step)">
+        <div className="x:leading-(--resume-baseline-step)">
+          <span className="x:leading-(--resume-baseline-step) x:font-semibold x:text-gray-900 x:dark:text-gray-100">
             {exp.title}
           </span>
-          <span className="x:mx-1 x:text-gray-400">·</span>
-          <span className="x:text-gray-700 x:dark:text-gray-300">
+          <span className="x:mx-1 x:leading-(--resume-baseline-step) x:text-gray-400">
+            ·
+          </span>
+          <span className="x:leading-(--resume-baseline-step) x:text-gray-700 x:dark:text-gray-300">
             {exp.company}
           </span>
         </div>
-        <span className="x:text-xs x:text-gray-500 x:dark:text-gray-400">
+        <span className="x:text-xs x:leading-(--resume-baseline-step) x:text-gray-500 x:dark:text-gray-400">
           {dateRange}
         </span>
       </div>
 
       {exp.location && (
-        <p className="x:text-sm x:text-gray-500 x:dark:text-gray-400">
+        <p className="x:text-sm x:leading-(--resume-baseline-step) x:text-gray-500 x:dark:text-gray-400">
           {exp.location}
         </p>
       )}
 
       {exp.tech && (
-        <p className="x:mt-(--tw-baseline-unit-value-px) x:border-l x:border-gray-400 x:pl-2 x:text-xs x:leading-(--tw-baseline-unit-value-px) x:text-gray-500 x:dark:border-gray-500 x:dark:text-gray-400 x:print:mt-3 x:print:leading-6">
+        <p
+          className={clsx(
+            resumeMetaLineClassName,
+            resumeTechStackSurroundClassName,
+          )}
+        >
           {exp.tech.join(", ")}
         </p>
       )}
 
       {exp.bullets && (
-        <ul className="x:mt-(--tw-baseline-unit-value-px) x:list-disc x:space-y-(--tw-baseline-unit-value-px) x:pl-4 x:text-base x:leading-(--tw-baseline-unit-value-px) x:text-gray-900 x:dark:text-gray-100 x:print:mt-3 x:print:space-y-2 x:print:text-sm x:print:leading-6">
+        <ul
+          className={clsx(
+            "x:list-disc x:space-y-0 x:pl-4 x:text-sm x:leading-(--resume-baseline-step) x:text-gray-900 x:dark:text-gray-100",
+            exp.tech ? "x:mt-0" : "x:mt-(--resume-baseline-step)",
+          )}
+        >
           {exp.bullets.map((b, i) => (
             <li key={i}>{b}</li>
           ))}
@@ -84,8 +99,15 @@ export function ExperienceEntry({ exp }: { exp: ResumeExperience }) {
       )}
 
       {exp.clients && exp.clients.length > 0 && (
-        <div className="x:mt-(--tw-baseline-unit-value-px) x:pl-4 x:print:mt-6">
-          <div className="x:mb-(--tw-baseline-unit-value-px) x:text-xs x:font-semibold x:tracking-widest x:text-gray-400 x:uppercase">
+        <div
+          className={clsx(
+            "x:pl-4",
+            exp.tech && !exp.bullets
+              ? "x:mt-0"
+              : "x:mt-(--resume-baseline-step)",
+          )}
+        >
+          <div className="resume-subsection-heading x:mb-(--resume-baseline-step) x:text-[0.625rem] x:leading-(--resume-baseline-step) x:font-semibold x:tracking-widest x:text-gray-400 x:uppercase">
             Clients
           </div>
           {exp.clients.map((client, i) => (
@@ -95,8 +117,15 @@ export function ExperienceEntry({ exp }: { exp: ResumeExperience }) {
       )}
 
       {exp.otherEngagements && exp.otherEngagements.length > 0 && (
-        <div className="x:mt-(--tw-baseline-unit-value-px) x:pl-4 x:print:mt-6">
-          <div className="x:mb-(--tw-baseline-unit-value-px) x:text-xs x:font-semibold x:tracking-widest x:text-gray-400 x:uppercase">
+        <div
+          className={clsx(
+            "x:pl-4",
+            exp.tech && !exp.bullets && !(exp.clients && exp.clients.length > 0)
+              ? "x:mt-0"
+              : "x:mt-(--resume-baseline-step)",
+          )}
+        >
+          <div className="resume-subsection-heading x:mb-(--resume-baseline-step) x:text-[0.625rem] x:leading-(--resume-baseline-step) x:font-semibold x:tracking-widest x:text-gray-400 x:uppercase">
             Other Engagements
           </div>
           {exp.otherEngagements.map((engagement, i) => (

@@ -1,0 +1,17 @@
+/**
+ * Resume typography rhythm (independent of prose-baseline / --tw-baseline-*).
+ * Use x:leading-(--resume-baseline-step), margins, etc. only inside `.resume-rhythm-root`.
+ */
+
+@layer utilities {
+  .resume-rhythm-root {
+    --resume-base-font-size: 1rem;
+    --resume-baseline-step: calc(var(--resume-base-font-size) * 1.5);
+  }
+
+  @media print {
+    .resume-rhythm-root {
+      --resume-base-font-size: 0.875rem;
+    }
+  }
+}

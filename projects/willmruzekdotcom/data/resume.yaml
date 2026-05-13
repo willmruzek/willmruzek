@@ -22,12 +22,9 @@ top_skills:
 ai_tools:
   - Github Copilot
   - Cursor
-  - Zed
-  - Claude Sonnet
-  - Claude Opus
-  - GPT-5.4
-  - MCP
-  - Skills
+  - Claude Sonnet 4.6
+  - Claude Opus 4.7
+  - GPT-5.5
 
 # you can see my set up [here](https://willmruzek.com/setup)
 
@@ -41,7 +38,7 @@ experience:
     clients:
       - company: CreditKarma
         via: Uplift.ltd
-        duration: 1.5 years
+        duration: 1 yr 6 mos
         tech:
           - React
           - GraphQL/Apollo/URQL
@@ -53,7 +50,7 @@ experience:
           - Scala
         bullets:
           - "Helped launch Intuit Credit Karma's first zero-to-one subscription product across desktop, mobile web, and in-app web experiences"
-          - "Built multistep flows with XState, enabling complex state management across the experience"
+          - "Built multistep, stateful flows with XState, including an identify theft assessment and cancel subscription flow"
           - "Led the migration of the main user profile app from React Router to Next.js and integrated it with Credit Karma's bespoke deployment infrastructure"
 
   - title: Senior Software Engineer
@@ -85,7 +82,7 @@ experience:
     clients:
       - company: CreditKarma
         via: Uplift.ltd
-        duration: 2 years
+        duration: 2 yrs
         tech:
           - React
           - GraphQL/Apollo/URQL
@@ -102,7 +99,7 @@ experience:
 
       - company: Zathom
         via: Uplift.ltd
-        duration: 1 year and 6 months
+        duration: 1 yr 6 mos
         tech:
           - React
           - GraphQL/Apollo
@@ -120,7 +117,7 @@ experience:
           - Mentored junior engineer in React, GraphQL, and AWS infrastructure
 
       - company: Skybound Digital
-        duration: 1 year
+        duration: 1 yr
         tech:
           - Laravel
           - PHP
@@ -135,11 +132,11 @@ experience:
     other_engagements:
       - company: Reforge
         via: Uplift.ltd
-        duration: 4 months
+        duration: 4 mos
 
       - company: Syncari
         via: Uplift.ltd
-        duration: 3 months
+        duration: 3 mos
         tech:
           - React
           - TypeScript
@@ -149,7 +146,6 @@ experience:
   - title: Senior Software Engineer
     company: Duo Security
     employment_type: Full-time
-    page_break: true
     start_date: Nov 2018
     end_date: Jun 2019
     location: Austin, Texas

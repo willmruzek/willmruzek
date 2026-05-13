@@ -1,7 +1,7 @@
 /**
- * Resume PDF generator using Playwright
+ * Resume PDF generator using Puppeteer
  *
- * Starts a Next.js dev server, navigates to /resume, and saves a PDF.
+ * Starts a Next.js dev server, navigates to /resume, and saves PDFs.
  * Local-only — not intended for CI.
  *
  * Usage:
@@ -13,14 +13,23 @@ import fs from "node:fs";
 import path from "node:path";
 import url from "node:url";
 
-import { chromium } from "playwright";
+import puppeteer from "puppeteer";
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
 const PORT = 3100;
-const URL = `http://localhost:${PORT}/resume`;
+const BASE_URL = `http://localhost:${PORT}/resume`;
 const OUT_DIR = path.resolve(__dirname, "../public/static");
-const OUT_PATH = path.join(OUT_DIR, "WillMruzekResume.pdf");
+const PRINT_TARGETS = [
+  {
+    url: BASE_URL,
+    outPath: path.join(OUT_DIR, "WillMruzekResume.pdf"),
+  },
+  {
+    url: `${BASE_URL}?format=short`,
+    outPath: path.join(OUT_DIR, "WillMruzekResumeShort.pdf"),
+  },
+];
 
 function waitForServer(url: string, timeout = 30_000): Promise<void> {
   const start = Date.now();
@@ -56,11 +65,11 @@ async function isPortInUse(url: string): Promise<boolean> {
 async function main() {
   fs.mkdirSync(OUT_DIR, { recursive: true });
 
-  const alreadyRunning = await isPortInUse(URL);
+  const alreadyRunning = await isPortInUse(BASE_URL);
   let server: cp.ChildProcess | null = null;
 
   if (alreadyRunning) {
-    console.log(`Server already running at ${URL}, reusing it.`);
+    console.log(`Server already running at ${BASE_URL}, reusing it.`);
   } else {
     const startServerCmd: [string, string[]] = [
       "pnpm",
@@ -80,32 +89,33 @@ async function main() {
       if (msg.includes("Error")) console.error(msg);
     });
 
-    await waitForServer(URL);
+    await waitForServer(BASE_URL);
   }
 
   try {
-    console.log("Server ready. Generating PDF…");
+    console.log("Server ready. Generating PDFs…");
 
-    const browser = await chromium.launch();
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
-    await page.emulateMedia({ colorScheme: "light" });
-    await page.goto(URL, { waitUntil: "networkidle" });
+    await page.emulateMediaFeatures([
+      { name: "prefers-color-scheme", value: "light" },
+    ]);
 
-    await page.pdf({
-      path: OUT_PATH,
-      format: "Letter",
-      printBackground: true,
-      margin: {
-        top: "0.5in",
-        bottom: "0.5in",
-        left: "0.125in",
-        right: "0.125in",
-      },
-    });
+    for (const { url, outPath } of PRINT_TARGETS) {
+      await page.goto(url, { waitUntil: "networkidle0" });
+
+      await page.pdf({
+        path: outPath,
+        format: "letter",
+        preferCSSPageSize: true,
+        printBackground: true,
+      });
+
+      console.log(`PDF saved to ${outPath}`);
+    }
 
     await browser.close();
-    console.log(`PDF saved to ${OUT_PATH}`);
   } finally {
     server?.kill();
   }

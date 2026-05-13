@@ -1,6 +1,12 @@
 import type { ResumeEngagement } from "@/lib/resume-schema";
 
+import clsx from "clsx";
+
 import { EngagementMeta } from "./EngagementMeta";
+import {
+  resumeMetaLineClassName,
+  resumeTechStackSurroundClassName,
+} from "./resumeMetaLine";
 
 export function OtherEngagementEntry({
   engagement,
@@ -8,14 +14,19 @@ export function OtherEngagementEntry({
   engagement: ResumeEngagement;
 }) {
   return (
-    <div className="x:mt-(--tw-baseline-unit-value-px)">
+    <div className="x:mt-(--resume-baseline-step)">
       <EngagementMeta
         company={engagement.company}
         via={engagement.via}
         duration={engagement.duration}
       />
       {engagement.tech && (
-        <p className="x:mt-(--tw-baseline-unit-value-px) x:border-l x:border-gray-400 x:pl-2 x:text-xs x:leading-(--tw-baseline-unit-value-px) x:text-gray-500 x:dark:border-gray-500 x:dark:text-gray-400">
+        <p
+          className={clsx(
+            resumeMetaLineClassName,
+            resumeTechStackSurroundClassName,
+          )}
+        >
           {engagement.tech.join(", ")}
         </p>
       )}
