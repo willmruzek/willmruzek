@@ -37,7 +37,7 @@ export const Layout: React.FC<{
       {banner}
       <div
         className={clsx(
-          "x:mx-auto x:max-w-[768px] x:px-4 x:pb-32 x:print:mx-0 x:print:max-w-none x:print:px-0 x:print:pt-0 x:print:pb-0 x:[&_img]:mx-auto",
+          "x:mx-auto x:max-w-3xl x:px-4 x:pb-32 x:print:mx-0 x:print:max-w-none x:print:px-0 x:print:pt-0 x:print:pb-0 x:[&_img]:mx-auto",
           isBlogEnabled() ? "x:pt-20" : "x:pt-12",
         )}
         dir="ltr"

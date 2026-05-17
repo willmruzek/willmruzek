@@ -5,15 +5,23 @@ import { IndexWrapper } from "@/components/theme/IndexWrapper";
 export const generateStaticParams = async () => {
   const params = await generateStaticParamsFor("mdxPath")();
   return params.filter((p) => {
-    const segments = Array.isArray(p.mdxPath) ? p.mdxPath : [p.mdxPath];
-    return !segments.some((segment) => segment.startsWith("_"));
+    const segments = Array.isArray(p.mdxPath)
+      ? p.mdxPath
+      : p.mdxPath
+        ? [p.mdxPath]
+        : [];
+
+    return (
+      segments.length > 0 &&
+      !segments.some((segment) => segment.startsWith("_"))
+    );
   });
 };
 
 function isExcluded(params: Awaited<Props["params"]>): boolean {
-  const first = params?.mdxPath?.[0];
+  const first = params.mdxPath[0];
   if (first === "_next" || first === "__tsd") return true;
-  if (params?.mdxPath?.some((segment) => segment.startsWith("_"))) return true;
+  if (params.mdxPath.some((segment) => segment.startsWith("_"))) return true;
   return false;
 }
 
@@ -27,7 +35,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 }
 
 type Props = {
-  params: Promise<{ mdxPath?: string[] }>;
+  params: Promise<{ mdxPath: string[] }>;
 };
 
 export default async function Page(props: Props) {
