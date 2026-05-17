@@ -22,6 +22,7 @@
 
 ### 🔭 I’m currently working on
 
+- **[dry-ai](https://github.com/willmruzek/dry-ai)** - CLI for managing shared AI-assistant configuration in one place and syncing it into tools like Cursor and Copilot. It handles commands, rules, and skills.
 - **[BloomingtonArts.Today](https://bloomingtonarts.today)** - Local arts calendar with fast, mobile-friendly filtering and search.
 - **[AI Life Tools](https://github.com/willmruzek/ai-life-tools)** - Collection of small, personal AI-powered tools and automations.
   - You Need A Budget ([YNAB](http://ynab.com/)) - Tools to categorize transactions and get suggestions for better budget categories
