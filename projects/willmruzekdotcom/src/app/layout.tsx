@@ -55,7 +55,16 @@ export default async function RootLayout({
           {children}
 
           <Footer>
-            &copy; {new Date().getFullYear()} Will Mruzek
+            &copy; {new Date().getFullYear()} Will Mruzek · Code for this
+            Next.js site is{" "}
+            <a
+              href="https://github.com/willmruzek/willmruzek/tree/main/projects/willmruzekdotcom"
+              target="_blank"
+              rel="noreferrer"
+              className="x:underline"
+            >
+              here
+            </a>
             {/* <a href="/feed.xml" style={{ float: 'right' }}>
               RSS
             </a> */}
