@@ -1,44 +1,31 @@
 import { z } from "zod";
 
-export const EngagementSchema = z.object({
-  company: z.string().min(1),
-  via: z.string().min(1).optional(),
-  duration: z.string().min(1).optional(),
-  tech: z.array(z.string().min(1)).optional(),
-});
-
-export const ClientSchema = EngagementSchema.extend({
-  bullets: z.array(z.string().min(1)),
-});
+export const ExperienceTypeSchema = z.enum([
+  "Full-time",
+  "Consulting",
+  "Consulting and Full-time",
+]);
 
 export const ExperienceSchema = z
   .object({
-    title: z.string().min(1),
+    title: z.string().min(1).optional(),
     company: z.string().min(1),
-    employment_type: z.string().min(1).optional(),
-    start_date: z.string().min(1),
+    stage: z.string().min(1).optional(),
+    employment_type: ExperienceTypeSchema.optional(),
+    start_date: z.string().min(1).optional(),
     end_date: z.string().min(1).optional(),
+    duration: z.string().min(1).optional(),
     location: z.string().min(1).optional(),
     tech: z.array(z.string().min(1)).optional(),
     bullets: z.array(z.string().min(1)).optional(),
-    clients: z.array(ClientSchema).optional(),
-    other_engagements: z.array(EngagementSchema).optional(),
     page_break: z.boolean().optional(),
   })
   .transform(
-    ({
-      employment_type,
-      start_date,
-      end_date,
-      other_engagements,
-      page_break,
-      ...rest
-    }) => ({
+    ({ start_date, end_date, page_break, employment_type, ...rest }) => ({
       ...rest,
       employmentType: employment_type,
       startDate: start_date,
       endDate: end_date,
-      otherEngagements: other_engagements,
       pageBreak: page_break ?? false,
     }),
   );
@@ -46,8 +33,7 @@ export const ExperienceSchema = z
 export const EducationSchema = z.object({
   school: z.string().min(1),
   degree: z.string().min(1),
-  year: z.string().min(1),
-  grade: z.string().min(1).optional(),
+  distinction: z.string().min(1).optional(),
 });
 
 export const ResumeSchema = z
@@ -70,6 +56,4 @@ export const ResumeSchema = z
 
 export type Resume = z.infer<typeof ResumeSchema>;
 export type ResumeExperience = z.infer<typeof ExperienceSchema>;
-export type ResumeClient = z.infer<typeof ClientSchema>;
-export type ResumeEngagement = z.infer<typeof EngagementSchema>;
 export type ResumeEducation = z.infer<typeof EducationSchema>;

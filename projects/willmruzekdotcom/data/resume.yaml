@@ -29,34 +29,30 @@ ai_tools:
 # you can see my set up [here](https://willmruzek.com/setup)
 
 experience:
-  - title: Independent Consultant
-    company: Self Employed
-    employment_type: Contract
+  - title: Senior Software Engineer
+    company: CreditKarma
+    employment_type: Consulting
     start_date: Nov 2024
+    end_date: May 2026
     location: Remote
-    tech: []
-    clients:
-      - company: CreditKarma
-        via: Uplift.ltd
-        duration: 1 yr 6 mos
-        tech:
-          - React
-          - GraphQL/Apollo/URQL
-          - TypeScript
-          - XState
-          - Design system UI component library
-          - Front-end unit testing
-          - Microservices (Thrift)
-          - Scala
-        bullets:
-          - "Helped launch Intuit Credit Karma's first zero-to-one subscription product across desktop, mobile web, and in-app web experiences"
-          - "Built multistep, stateful flows with XState, including an identify theft assessment and cancel subscription flow"
-          - "Led the migration of the main user profile app from React Router to Next.js and integrated it with Credit Karma's bespoke deployment infrastructure"
+    tech:
+      - React
+      - GraphQL/Apollo/URQL
+      - TypeScript
+      - XState
+      - Design system UI component library
+      - Front-end unit testing
+      - Microservices (Thrift)
+      - Scala
+    bullets:
+      - "Helped launch Intuit Credit Karma's first zero-to-one subscription product across desktop, mobile web, and in-app web experiences"
+      - Built multistep, stateful flows with XState, including an identity theft assessment and cancel subscription flow
+      - "Led the migration of the main user profile app from React Router to Next.js and integrated it with Credit Karma's bespoke deployment infrastructure"
 
   - title: Senior Software Engineer
     company: Reforge
-    employment_type: Full-time
-    start_date: Aug 2023
+    employment_type: Consulting and Full-time
+    start_date: Apr 2023
     end_date: Oct 2024
     location: Remote
     tech:
@@ -72,76 +68,60 @@ experience:
       - Revamped the Artifacts home feed by combining Sanity CMS content with GraphQL queries to produce a sorted, filterable list of expert work examples
       - Consolidated a standalone Next.js app (Artifacts) into the main React + Ruby on Rails app, homogenizing the tech stack for all app features
 
-  - title: Independent Consultant
-    company: Self Employed
-    employment_type: Contract
+  - title: Senior Software Engineer
+    company: CreditKarma
+    employment_type: Consulting
+    start_date: Mar 2021
+    end_date: Mar 2023
     location: Remote
-    start_date: Jul 2016
-    end_date: Nov 2023
-    tech: []
-    clients:
-      - company: CreditKarma
-        via: Uplift.ltd
-        duration: 2 yrs
-        tech:
-          - React
-          - GraphQL/Apollo/URQL
-          - TypeScript
-          - Design system UI component library
-          - Front-end unit testing
-          - Microservices (Thrift)
-          - Scala
-        bullets:
-          - Implemented green-field web and mobile experience to help millions track their income and better understand their taxes
-          - Extended multiple frontend React apps and TS/JS libraries, supporting both infrastructure and product changes
-          - Improved accessibility in site navigation, including keyboard navigation support
-          - "Evaluated Apollo vs. URQL; URQL was adopted as the default GraphQL client across the org for its smaller API and bundle size"
+    tech:
+      - React
+      - GraphQL/Apollo/URQL
+      - TypeScript
+      - Design system UI component library
+      - Front-end unit testing
+      - Microservices (Thrift)
+      - Scala
+    bullets:
+      - Implemented green-field web and mobile experience to help millions track their income and better understand their taxes
+      - Extended multiple frontend React apps and TS/JS libraries, supporting both infrastructure and product changes
+      - Improved accessibility in site navigation, including keyboard navigation support
+      - "Evaluated Apollo vs. URQL; URQL was adopted as the default GraphQL client across the org for its smaller API and bundle size"
 
-      - company: Zathom
-        via: Uplift.ltd
-        duration: 1 yr 6 mos
-        tech:
-          - React
-          - GraphQL/Apollo
-          - XState
-          - TS
-          - Styled-Components
-          - AWS Amplify
-          - AWS AppSync
-          - AWS Cognito
-          - AWS DynamoDB
-          - AWS Lambda
-        bullets:
-          - Rapidly iterated on product concepts for a creator social network targeting writers, supporting a fast-moving founder in PMF exploration
-          - Built out writing tools and game-like experiences that encouraged good storytelling and cross-user engagement
-          - Mentored junior engineer in React, GraphQL, and AWS infrastructure
+  - title: Senior Software Engineer
+    company: Syncari
+    employment_type: Consulting
+    start_date: Jan 2021
+    end_date: Mar 2021
+    location: Remote
+    tech:
+      - React
+      - TypeScript
+      - Java
+      - Spring Boot
 
-      - company: Skybound Digital
-        duration: 1 yr
-        tech:
-          - Laravel
-          - PHP
-          - React
-          - Redux
-          - JS
-          - SASS
-          - MySQL
-        bullets:
-          - Built and maintained a customer- and bizops-facing portal to facilitate the selection of keywords for SEO campaigns
-          - Integrated third-party APIs like Stripe for payments and bank transfers
-    other_engagements:
-      - company: Reforge
-        via: Uplift.ltd
-        duration: 4 mos
-
-      - company: Syncari
-        via: Uplift.ltd
-        duration: 3 mos
-        tech:
-          - React
-          - TypeScript
-          - Java
-          - Spring Boot
+  - title: Senior Software Engineer
+    company: Zathom
+    stage: Pre-seed
+    employment_type: Consulting
+    start_date: Jun 2019
+    end_date: Nov 2020
+    location: Remote
+    tech:
+      - React
+      - GraphQL/Apollo
+      - XState
+      - TS
+      - Styled-Components
+      - AWS Amplify
+      - AWS AppSync
+      - AWS Cognito
+      - AWS DynamoDB
+      - AWS Lambda
+    bullets:
+      - Rapidly iterated on product concepts for a creator social network targeting writers, supporting a fast-moving founder in PMF exploration
+      - Built out writing tools and game-like experiences that encouraged good storytelling and cross-user engagement
+      - Mentored junior engineer in React, GraphQL, and AWS infrastructure
 
   - title: Senior Software Engineer
     company: Duo Security
@@ -179,6 +159,24 @@ experience:
       - Improved code quality and developer tooling while sustaining 95% test coverage and strong static typing with Flow
       - Maintained the shared UI component library used across multiple products, ensuring consistency and reusability across the organization
       - Mentored engineers on architecture, feature development, and typed JavaScript best practices
+
+  - title: Software Engineer
+    company: Skybound Digital
+    employment_type: Consulting
+    start_date: Dec 2015
+    end_date: Jun 2017
+    location: Remote
+    tech:
+      - Laravel
+      - PHP
+      - React
+      - Redux
+      - JS
+      - SASS
+      - MySQL
+    bullets:
+      - Built and maintained a customer- and bizops-facing portal to facilitate the selection of keywords for SEO campaigns
+      - Integrated third-party APIs like Stripe for payments and bank transfers
 
   - title: Front End Software Engineer
     company: CloudPassage
@@ -223,6 +221,7 @@ experience:
 
   - title: Software Engineer
     company: Glerb
+    page_break: true
     employment_type: Full-time
     start_date: May 2013
     end_date: Dec 2013
@@ -243,7 +242,6 @@ experience:
       - Implemented deploy pipeline to AppFog PaaS, streamlining and easing the release process
 
 education:
-  school: Indiana University Bloomington
+  school: Indiana University - Bloomington
   degree: Bachelor of Arts, Communication and Culture
-  year: "2013"
-  grade: "3.81"
+  distinction: High Distinction (3.81 GPA)

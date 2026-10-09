@@ -94,8 +94,7 @@ export function LongResumeContent({ resume }: { resume: Resume }) {
             {education.degree}
           </div>
           <div className="x:text-xs x:leading-(--resume-baseline-step) x:text-gray-400">
-            {education.year}
-            {education.grade && ` · GPA ${education.grade}`}
+            {education.distinction}
           </div>
         </div>
       </section>

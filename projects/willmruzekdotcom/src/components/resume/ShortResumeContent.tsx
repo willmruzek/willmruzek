@@ -14,11 +14,6 @@ function getShortResume(resume: Resume): Resume {
     experience: resume.experience.slice(0, 2).map((exp) => ({
       ...exp,
       tech: exp.tech?.slice(0, 8),
-      clients: exp.clients?.slice(0, 1).map((client) => ({
-        ...client,
-        tech: client.tech?.slice(0, 8),
-      })),
-      otherEngagements: undefined,
       pageBreak: false,
     })),
   };
