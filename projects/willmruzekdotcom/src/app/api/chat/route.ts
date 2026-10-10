@@ -23,7 +23,7 @@ export async function POST(req: Request) {
   `;
 
   const result = streamText({
-    model: openai("gpt-5.4"),
+    model: openai("gpt-6-luna"),
     system: systemPrompt,
     messages: await convertToModelMessages(messages),
   });

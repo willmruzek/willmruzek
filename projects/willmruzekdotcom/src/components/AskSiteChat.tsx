@@ -166,7 +166,7 @@ export const AskSiteChat: React.FC = () => {
           </button>
         </form>
         <p className="x:mt-3 x:text-center x:text-xs x:text-zinc-400 x:dark:text-zinc-500">
-          Powered by AI. Responses may not be accurate.
+          Powered by OpenAI&apos;s GPT-6 Luna
         </p>
       </div>
     </div>
