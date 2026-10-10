@@ -18,6 +18,25 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@property --dock-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@theme {
+  --animate-dock-border: dock-border 3s linear infinite;
+
+  @keyframes dock-border {
+    from {
+      --dock-angle: 0deg;
+    }
+    to {
+      --dock-angle: 360deg;
+    }
+  }
+}
+
 @layer base {
   :root {
     /* Baseline Grid variables */

@@ -48,32 +48,32 @@ export const AskSiteChat: React.FC = () => {
   }
 
   return (
-    <div className="x:pointer-events-none x:fixed x:inset-x-0 x:bottom-0 x:z-50 x:flex x:flex-col x:items-center x:print:hidden">
+    <div className="x:pointer-events-none x:fixed x:bottom-0 x:left-1/2 x:z-50 x:flex x:w-full x:max-w-[40.8rem] x:-translate-x-1/2 x:flex-col x:items-center x:px-4 x:pb-6 x:print:hidden">
       {/* Message panel — kept mounted once messages appear so exit animation plays */}
       {hasMessages && (
-        <div
-          className={clsx(
-            "x:mb-3 x:w-full x:max-w-[65ch] x:px-4",
-            "x:transition-all x:duration-200 x:ease-out",
-            isOpen
-              ? "x:pointer-events-auto x:translate-y-0 x:opacity-100"
-              : "x:pointer-events-none x:translate-y-2 x:opacity-0",
-          )}
-        >
-          <div className="x:flex x:max-h-[50vh] x:flex-col x:rounded-3xl x:border x:border-neutral-200/60 x:bg-white/50 x:shadow-sm x:backdrop-blur-md x:dark:border-zinc-700/40 x:dark:bg-zinc-900/50">
+        <div className="x:relative x:z-0 x:-mb-8 x:w-[85%]">
+          <div
+            className={clsx(
+              "x:flex x:max-h-[50vh] x:flex-col x:rounded-t-3xl x:border x:border-neutral-200/60 x:bg-white/50 x:pb-8 x:shadow-sm x:backdrop-blur-sm x:dark:border-zinc-700/40 x:dark:bg-zinc-900/50",
+              "x:transition-[opacity,translate] x:duration-200 x:ease-out",
+              isOpen
+                ? "x:pointer-events-auto x:translate-y-0 x:opacity-100"
+                : "x:pointer-events-none x:translate-y-2 x:opacity-0",
+            )}
+          >
             {/* Panel header */}
-            <div className="x:flex x:shrink-0 x:items-center x:justify-end x:px-4 x:pt-3">
+            <div className="x:flex x:shrink-0 x:items-center x:justify-end x:px-6 x:pt-3 x:pb-6">
               <button
                 onClick={handleClose}
                 aria-label="Close chat"
-                className="x:text-lg x:leading-none x:text-zinc-400 x:transition-colors x:hover:text-zinc-600 x:dark:text-zinc-500 x:dark:hover:text-zinc-200"
+                className="x:text-lg x:leading-none x:text-zinc-700"
               >
                 ×
               </button>
             </div>
 
             {/* Messages */}
-            <div className="x:flex-1 x:space-y-7 x:overflow-y-auto x:px-4 x:py-3 x:text-sm">
+            <div className="x:flex-1 x:space-y-7 x:overflow-y-auto x:px-6 x:pb-3 x:text-sm">
               {messages.map((message) => (
                 <div
                   key={message.id}
@@ -86,7 +86,7 @@ export const AskSiteChat: React.FC = () => {
                   <div
                     className={
                       message.role === "user"
-                        ? "x:max-w-[80%] x:rounded-2xl x:rounded-br-sm x:bg-zinc-600 x:px-3 x:py-2 x:text-zinc-100 x:dark:bg-zinc-950"
+                        ? "x:max-w-[80%] x:rounded-2xl x:rounded-br-sm x:bg-zinc-500 x:px-3 x:py-2 x:text-zinc-100"
                         : "x:prose x:prose-sm x:max-w-[90%] x:text-zinc-800 x:dark:text-zinc-200 x:dark:prose-invert"
                     }
                   >
@@ -130,44 +130,56 @@ export const AskSiteChat: React.FC = () => {
       )}
 
       {/* Floating input bar */}
-      <div className="x:pointer-events-auto x:w-full x:max-w-[65ch] x:px-4 x:pt-0 x:pb-6">
-        <form onSubmit={handleSubmit} className="x:flex x:items-center x:gap-2">
-          <input
-            ref={inputRef}
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask me about Will Mruzek…"
-            onFocus={() => {
-              if (hasMessages) setIsOpen(true);
-            }}
-            disabled={isStreaming}
-            className="x:flex-1 x:rounded-full x:border x:border-neutral-200 x:bg-white x:px-5 x:py-3.5 x:text-base x:text-zinc-900 x:placeholder-zinc-400 x:shadow-sm x:transition-colors x:outline-none x:focus:border-zinc-300 x:disabled:bg-zinc-100 x:disabled:text-zinc-400 x:disabled:placeholder-zinc-300 x:dark:border-zinc-700 x:dark:bg-zinc-900 x:dark:text-zinc-100 x:dark:placeholder-zinc-500 x:dark:focus:border-zinc-500 x:dark:disabled:bg-zinc-800 x:dark:disabled:text-zinc-500 x:dark:disabled:placeholder-zinc-600"
-          />
-          <button
-            type="submit"
-            disabled={!input.trim() || isStreaming}
-            aria-label="Send"
-            className="x:flex x:h-11 x:w-11 x:shrink-0 x:items-center x:justify-center x:rounded-full x:bg-zinc-900 x:text-white x:shadow-xl x:transition-colors x:hover:bg-zinc-700 x:disabled:bg-zinc-200 x:disabled:text-zinc-400 x:dark:bg-zinc-100 x:dark:text-zinc-900 x:dark:hover:bg-zinc-300 x:dark:disabled:bg-zinc-700 x:dark:disabled:text-zinc-500"
+      <div className="x:pointer-events-auto x:relative x:z-10 x:w-full">
+        <div
+          className={clsx(
+            "x:relative x:isolate x:rounded-full x:border-4 x:border-transparent x:bg-zinc-100 x:p-4 x:shadow-[0_-4px_24px_rgba(0,0,0,0.12)] x:dark:bg-zinc-800 x:dark:shadow-[0_-4px_24px_rgba(0,0,0,0.35)]",
+            "x:before:pointer-events-none x:before:absolute x:before:-inset-1.25 x:before:z-[-2] x:before:rounded-[inherit] x:before:bg-[conic-gradient(from_var(--dock-angle,0deg),var(--dock-teal),var(--dock-blue),var(--dock-rose),var(--dock-amber),var(--dock-teal))] x:before:opacity-85 x:before:blur-[3px] x:before:content-[''] x:motion-safe:before:animate-dock-border",
+            "x:after:pointer-events-none x:after:absolute x:after:-inset-1 x:after:-z-1 x:after:rounded-[inherit] x:after:bg-inherit x:after:content-['']",
+            "x:[--dock-amber:#d5ad61] x:[--dock-blue:#719ddd] x:[--dock-rose:#d786a1] x:[--dock-teal:#45b8a7] x:focus-within:[--dock-amber:#c89435] x:focus-within:[--dock-blue:#477fcd] x:focus-within:[--dock-rose:#c85d83] x:focus-within:[--dock-teal:#239b88]",
+          )}
+        >
+          <form
+            onSubmit={handleSubmit}
+            className="x:flex x:items-center x:gap-3"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              className="x:h-5 x:w-5"
-              aria-hidden="true"
+            <input
+              ref={inputRef}
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="🤖 Ask me about Will Mruzek…"
+              onFocus={() => {
+                if (hasMessages) setIsOpen(true);
+              }}
+              disabled={isStreaming}
+              className="x:min-w-0 x:flex-1 x:rounded-full x:border x:border-neutral-200 x:bg-white x:px-5 x:py-3.5 x:text-base x:text-zinc-900 x:placeholder-zinc-400 x:shadow-sm x:transition-colors x:outline-none x:focus:border-zinc-300 x:disabled:bg-zinc-100 x:disabled:text-zinc-400 x:disabled:placeholder-zinc-300 x:dark:border-zinc-700 x:dark:bg-zinc-900 x:dark:text-zinc-100 x:dark:placeholder-zinc-500 x:dark:focus:border-zinc-500 x:dark:disabled:bg-zinc-800 x:dark:disabled:text-zinc-500 x:dark:disabled:placeholder-zinc-600"
+            />
+            <button
+              type="submit"
+              disabled={!input.trim() || isStreaming}
+              aria-label="Send"
+              className="x:flex x:h-11 x:w-11 x:shrink-0 x:items-center x:justify-center x:rounded-full x:bg-zinc-900 x:text-white x:shadow-xl x:transition-colors x:hover:bg-zinc-700 x:disabled:bg-zinc-200 x:disabled:text-zinc-400 x:dark:bg-zinc-100 x:dark:text-zinc-900 x:dark:hover:bg-zinc-300 x:dark:disabled:bg-zinc-700 x:dark:disabled:text-zinc-500"
             >
-              <path
-                fillRule="evenodd"
-                d="M10 17a.75.75 0 0 1-.75-.75V5.612L5.29 9.77a.75.75 0 0 1-1.08-1.04l5.25-5.5a.75.75 0 0 1 1.08 0l5.25 5.5a.75.75 0 1 1-1.08 1.04L10.75 5.612V16.25A.75.75 0 0 1 10 17Z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </button>
-        </form>
-        <p className="x:mt-3 x:text-center x:text-xs x:text-zinc-400 x:dark:text-zinc-500">
-          Powered by OpenAI&apos;s GPT-6 Luna
-        </p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="x:h-5 x:w-5"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 17a.75.75 0 0 1-.75-.75V5.612L5.29 9.77a.75.75 0 0 1-1.08-1.04l5.25-5.5a.75.75 0 0 1 1.08 0l5.25 5.5a.75.75 0 1 1-1.08 1.04L10.75 5.612V16.25A.75.75 0 0 1 10 17Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </button>
+          </form>
+          <p className="x:mt-2 x:text-center x:text-xs x:text-zinc-400 x:dark:text-zinc-400">
+            Powered by OpenAI&apos;s GPT-6 Luna
+          </p>
+        </div>
       </div>
     </div>
   );
