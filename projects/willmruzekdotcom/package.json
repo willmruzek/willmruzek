@@ -13,7 +13,7 @@
     "lint": "eslint .",
     "tsc": "tsc",
     "format": "prettier --list-different --write .",
-    "format:check": "prettier --list-different --check .",
+    "format:check": "prettier --check .",
     "generate:og": "node ./scripts/generate-og.ts",
     "print": "node ./scripts/print.ts",
     "validate": "node ./scripts/validate.ts",

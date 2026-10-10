@@ -1,8 +1,15 @@
+set -e
+
+pnpm --filter @willmruzek/willmruzekdotcom run lint
+pnpm --filter @willmruzek/willmruzekdotcom exec next typegen
+pnpm --filter @willmruzek/willmruzekdotcom run tsc
+pnpm --filter @willmruzek/willmruzekdotcom run format:check
+pnpm --filter @willmruzek/willmruzekdotcom run validate
+
 if ! git diff --cached --quiet -- projects/willmruzekdotcom/data/resume.yaml; then
   echo "resume.yaml changed — regenerating PDFs"
   pnpm --filter @willmruzek/willmruzekdotcom run print
   git add projects/willmruzekdotcom/public/static/WillMruzekResume.pdf projects/willmruzekdotcom/public/static/WillMruzekResumeShort.pdf
-  git update-index --again
 else
   echo "resume.yaml unchanged"
 fi
