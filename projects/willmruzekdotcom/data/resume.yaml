@@ -29,7 +29,26 @@ ai_tools:
 # you can see my set up [here](https://willmruzek.com/setup)
 
 experience:
-  - title: Senior Software Engineer
+  - title: Senior Software Engineer (Consultant)
+    company: Luma
+    employment_type: Consulting
+    start_date: Jun 2026
+    end_date: Aug 2026
+    location: Remote
+    tech:
+      - React
+      - TypeScript
+      - Python
+      - Postgres
+      - TanStack Query
+      - tldraw SDK
+      - Next.js
+      - Vercel
+      - Sanity
+      - Claude Code
+    bullets: []
+
+  - title: Senior Software Engineer (Consultant)
     company: CreditKarma
     employment_type: Consulting
     start_date: Nov 2024
@@ -37,13 +56,16 @@ experience:
     location: Remote
     tech:
       - React
-      - GraphQL/Apollo/URQL
       - TypeScript
-      - XState
-      - Design system UI component library
-      - Front-end unit testing
+      - Node.js
+      - GraphQL
       - Microservices (Thrift)
-      - Scala
+      - Next.js
+      - Design system UI component library
+      - React Server Components
+      - XState
+      - Panda CSS
+      - Cursor
     bullets:
       - "Helped launch Intuit Credit Karma's first zero-to-one subscription product across desktop, mobile web, and in-app web experiences"
       - Built multistep, stateful flows with XState, including an identity theft assessment and cancel subscription flow
@@ -68,7 +90,7 @@ experience:
       - Revamped the Artifacts home feed by combining Sanity CMS content with GraphQL queries to produce a sorted, filterable list of expert work examples
       - Consolidated a standalone Next.js app (Artifacts) into the main React + Ruby on Rails app, homogenizing the tech stack for all app features
 
-  - title: Senior Software Engineer
+  - title: Senior Software Engineer (Consultant)
     company: CreditKarma
     employment_type: Consulting
     start_date: Mar 2021
@@ -76,19 +98,18 @@ experience:
     location: Remote
     tech:
       - React
-      - GraphQL/Apollo/URQL
       - TypeScript
-      - Design system UI component library
-      - Front-end unit testing
+      - Node.js
+      - GraphQL
       - Microservices (Thrift)
-      - Scala
+      - Design system UI component library
     bullets:
       - Implemented green-field web and mobile experience to help millions track their income and better understand their taxes
       - Extended multiple frontend React apps and TS/JS libraries, supporting both infrastructure and product changes
       - Improved accessibility in site navigation, including keyboard navigation support
       - "Evaluated Apollo vs. URQL; URQL was adopted as the default GraphQL client across the org for its smaller API and bundle size"
 
-  - title: Senior Software Engineer
+  - title: Senior Software Engineer (Consultant)
     company: Syncari
     employment_type: Consulting
     start_date: Jan 2021
@@ -100,7 +121,7 @@ experience:
       - Java
       - Spring Boot
 
-  - title: Senior Software Engineer
+  - title: Senior Software Engineer (Consultant)
     company: Zathom
     stage: Pre-seed
     employment_type: Consulting
