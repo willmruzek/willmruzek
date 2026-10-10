@@ -1,7 +1,7 @@
 if ! git diff --cached --quiet -- projects/willmruzekdotcom/data/resume.yaml; then
-  echo "resume.yaml changed — regenerating PDF"
+  echo "resume.yaml changed — regenerating PDFs"
   pnpm --filter @willmruzek/willmruzekdotcom run print
-  git add projects/willmruzekdotcom/public/static/WillMruzekResume.pdf
+  git add projects/willmruzekdotcom/public/static/WillMruzekResume.pdf projects/willmruzekdotcom/public/static/WillMruzekResumeShort.pdf
   git update-index --again
 else
   echo "resume.yaml unchanged"
