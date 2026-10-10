@@ -1,7 +1,18 @@
 {
   "chat.tools.terminal.autoApprove": {
-    "/pnpm --filter @willmruzek/resume run (validate|print|build)/": true,
+    "/pnpm --filter @willmruzek/willmruzekdotcom run (validate|print|build)/": true,
     "pnpm exec tsc": true,
     "pnpm exec playwright install chromium": true
-  }
+  },
+  "yaml.disableSchemaDetection": ["projects/willmruzekdotcom/data/resume.yaml"],
+  "files.watcherExclude": {
+    "**/.next/**": true
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "nixEnvSelector.nixFile": "${workspaceFolder}/projects/willmruzekdotcom/devenv.nix"
 }
