@@ -12,6 +12,7 @@ export const AskSiteChat: React.FC = () => {
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
+  const chatRef = useRef<HTMLDivElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -32,6 +33,31 @@ export const AskSiteChat: React.FC = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    function handleOutsidePointerDown(event: PointerEvent) {
+      if (
+        !(event.target instanceof Node) ||
+        chatRef.current?.contains(event.target)
+      ) {
+        return;
+      }
+
+      setIsOpen(false);
+      inputRef.current?.blur();
+    }
+
+    document.addEventListener("pointerdown", handleOutsidePointerDown, true);
+    return () => {
+      document.removeEventListener(
+        "pointerdown",
+        handleOutsidePointerDown,
+        true,
+      );
+    };
+  }, [isOpen]);
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
@@ -48,7 +74,10 @@ export const AskSiteChat: React.FC = () => {
   }
 
   return (
-    <div className="x:pointer-events-none x:fixed x:bottom-0 x:left-1/2 x:z-50 x:flex x:w-full x:max-w-[40.8rem] x:-translate-x-1/2 x:flex-col x:items-center x:px-4 x:pb-6 x:print:hidden">
+    <div
+      ref={chatRef}
+      className="x:pointer-events-none x:fixed x:bottom-0 x:left-1/2 x:z-50 x:flex x:w-full x:max-w-[40.8rem] x:-translate-x-1/2 x:flex-col x:items-center x:px-4 x:pb-6 x:print:hidden"
+    >
       {/* Message panel — kept mounted once messages appear so exit animation plays */}
       {hasMessages && (
         <div className="x:relative x:z-0 x:-mb-8 x:w-[85%]">
