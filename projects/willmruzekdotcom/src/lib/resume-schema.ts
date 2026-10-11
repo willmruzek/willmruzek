@@ -44,14 +44,12 @@ export const ResumeSchema = z
     location: z.string().min(1),
     summary: z.string().min(1),
     top_skills: z.array(z.string().min(1)),
-    ai_tools: z.array(z.string().min(1)),
     experience: z.array(ExperienceSchema),
     education: EducationSchema,
   })
-  .transform(({ top_skills, ai_tools, ...rest }) => ({
+  .transform(({ top_skills, ...rest }) => ({
     ...rest,
     topSkills: top_skills,
-    aiTools: ai_tools,
   }));
 
 export type Resume = z.infer<typeof ResumeSchema>;

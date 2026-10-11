@@ -21,16 +21,8 @@ function getShortResume(resume: Resume): Resume {
 
 export function ShortResumeContent({ resume }: { resume: Resume }) {
   const shortResume = getShortResume(resume);
-  const {
-    name,
-    headline,
-    email,
-    location,
-    topSkills,
-    aiTools,
-    experience,
-    education,
-  } = shortResume;
+  const { name, headline, email, location, topSkills, experience, education } =
+    shortResume;
 
   const earlierCompanyNames = resume.experience
     .slice(experience.length)
@@ -47,7 +39,6 @@ export function ShortResumeContent({ resume }: { resume: Resume }) {
             <div className="x:mt-(--resume-baseline-step) x:space-y-0 x:print:mt-(--resume-baseline-step)">
               <p className={resumeMetaLineClassName}>{headline}</p>
               <p className={resumeMetaLineClassName}>{topSkills.join(", ")}</p>
-              <p className={resumeMetaLineClassName}>{aiTools.join(", ")}</p>
             </div>
           </div>
           <div className="x:shrink-0 x:text-right x:text-sm x:leading-(--resume-baseline-step) x:text-gray-500 x:dark:text-gray-400 x:print:text-xs">
