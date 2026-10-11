@@ -123,7 +123,7 @@ export function ExperienceEntry({ exp }: { exp: ResumeExperience }) {
       {exp.bullets && (
         <ul
           className={clsx(
-            "x:list-disc x:space-y-0 x:pl-4 x:text-sm x:leading-(--resume-baseline-step) x:text-gray-900 x:dark:text-gray-100",
+            "x:ml-8 x:list-disc x:space-y-0 x:pl-4 x:text-sm x:leading-(--resume-baseline-step) x:text-gray-900 x:dark:text-gray-100",
             exp.tech ? "x:mt-0" : "x:mt-(--resume-baseline-step)",
           )}
         >
