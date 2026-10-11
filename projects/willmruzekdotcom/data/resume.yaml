@@ -1,7 +1,7 @@
 name: Will Mruzek
 headline: Software Engineer w/ 13+ years experience
 email: hello@willmruzek.com
-location: Eastern Time, USA
+location: Bloomington, Indiana, USA (Eastern Time)
 
 summary: |
   I'm Will Mruzek, a software consultant and engineer with 13+ years of experience. I've worked with startups and established companies like Syncari, Reforge, and Intuit Credit Karma. Previously, I've held full-time engineering roles at Humble Bundle, CloudPassage, Spredfast, and Duo Security (Cisco).
@@ -42,7 +42,7 @@ experience:
     bullets: []
 
   - title: Senior Software Engineer (Consultant)
-    company: CreditKarma
+    company: CreditKarma (Intuit)
     employment_type: Consulting
     start_date: Nov 2024
     end_date: May 2026
@@ -73,9 +73,9 @@ experience:
     tech:
       - React
       - TypeScript
-      - Next.js
       - GraphQL
       - Ruby on Rails
+      - Next.js
       - Tailwind
       - Sanity CMS
       - Vercel
@@ -84,7 +84,7 @@ experience:
       - Consolidated a standalone Next.js app (Artifacts) into the main React + Ruby on Rails app, homogenizing the tech stack for all app features
 
   - title: Senior Software Engineer (Consultant)
-    company: CreditKarma
+    company: CreditKarma (Intuit)
     employment_type: Consulting
     start_date: Mar 2021
     end_date: Mar 2023
@@ -123,9 +123,9 @@ experience:
     location: Remote
     tech:
       - React
-      - GraphQL/Apollo
+      - TypeScript
+      - GraphQL
       - XState
-      - TS
       - Styled-Components
       - AWS Amplify
       - AWS AppSync
@@ -159,9 +159,9 @@ experience:
     end_date: Nov 2018
     location: Austin, Texas
     tech:
-      - Javascript
-      - Flow
       - React
+      - JavaScript
+      - Flow
       - Redux
       - ImmutableJS
       - SASS
@@ -181,13 +181,13 @@ experience:
     end_date: Jun 2017
     location: Remote
     tech:
-      - Laravel
-      - PHP
       - React
-      - Redux
-      - JS
-      - SASS
+      - JavaScript
+      - PHP
+      - Laravel
       - MySQL
+      - Redux
+      - SASS
     bullets:
       - Built and maintained a customer- and bizops-facing portal to facilitate the selection of keywords for SEO campaigns
       - Integrated third-party APIs like Stripe for payments and bank transfers
@@ -199,6 +199,7 @@ experience:
     end_date: Jul 2015
     location: San Francisco, California
     tech:
+      - JavaScript
       - AngularJS
       - SASS
       - Gulp
@@ -219,11 +220,11 @@ experience:
     end_date: Sep 2014
     location: San Francisco, California
     tech:
+      - JavaScript
       - AngularJS
       - Backbone.js
       - Python
       - Jinja
-      - Javascript
       - jQuery
       - SASS
       - Grunt
@@ -241,7 +242,7 @@ experience:
     end_date: Dec 2013
     location: Bloomington, Indiana
     tech:
-      - Javascript
+      - JavaScript
       - BackboneJS
       - MarionetteJS
       - jQuery
