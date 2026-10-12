@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import { getPageMap } from "nextra/page-map";
 import { Footer, Layout } from "@/components/theme/Layout";
 import { Navbar } from "@/components/theme/Navbar";
+import { getResume } from "@/lib/resume-data";
 
 import { Analytics } from "@vercel/analytics/next";
 
@@ -18,15 +19,21 @@ const atkinsonHyperlegible = localFont({
   fallback: ["system-ui", "-apple-system", "sans-serif"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-  ),
-  title: {
-    default: "Will Mruzek",
-    template: "%s | Will Mruzek",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const resume = await getResume();
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://willmruzek.com";
+
+  return {
+    metadataBase: new URL(siteUrl),
+    title: {
+      default: resume.name,
+      template: `%s | ${resume.name}`,
+    },
+    description: resume.summary,
+    authors: [{ name: resume.name, url: siteUrl }],
+    keywords: resume.topSkills,
+  };
+}
 
 export default async function RootLayout({
   children,

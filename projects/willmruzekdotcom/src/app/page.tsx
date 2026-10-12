@@ -12,7 +12,7 @@ import { IndexWrapper } from "@/components/theme/IndexWrapper";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Will Mruzek's Website",
+  title: { absolute: "Will Mruzek's Website" },
 };
 
 function HomePageHeader() {

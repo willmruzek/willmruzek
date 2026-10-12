@@ -15,6 +15,7 @@ A modern, personal website and blog built with Next.js 15 and Nextra.
 - **Zod + JSON Schema** validation for MDX frontmatter
 - Runtime type checking ensures no invalid metadata reaches production
 - TypeScript end-to-end for complete type safety
+- [Resume data](data/resume.yaml) supplies the site-wide metadata description, author, keywords, and default title. The resume page inherits that description. Keep shared facts in the homepage and [GitHub profile](../../README.md) aligned when editing the resume; GitHub may also feature tooling projects not listed on the website.
 
 ### Modern Next.js Architecture
 
