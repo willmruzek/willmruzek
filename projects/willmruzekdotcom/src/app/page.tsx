@@ -39,37 +39,78 @@ function HomePage() {
   return (
     <IndexWrapper header={<HomePageHeader />}>
       <p>
-        I&apos;m a <strong>senior engineer and software consultant</strong> with{" "}
-        <strong>over 13 years of experience</strong>. I help{" "}
-        <strong>startups and established companies</strong> turn business goals
-        into well-crafted applications. My consulting work includes projects
-        with <strong>Syncari</strong>, <strong>Reforge</strong>, and{" "}
-        <strong>Intuit Credit Karma</strong>.
+        I&apos;m a <strong>senior full-stack software engineer</strong> with{" "}
+        <strong>13+ years of experience</strong> helping startups and
+        established companies turn business goals into well-crafted
+        applications. I&apos;ve worked with teams at{" "}
+        <strong>
+          <a
+            href="https://lumalabs.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Luma AI
+          </a>
+        </strong>
+        ,{" "}
+        <strong>
+          <a
+            href="https://www.creditkarma.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Intuit Credit Karma
+          </a>
+        </strong>
+        ,{" "}
+        <strong>
+          <a
+            href="https://www.reforge.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Reforge
+          </a>
+        </strong>
+        ,{" "}
+        <strong>
+          <a href="https://duo.com/" target="_blank" rel="noopener noreferrer">
+            Duo Security (Cisco)
+          </a>
+        </strong>
+        , and{" "}
+        <strong>
+          <a
+            href="https://www.humblebundle.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Humble Bundle
+          </a>
+        </strong>
+        , among others.
       </p>
 
       <p>
-        Previously, I held full-time engineering roles at{" "}
-        <strong>Reforge</strong>, <strong>Duo Security (Cisco)</strong>,{" "}
-        <strong>Spredfast</strong>, <strong>CloudPassage</strong>, and{" "}
-        <strong>Humble Bundle</strong>.
+        I work primarily with <strong>React</strong>,{" "}
+        <strong>TypeScript</strong>, <strong>Next.js</strong>,{" "}
+        <strong>Node.js</strong>, <strong>Postgres</strong>, and{" "}
+        <strong>GraphQL</strong>. My experience spans 0-to-1 product
+        development, application architecture, and modernizing existing systems.
       </p>
 
       <p>
-        Day to day, I use <strong>React</strong>, <strong>Next.js</strong>,{" "}
-        <strong>TypeScript</strong>, <strong>Node.js</strong>,{" "}
-        <strong>Postgres</strong>, <strong>GraphQL</strong>, and{" "}
-        <strong>Tailwind CSS</strong>.
+        I care deeply about{" "}
+        <strong>user experience and developer experience</strong>. I favor
+        thoughtful architecture, code that&apos;s easy to reason about, and
+        software that can adapt to changing requirements without unnecessary
+        complexity. I&apos;m particularly interested in functional programming,
+        immutability, and tools that make developers more effective.
       </p>
 
       <p>
-        I&apos;m passionate about <strong>developer tooling</strong>,{" "}
-        <strong>UX</strong>, <strong>DX</strong>, <strong>type-safety</strong>,
-        and <strong>functional programming</strong>. I aim to craft code
-        that&apos;s principled, predictable, and adaptable to change, while
-        avoiding unnecessary complexity.
+        Outside of software engineering, I sing, compose music, act, and write.
       </p>
-
-      <p>Outside of coding, I sing, compose music, act, and write.</p>
 
       <p>
         Contact me at{" "}
