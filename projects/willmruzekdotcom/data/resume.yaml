@@ -189,7 +189,7 @@ experience:
       - Maintained and enhanced a shared UI component library used across multiple products, promoting consistency and component reuse
       - Mentored engineers on software architecture, feature development, and typed JavaScript best practices
 
-  - title: Software Engineer
+  - title: Software Engineer (Consultant)
     company: Skybound Digital
     employment_type: Consulting
     start_date: Dec 2015
@@ -249,8 +249,8 @@ experience:
       - Grunt
       - RequireJS / r.js
     bullets:
+      - Eliminated recurring engineering involvement in promotional page publishing by architecting a self-service content generation system for product operations
       - Built and unit tested a partner-facing AngularJS dashboard for managing store and widget products
-      - Eliminated recurring engineering involvement in promotional page publishing by architecting a self-service content generation system for product operations.
       - Modernized the front-end workflow with SASS, Grunt, RequireJS / r.js, and component-based architecture
 
   - title: Software Engineer
