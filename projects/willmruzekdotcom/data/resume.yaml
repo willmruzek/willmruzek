@@ -1,12 +1,12 @@
 name: Will Mruzek
-headline: Software Engineer w/ 13+ years experience
+headline: Senior Full-Stack Software Engineer
 email: hello@willmruzek.com
 location: Bloomington, Indiana, USA (Eastern Time)
 
 summary: >-
   Senior full-stack software engineer with 13+ years of experience building
   web applications for startups and established companies. Experienced in
-  zero-to-one product development, application architecture, and modernizing
+  0-to-1 product development, application architecture, and modernizing
   existing systems. Combines strong product and UX sensibilities with a
   principled approach to software engineering, emphasizing code that's easy
   to reason about, developer experience, and simplicity over unnecessary
@@ -28,11 +28,12 @@ top_skills:
 
 experience:
   - title: Senior Software Engineer (Consultant)
-    company: Luma
+    company: Luma AI
     employment_type: Consulting
     start_date: Jun 2026
     end_date: Aug 2026
     location: Remote
+    company_size: ~500 employees
     tech:
       - React
       - TypeScript
@@ -50,11 +51,12 @@ experience:
       - Collaborated on implementing two landing page designs and integrating PostHog A/B testing to evaluate prompt-based versus example-driven experiences for Luma's AI creative platform
 
   - title: Senior Software Engineer (Consultant)
-    company: CreditKarma (Intuit)
+    company: Intuit Credit Karma
     employment_type: Consulting
     start_date: Nov 2024
     end_date: May 2026
     location: Remote
+    company_size: ~1,600 employees
     tech:
       - React
       - TypeScript
@@ -73,12 +75,13 @@ experience:
       - Independently migrated Credit Karma's user profile application from React Router and custom SSR infrastructure to Next.js, aligning it with organization-wide frameworks and deployment tooling
       - Built shared API mocking infrastructure using Mock Service Worker (MSW), enabling Jest and Cypress tests to simulate different backend states and cover previously untestable scenarios
 
-  - title: Senior Software Engineer
+  - title: Senior Software Engineer (Front-End)
     company: Reforge
-    employment_type: Consulting and Full-time
+    employment_type: Consulting & Full-time
     start_date: Apr 2023
     end_date: Oct 2024
     location: Remote
+    company_size: ~150–200 employees
     tech:
       - React
       - TypeScript
@@ -94,11 +97,12 @@ experience:
       - Implemented a responsive redesign of the Artifacts commenting interface, improving usability across desktop and mobile
 
   - title: Senior Software Engineer (Consultant)
-    company: CreditKarma (Intuit)
+    company: Intuit Credit Karma
     employment_type: Consulting
     start_date: Mar 2021
     end_date: Mar 2023
     location: Remote
+    company_size: ~1,600 employees
     tech:
       - React
       - TypeScript
@@ -107,7 +111,7 @@ experience:
       - Microservices (Thrift)
       - Design system UI component library
     bullets:
-      - Contributed to the zero-to-one launch of Credit Karma's integrated tax and income tracking experience, including a feature displaying users' TurboTax filing status
+      - Contributed to the 0-to-1 launch of Credit Karma's integrated tax and income tracking experience, including a feature displaying users' TurboTax filing status
       - Improved keyboard accessibility across all Credit Karma web products by implementing focus management, focus traps, and ARIA attributes in the shared site navigation
       - Benchmarked Apollo and URQL for bundle size and page load performance, informing organization-wide adoption of the lighter URQL client without unnecessary caching complexity
 
@@ -117,6 +121,7 @@ experience:
     start_date: Jan 2021
     end_date: Mar 2021
     location: Remote
+    company_size: ~25 employees
     tech:
       - React
       - TypeScript
@@ -125,11 +130,11 @@ experience:
 
   - title: Senior Software Engineer (Consultant)
     company: Zathom
-    stage: Pre-seed
     employment_type: Consulting
     start_date: Jun 2019
     end_date: Nov 2020
     location: Remote
+    company_size: 2–3 employees
     tech:
       - React
       - TypeScript
@@ -142,16 +147,17 @@ experience:
       - AWS DynamoDB
       - AWS Lambda
     bullets:
-      - Led full-stack development of a zero-to-one social platform for writers, rapidly iterating on user management, content feeds, and gamified writing experiences to support product-market fit exploration
+      - Led full-stack development of a 0-to-1 social platform for writers, rapidly iterating on user management, content feeds, and gamified writing experiences to support product-market fit exploration
       - Built and maintained serverless backend infrastructure using AWS AppSync, DynamoDB, Lambda, and Cognito to support authentication, data management, and application APIs
       - Mentored a junior engineer through onboarding, code reviews, pair programming, and architectural guidance across React, GraphQL, and AWS
 
   - title: Senior Software Engineer
-    company: Duo Security
+    company: Duo Security (Cisco)
     employment_type: Full-time
     start_date: Nov 2018
     end_date: Jun 2019
-    location: Austin, Texas
+    location: Austin, TX
+    company_size: ~700 employees
     tech:
       - React
       - jQuery
@@ -165,7 +171,8 @@ experience:
     employment_type: Full-time
     start_date: Jun 2017
     end_date: Nov 2018
-    location: Austin, Texas
+    location: Austin, TX
+    company_size: ~300 employees
     tech:
       - React
       - JavaScript
@@ -188,6 +195,7 @@ experience:
     start_date: Dec 2015
     end_date: Jun 2017
     location: Remote
+    company_size: ~25 employees
     tech:
       - React
       - JavaScript
@@ -200,12 +208,13 @@ experience:
       - Built and maintained a customer- and bizops-facing portal to facilitate the selection of keywords for SEO campaigns
       - Integrated third-party APIs like Stripe for payments and bank transfers
 
-  - title: Front End Software Engineer
+  - title: Front-End Software Engineer
     company: CloudPassage
     employment_type: Full-time
     start_date: Sep 2014
     end_date: Jul 2015
-    location: San Francisco, California
+    location: San Francisco, CA
+    company_size: ~100 employees
     tech:
       - JavaScript
       - AngularJS
@@ -216,17 +225,19 @@ experience:
       - Webpack
       - Ruby on Rails
     bullets:
-      - "Architected and built zero-to-one a single-page application for the second generation of the company's main product"
+      - "Architected and built 0-to-1 a single-page application for the second generation of the company's main product"
       - Built and extended custom AngularJS directives to support exhaustive reporting of cloud server instances
       - Partnered with UX and DevOps to launch the product across multiple environments
       - Maintained legacy Ruby on Rails application during the migration to the new frontend
 
   - title: Software Engineer
     company: Humble Bundle
+    page_break: true
     employment_type: Full-time
     start_date: Dec 2013
     end_date: Sep 2014
-    location: San Francisco, California
+    location: San Francisco, CA
+    company_size: 50–100 employees
     tech:
       - JavaScript
       - AngularJS
@@ -244,11 +255,11 @@ experience:
 
   - title: Software Engineer
     company: Glerb
-    page_break: true
     employment_type: Full-time
     start_date: May 2013
     end_date: Dec 2013
-    location: Bloomington, Indiana
+    location: Bloomington, IN
+    company_size: <10 employees
     tech:
       - JavaScript
       - BackboneJS

@@ -3,14 +3,14 @@ import { z } from "zod";
 export const ExperienceTypeSchema = z.enum([
   "Full-time",
   "Consulting",
-  "Consulting and Full-time",
+  "Consulting & Full-time",
 ]);
 
 export const ExperienceSchema = z
   .object({
     title: z.string().min(1).optional(),
     company: z.string().min(1),
-    stage: z.string().min(1).optional(),
+    company_size: z.string().min(1).optional(),
     employment_type: ExperienceTypeSchema.optional(),
     start_date: z.string().min(1).optional(),
     end_date: z.string().min(1).optional(),
@@ -21,8 +21,16 @@ export const ExperienceSchema = z
     page_break: z.boolean().optional(),
   })
   .transform(
-    ({ start_date, end_date, page_break, employment_type, ...rest }) => ({
+    ({
+      start_date,
+      end_date,
+      page_break,
+      employment_type,
+      company_size,
+      ...rest
+    }) => ({
       ...rest,
+      companySize: company_size,
       employmentType: employment_type,
       startDate: start_date,
       endDate: end_date,

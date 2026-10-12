@@ -18,7 +18,7 @@
 
 ### 🚀 I've recently worked with
 
-- **[Intuit Credit Karma](https://www.creditkarma.com/)** - Helped launch their first subscription product (zero-to-one) across desktop, mobile web, and in-app web, built complex multistep flows, and led a migration from React Router to Next.js.
+- **[Intuit Credit Karma](https://www.creditkarma.com/)** - Helped launch their first subscription product (0-to-1) across desktop, mobile web, and in-app web, built complex multi-step flows, and led a migration from React Router to Next.js.
 
 ### 🔭 I’m currently working on
 

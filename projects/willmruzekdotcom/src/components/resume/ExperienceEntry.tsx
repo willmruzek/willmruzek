@@ -73,7 +73,7 @@ function getDateRange(exp: ResumeExperience): string | undefined {
 
 export function ExperienceEntry({ exp }: { exp: ResumeExperience }) {
   const dateRange = getDateRange(exp);
-  const metaParts = [exp.stage, exp.employmentType, exp.location].filter(
+  const metaParts = [exp.employmentType, exp.location, exp.companySize].filter(
     (part): part is string => Boolean(part),
   );
 
