@@ -33,12 +33,11 @@ async function collectBlogPosts(dir: string): Promise<string[]> {
 }
 
 /**
- * Assembles all public site content into a single string to use as LLM context.
+ * Assembles resume data, projects, and published blog posts as LLM context.
  * Always includes published blog posts regardless of the ENABLE_BLOG feature flag.
  */
 export async function getSiteContent(): Promise<string> {
-  const [homepage, resume, projects] = await Promise.all([
-    readFileOrEmpty(path.join(ROOT, "index.mdx")),
+  const [resume, projects] = await Promise.all([
     readFileOrEmpty(path.join(DATA_ROOT, "resume.yaml")),
     readFileOrEmpty(path.join(DATA_ROOT, "projects.yaml")),
   ]);
@@ -63,7 +62,6 @@ export async function getSiteContent(): Promise<string> {
   }
 
   const sections = [
-    "## Homepage / About\n\n" + homepage,
     "## Resume / Work History\n\n" + resume,
     "## Projects / Side Projects\n\n" + projects,
     blogSection,
