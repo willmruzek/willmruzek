@@ -14,8 +14,20 @@ export function ProjectsContent({
       <div className="x:space-y-(--tw-baseline-unit-value-px)">
         {projects.map((project) => (
           <div key={project.name}>
-            <div className="x:font-semibold x:text-gray-900 x:dark:text-gray-100">
-              {project.name}
+            <div className="x:flex x:flex-wrap x:items-baseline x:gap-x-3">
+              <span className="x:font-semibold x:text-gray-900 x:dark:text-gray-100">
+                {project.name}
+              </span>
+              {project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="x:shrink-0 x:text-sm x:text-gray-500 x:underline x:hover:text-gray-900 x:dark:text-gray-400 x:dark:hover:text-gray-100"
+                >
+                  Visit
+                </a>
+              )}
             </div>
             <div>
               {project.description.map((block, blockIndex) => {
@@ -54,28 +66,16 @@ export function ProjectsContent({
                 ))}
               </p>
             )}
-            {(project.url || project.sourceUrl) && (
+            {project.sourceUrl && (
               <div className="x:mt-1 x:flex x:gap-3 x:text-sm x:text-gray-500 x:dark:text-gray-400">
-                {project.url && (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="x:underline x:hover:text-gray-900 x:dark:hover:text-gray-100"
-                  >
-                    Visit
-                  </a>
-                )}
-                {project.sourceUrl && (
-                  <a
-                    href={project.sourceUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="x:underline x:hover:text-gray-900 x:dark:hover:text-gray-100"
-                  >
-                    Source
-                  </a>
-                )}
+                <a
+                  href={project.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="x:underline x:hover:text-gray-900 x:dark:hover:text-gray-100"
+                >
+                  Source
+                </a>
               </div>
             )}
           </div>
