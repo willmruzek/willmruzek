@@ -1,7 +1,7 @@
 /**
  * Resume PDF generator using Puppeteer
  *
- * Starts a Next.js dev server, navigates to /resume, and saves PDFs.
+ * Starts a Next.js dev server, navigates to /resume, and saves the resume PDF.
  * Local-only — not intended for CI.
  *
  * Usage:
@@ -20,16 +20,7 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const PORT = 3100;
 const BASE_URL = `http://localhost:${PORT}/resume`;
 const OUT_DIR = path.resolve(__dirname, "../public/static");
-const PRINT_TARGETS = [
-  {
-    url: BASE_URL,
-    outPath: path.join(OUT_DIR, "WillMruzekResume.pdf"),
-  },
-  {
-    url: `${BASE_URL}?format=short`,
-    outPath: path.join(OUT_DIR, "WillMruzekResumeShort.pdf"),
-  },
-];
+const OUT_PATH = path.join(OUT_DIR, "WillMruzekResume.pdf");
 
 function waitForServer(url: string, timeout = 30_000): Promise<void> {
   const start = Date.now();
@@ -93,7 +84,7 @@ async function main() {
   }
 
   try {
-    console.log("Server ready. Generating PDFs…");
+    console.log("Server ready. Generating resume PDF…");
 
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -102,18 +93,16 @@ async function main() {
       { name: "prefers-color-scheme", value: "light" },
     ]);
 
-    for (const { url, outPath } of PRINT_TARGETS) {
-      await page.goto(url, { waitUntil: "networkidle0" });
+    await page.goto(BASE_URL, { waitUntil: "networkidle0" });
 
-      await page.pdf({
-        path: outPath,
-        format: "letter",
-        preferCSSPageSize: true,
-        printBackground: true,
-      });
+    await page.pdf({
+      path: OUT_PATH,
+      format: "letter",
+      preferCSSPageSize: true,
+      printBackground: true,
+    });
 
-      console.log(`PDF saved to ${outPath}`);
-    }
+    console.log(`PDF saved to ${OUT_PATH}`);
 
     await browser.close();
   } finally {

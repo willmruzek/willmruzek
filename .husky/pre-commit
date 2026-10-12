@@ -7,9 +7,9 @@ pnpm --filter @willmruzek/willmruzekdotcom run format:check
 pnpm --filter @willmruzek/willmruzekdotcom run validate
 
 if ! git diff --cached --quiet -- projects/willmruzekdotcom/data/resume.yaml; then
-  echo "resume.yaml changed — regenerating PDFs"
+  echo "resume.yaml changed — regenerating resume PDF"
   pnpm --filter @willmruzek/willmruzekdotcom run print
-  git add projects/willmruzekdotcom/public/static/WillMruzekResume.pdf projects/willmruzekdotcom/public/static/WillMruzekResumeShort.pdf
+  git add projects/willmruzekdotcom/public/static/WillMruzekResume.pdf
 else
   echo "resume.yaml unchanged"
 fi

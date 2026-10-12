@@ -51,12 +51,6 @@ export function LongResumeContent({ resume }: { resume: Resume }) {
           >
             View PDF
           </a>
-          <a
-            href="/static/WillMruzekResumeShort.pdf"
-            className="x:rounded x:bg-gray-200 x:px-3 x:py-1 x:text-xs x:font-semibold x:text-gray-800 x:shadow-sm x:hover:bg-gray-300 x:dark:bg-gray-700 x:dark:text-gray-100 x:dark:hover:bg-gray-600"
-          >
-            View Short PDF
-          </a>
         </div>
       </header>
 
