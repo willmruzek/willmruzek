@@ -22,7 +22,12 @@ export function LongResumeContent({ resume }: { resume: Resume }) {
         <div className="x:flex x:items-start x:justify-between x:gap-4">
           <div className="x:min-w-0 x:flex-1">
             <h1 className="x:text-4xl x:leading-[calc(var(--resume-baseline-step)*2)] x:font-bold x:tracking-tight x:text-gray-900 x:dark:text-gray-100 x:print:text-3xl">
-              {name}
+              <span className="x:relative x:inline-block x:pb-(--resume-baseline-step)">
+                {name}
+                <em className="x:absolute x:right-0 x:bottom-3 x:text-xs x:leading-(--resume-baseline-step) x:font-normal x:tracking-normal x:text-gray-500 x:dark:text-gray-400">
+                  (mroo-zeck)
+                </em>
+              </span>
             </h1>
             <div className="x:mt-(--resume-baseline-step) x:space-y-0 x:print:mt-(--resume-baseline-step)">
               <p className={resumeMetaLineClassName}>{headline}</p>

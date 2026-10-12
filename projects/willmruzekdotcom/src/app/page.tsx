@@ -18,11 +18,21 @@ export const metadata: Metadata = {
 function HomePageHeader() {
   return (
     <div className="x:mb-12 x:flex x:flex-col x:items-center x:gap-8 x:sm:flex-row x:sm:items-center x:sm:justify-between">
-      <h1 className="x:text-5xl x:leading-18 x:font-extrabold x:tracking-tight x:text-balance x:text-gray-900 x:sm:text-6xl x:dark:text-gray-100">
-        Hi there 👋
-        <br />
-        <span className="x:text-5xl">I&apos;m Will Mruzek</span>
-      </h1>
+      <div>
+        <h1 className="x:text-5xl x:leading-18 x:font-extrabold x:tracking-tight x:text-balance x:text-gray-900 x:sm:text-6xl x:dark:text-gray-100">
+          Hi there 👋
+          <br />
+          <span className="x:text-5xl">
+            I&apos;m Will{" "}
+            <span className="x:relative x:inline-block x:pb-8">
+              Mruzek
+              <em className="x:absolute x:right-0 x:bottom-0 x:text-base x:leading-6 x:font-normal x:tracking-normal x:text-gray-500 x:dark:text-gray-400">
+                (mroo-zeck)
+              </em>
+            </span>
+          </span>
+        </h1>
+      </div>
       <Image
         src="/static/me.jpeg"
         alt="Will Mruzek"
