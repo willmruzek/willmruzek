@@ -1,5 +1,6 @@
 import type { ResumeExperience } from "@/lib/resume-schema";
 import clsx from "clsx";
+import { TechBadge } from "@/components/TechBadge";
 
 import { resumeTechStackSurroundClassName } from "./resumeMetaLine";
 
@@ -110,12 +111,7 @@ export function ExperienceEntry({ exp }: { exp: ResumeExperience }) {
       {exp.tech && exp.tech.length > 0 && (
         <p className={resumeTechStackSurroundClassName}>
           {exp.tech.map((technology) => (
-            <span
-              key={technology}
-              className="x:inline-flex x:items-center x:rounded-sm x:bg-[#eaf3ff] x:px-2 x:text-xs x:leading-(--resume-baseline-step) x:text-[#506b90] x:dark:bg-[#253c5c] x:dark:text-[#c3d8f4] x:print:bg-gray-100 x:print:text-gray-900"
-            >
-              {technology}
-            </span>
+            <TechBadge key={technology}>{technology}</TechBadge>
           ))}
         </p>
       )}

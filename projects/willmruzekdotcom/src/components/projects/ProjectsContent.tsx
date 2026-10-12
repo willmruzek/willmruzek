@@ -1,4 +1,5 @@
 import type { Projects } from "@/lib/projects-schema";
+import { TechBadge } from "@/components/TechBadge";
 
 export function ProjectsContent({
   projects,
@@ -47,8 +48,10 @@ export function ProjectsContent({
               })}
             </div>
             {project.tech && project.tech.length > 0 && (
-              <p className="x:mt-1 x:text-sm x:leading-(--tw-baseline-unit-value-px) x:text-gray-500 x:dark:text-gray-400">
-                {project.tech.join(" · ")}
+              <p className="x:mt-1 x:flex x:flex-wrap x:gap-x-1.5 x:gap-y-1">
+                {project.tech.map((technology) => (
+                  <TechBadge key={technology}>{technology}</TechBadge>
+                ))}
               </p>
             )}
             {(project.url || project.sourceUrl) && (

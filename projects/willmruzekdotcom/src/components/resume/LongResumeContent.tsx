@@ -1,4 +1,5 @@
 import type { Resume } from "@/lib/resume-schema";
+import { TechBadge } from "@/components/TechBadge";
 
 import { ExperienceEntry } from "./ExperienceEntry";
 import { resumeMetaLineClassName } from "./resumeMetaLine";
@@ -25,7 +26,6 @@ export function LongResumeContent({ resume }: { resume: Resume }) {
             </h1>
             <div className="x:mt-(--resume-baseline-step) x:space-y-0 x:print:mt-(--resume-baseline-step)">
               <p className={resumeMetaLineClassName}>{headline}</p>
-              <p className={resumeMetaLineClassName}>{topSkills.join(", ")}</p>
             </div>
           </div>
           <div className="x:shrink-0 x:text-right x:text-sm x:leading-(--resume-baseline-step) x:text-gray-500 x:dark:text-gray-400 x:print:text-xs">
@@ -60,6 +60,17 @@ export function LongResumeContent({ resume }: { resume: Resume }) {
         </h2>
         <p className="x:text-base x:leading-(--resume-baseline-step) x:whitespace-pre-line x:text-gray-900 x:dark:text-gray-100 x:print:text-sm">
           {summary.trim()}
+        </p>
+      </section>
+
+      <section className="x:mb-(--resume-baseline-step)">
+        <h2 className="x:mb-(--resume-baseline-step) x:text-xs x:leading-(--resume-baseline-step) x:font-semibold x:tracking-widest x:text-gray-500 x:uppercase x:dark:text-gray-400">
+          Top Skills
+        </h2>
+        <p className="x:flex x:flex-wrap x:gap-x-1.5 x:gap-y-1">
+          {topSkills.map((skill) => (
+            <TechBadge key={skill}>{skill}</TechBadge>
+          ))}
         </p>
       </section>
 
