@@ -26,6 +26,7 @@ A modern, personal website and blog built with Next.js 15 and Nextra.
 ### Content-First Development
 
 - **Nextra** MDX engine with built-in page mapping
+- The MDX catch-all checks content-derived routes before importing pages or metadata; unknown URLs return 404 without missing-module errors
 - Organized content structure: `content/thoughts/[year]/[slug].mdx`
 - Advanced code highlighting with line numbers, diffs, and copy buttons
 - Image zoom, footnotes, and rich Markdown features

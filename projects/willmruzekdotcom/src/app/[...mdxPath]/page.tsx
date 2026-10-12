@@ -1,5 +1,6 @@
 import { generateStaticParamsFor, importPage } from "nextra/pages";
 import { type Metadata } from "next";
+import { notFound } from "next/navigation";
 import { IndexWrapper } from "@/components/theme/IndexWrapper";
 
 export const generateStaticParams = async () => {
@@ -25,11 +26,27 @@ function isExcluded(params: Awaited<Props["params"]>): boolean {
   return false;
 }
 
+async function assertContentPageExists(
+  params: Awaited<Props["params"]>,
+): Promise<void> {
+  const pathname = decodeURIComponent(params.mdxPath.join("/"));
+  const pages = await generateStaticParams();
+  const exists = pages.some((page) => {
+    const segments = Array.isArray(page.mdxPath)
+      ? page.mdxPath
+      : [page.mdxPath];
+    return segments.join("/") === pathname;
+  });
+
+  if (!exists) notFound();
+}
+
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
 
   if (isExcluded(params)) return {};
 
+  await assertContentPageExists(params);
   const { metadata } = await importPage(params.mdxPath);
   return metadata;
 }
@@ -43,6 +60,7 @@ export default async function Page(props: Props) {
 
   if (isExcluded(params)) return null;
 
+  await assertContentPageExists(params);
   const { default: MDXContent, metadata } = await importPage(params.mdxPath);
 
   return (
