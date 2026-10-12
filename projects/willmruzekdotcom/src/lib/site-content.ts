@@ -4,6 +4,11 @@ import path from "node:path";
 const ROOT = path.join(process.cwd(), "content");
 const DATA_ROOT = path.join(process.cwd(), "data");
 
+/** Reads the shared Markdown biography for the homepage and chat context. */
+export async function getHomepageContent(): Promise<string> {
+  return fs.readFile(path.join(DATA_ROOT, "homepage.md"), "utf-8");
+}
+
 async function readFileOrEmpty(filePath: string): Promise<string> {
   try {
     return await fs.readFile(filePath, "utf-8");
@@ -33,11 +38,12 @@ async function collectBlogPosts(dir: string): Promise<string[]> {
 }
 
 /**
- * Assembles resume data, projects, and published blog posts as LLM context.
+ * Assembles the homepage biography, resume, projects, and published posts as LLM context.
  * Always includes published blog posts regardless of the ENABLE_BLOG feature flag.
  */
 export async function getSiteContent(): Promise<string> {
-  const [resume, projects] = await Promise.all([
+  const [homepage, resume, projects] = await Promise.all([
+    getHomepageContent(),
     readFileOrEmpty(path.join(DATA_ROOT, "resume.yaml")),
     readFileOrEmpty(path.join(DATA_ROOT, "projects.yaml")),
   ]);
@@ -62,6 +68,7 @@ export async function getSiteContent(): Promise<string> {
   }
 
   const sections = [
+    "## Homepage / About\n\n" + homepage,
     "## Resume / Work History\n\n" + resume,
     "## Projects / Side Projects\n\n" + projects,
     blogSection,

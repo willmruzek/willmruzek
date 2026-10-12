@@ -5,11 +5,21 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
+import Markdown, { type Components } from "react-markdown";
 import { Email } from "react-obfuscate-email";
 import { SocialMediaIconLinkList } from "@/components/SocialMediaIconLinkList";
 import { IndexWrapper } from "@/components/theme/IndexWrapper";
+import { getHomepageContent } from "@/lib/site-content";
 
 import type { Metadata } from "next";
+
+const homepageMarkdownComponents: Components = {
+  a: ({ children, href, title }) => (
+    <a href={href} title={title} target="_blank" rel="noopener noreferrer">
+      {children}
+    </a>
+  ),
+};
 
 export const metadata: Metadata = {
   title: { absolute: "Will Mruzek's Website" },
@@ -45,82 +55,12 @@ function HomePageHeader() {
   );
 }
 
-function HomePage() {
+async function HomePage() {
+  const homepage = await getHomepageContent();
+
   return (
     <IndexWrapper header={<HomePageHeader />}>
-      <p>
-        I&apos;m a <strong>senior full-stack software engineer</strong> with{" "}
-        <strong>13+ years of experience</strong> helping startups and
-        established companies turn business goals into well-crafted
-        applications. I&apos;ve worked with teams at{" "}
-        <strong>
-          <a
-            href="https://lumalabs.ai/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Luma AI
-          </a>
-        </strong>
-        ,{" "}
-        <strong>
-          <a
-            href="https://www.creditkarma.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Intuit Credit Karma
-          </a>
-        </strong>
-        ,{" "}
-        <strong>
-          <a
-            href="https://www.reforge.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Reforge
-          </a>
-        </strong>
-        ,{" "}
-        <strong>
-          <a href="https://duo.com/" target="_blank" rel="noopener noreferrer">
-            Duo Security (Cisco)
-          </a>
-        </strong>
-        , and{" "}
-        <strong>
-          <a
-            href="https://www.humblebundle.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Humble Bundle
-          </a>
-        </strong>
-        , among others.
-      </p>
-
-      <p>
-        I work primarily with <strong>React</strong>,{" "}
-        <strong>TypeScript</strong>, <strong>Next.js</strong>,{" "}
-        <strong>Node.js</strong>, <strong>Postgres</strong>, and{" "}
-        <strong>GraphQL</strong>. My experience spans 0-to-1 product
-        development, application architecture, and modernizing existing systems.
-      </p>
-
-      <p>
-        I care deeply about{" "}
-        <strong>user experience and developer experience</strong>. I favor
-        thoughtful architecture, code that&apos;s easy to reason about, and
-        software that can adapt to changing requirements without unnecessary
-        complexity. I&apos;m particularly interested in functional programming,
-        immutability, and tools that make developers more effective.
-      </p>
-
-      <p>
-        Outside of software engineering, I sing, compose music, act, and write.
-      </p>
+      <Markdown components={homepageMarkdownComponents}>{homepage}</Markdown>
 
       <p>
         Contact me at{" "}
