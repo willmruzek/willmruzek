@@ -52,6 +52,8 @@ export function LongResumeContent({ resume }: { resume: Resume }) {
         <div className="x:mt-(--resume-baseline-step) x:flex x:justify-end x:gap-2 x:print:hidden">
           <a
             href="/static/WillMruzekResume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="x:rounded x:bg-gray-800 x:px-3 x:py-1 x:text-xs x:font-semibold x:text-white x:shadow-sm x:hover:bg-gray-700 x:dark:bg-gray-200 x:dark:text-gray-800 x:dark:hover:bg-gray-300"
           >
             View PDF
