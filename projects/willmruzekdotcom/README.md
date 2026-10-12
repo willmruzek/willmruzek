@@ -24,6 +24,12 @@ A modern, personal website and blog built with Next.js 15 and Nextra.
 - Static generation for optimal performance
 - Feature flags for conditional rendering
 
+### AI Chat History
+
+Chat messages, including streamed updates, are saved in this browser's `localStorage` under `willmruzek:chat-history:v1`. History survives reloads and page navigation but is not synced across browsers or devices. Restored conversations stay closed until the chat input is focused; restoring history does not make an AI request. Sending a new prompt includes the restored conversation as context.
+
+Closing the panel does not delete history. Remove the storage key or clear the site's browser storage to reset it. Saved messages are validated before loading; invalid history is discarded. If storage is blocked or full, chat remains usable, but new messages may not be saved.
+
 ### Content-First Development
 
 - **Nextra** MDX engine with built-in page mapping

@@ -3,24 +3,67 @@
 import { useEffect, useRef, useState } from "react";
 
 import { useChat } from "@ai-sdk/react";
+import { safeValidateUIMessages } from "ai";
 import clsx from "clsx";
 import Markdown from "react-markdown";
 
+const CHAT_HISTORY_KEY = "willmruzek:chat-history:v1";
+
 export const AskSiteChat: React.FC = () => {
-  const { messages, sendMessage, status } = useChat();
+  const { messages, sendMessage, status, setMessages } = useChat();
 
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [isHistoryLoaded, setIsHistoryLoaded] = useState(false);
 
   const chatRef = useRef<HTMLDivElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const hasOpenedOnce = useRef(false);
 
   const isStreaming = status === "streaming" || status === "submitted";
   const hasMessages = messages.length > 0;
 
+  useEffect(() => {
+    let cancelled = false;
+
+    async function restoreHistory() {
+      try {
+        const stored = localStorage.getItem(CHAT_HISTORY_KEY);
+        if (!stored) return;
+
+        const parsed: unknown = JSON.parse(stored);
+        const result = await safeValidateUIMessages({ messages: parsed });
+
+        if (!cancelled && result.success && result.data.length > 0) {
+          hasOpenedOnce.current = true;
+          setMessages(result.data);
+        }
+      } catch {
+        return;
+      } finally {
+        if (!cancelled) setIsHistoryLoaded(true);
+      }
+    }
+
+    void restoreHistory();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [setMessages]);
+
+  useEffect(() => {
+    if (!isHistoryLoaded) return;
+
+    try {
+      localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(messages));
+    } catch {
+      return;
+    }
+  }, [isHistoryLoaded, messages]);
+
   // Open the panel when the first message arrives
-  const hasOpenedOnce = useRef(false);
   useEffect(() => {
     if (hasMessages && !hasOpenedOnce.current) {
       hasOpenedOnce.current = true;
@@ -62,7 +105,7 @@ export const AskSiteChat: React.FC = () => {
     e.preventDefault();
 
     const trimmed = input.trim();
-    if (!trimmed || isStreaming) return;
+    if (!trimmed || isStreaming || !isHistoryLoaded) return;
 
     sendMessage({ text: trimmed });
     setInput("");
@@ -181,12 +224,12 @@ export const AskSiteChat: React.FC = () => {
               onFocus={() => {
                 if (hasMessages) setIsOpen(true);
               }}
-              disabled={isStreaming}
+              disabled={isStreaming || !isHistoryLoaded}
               className="x:min-w-0 x:flex-1 x:rounded-full x:border x:border-neutral-200 x:bg-white x:px-5 x:py-3.5 x:text-base x:text-zinc-900 x:placeholder-zinc-400 x:shadow-sm x:transition-colors x:outline-none x:focus:border-zinc-300 x:disabled:bg-zinc-100 x:disabled:text-zinc-400 x:disabled:placeholder-zinc-300 x:dark:border-zinc-700 x:dark:bg-zinc-900 x:dark:text-zinc-100 x:dark:placeholder-zinc-500 x:dark:focus:border-zinc-500 x:dark:disabled:bg-zinc-800 x:dark:disabled:text-zinc-500 x:dark:disabled:placeholder-zinc-600"
             />
             <button
               type="submit"
-              disabled={!input.trim() || isStreaming}
+              disabled={!input.trim() || isStreaming || !isHistoryLoaded}
               aria-label="Send"
               className="x:flex x:h-11 x:w-11 x:shrink-0 x:items-center x:justify-center x:rounded-full x:bg-zinc-900 x:text-white x:shadow-xl x:transition-colors x:hover:bg-zinc-700 x:disabled:bg-zinc-200 x:disabled:text-zinc-400 x:dark:bg-zinc-100 x:dark:text-zinc-900 x:dark:hover:bg-zinc-300 x:dark:disabled:bg-zinc-700 x:dark:disabled:text-zinc-500"
             >
