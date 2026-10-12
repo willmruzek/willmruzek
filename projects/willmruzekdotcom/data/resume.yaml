@@ -3,12 +3,14 @@ headline: Software Engineer w/ 13+ years experience
 email: hello@willmruzek.com
 location: Bloomington, Indiana, USA (Eastern Time)
 
-summary: |
-  I'm Will Mruzek, a software consultant and engineer with 13+ years of experience. I've worked with startups and established companies like Syncari, Reforge, and Intuit Credit Karma. Previously, I've held full-time engineering roles at Humble Bundle, CloudPassage, Spredfast, and Duo Security (Cisco).
-
-  I frequently work in React, TypeScript, Next.js, Node.js, Postgres, GraphQL, and Tailwind. I'm passionate about developer tooling, developer and user experience, type-safety, and functional programming. I aim to craft code that's principled, predictable, and adaptable to change, while avoiding unnecessary complexity.
-
-  Outside of work, I sing, compose music, act, and write.
+summary: >-
+  Senior full-stack software engineer with 13+ years of experience building
+  web applications for startups and established companies. Experienced in
+  zero-to-one product development, application architecture, and modernizing
+  existing systems. Combines strong product and UX sensibilities with a
+  principled approach to software engineering, emphasizing code that's easy
+  to reason about, developer experience, and simplicity over unnecessary
+  complexity.
 
 top_skills:
   - React
@@ -39,7 +41,10 @@ experience:
       - Vercel
       - Sanity
       - Claude Code
-    bullets: []
+    bullets:
+      - Developed keyboard layout internationalization for Luma's canvas editor, implementing layout detection, user preferences, cross-tab synchronization, and dynamic shortcut documentation
+      - Enhanced Luma's credit usage dashboard with custom date-range filtering and optimized Python/SQL queries to improve subteam reporting performance
+      - Collaborated on implementing two landing page designs and integrating PostHog A/B testing to evaluate prompt-based versus example-driven experiences for Luma's AI creative platform
 
   - title: Senior Software Engineer (Consultant)
     company: CreditKarma (Intuit)
@@ -60,9 +65,10 @@ experience:
       - Panda CSS
       - Cursor
     bullets:
-      - "Helped launch Intuit Credit Karma's first zero-to-one subscription product across desktop, mobile web, and in-app web experiences"
-      - Built multistep, stateful flows with XState, including an identity theft assessment and cancel subscription flow
-      - "Led the migration of the main user profile app from React Router to Next.js and integrated it with Credit Karma's bespoke deployment infrastructure"
+      - Contributed to the launch of Credit Karma's first subscription product, building an identity theft assistance questionnaire, owning the cancellation flow, and implementing versioned consent tracking to preserve which subscription terms each user accepted
+      - Architected and built an API-driven identity theft assistance questionnaire using XState to model conditional questions, state transitions, and eligibility outcomes
+      - Independently migrated Credit Karma's user profile application from React Router and custom SSR infrastructure to Next.js, aligning it with organization-wide frameworks and deployment tooling
+      - Built shared API mocking infrastructure using Mock Service Worker (MSW), enabling Jest and Cypress tests to simulate different backend states and cover previously untestable scenarios
 
   - title: Senior Software Engineer
     company: Reforge
@@ -80,8 +86,9 @@ experience:
       - Sanity CMS
       - Vercel
     bullets:
-      - Revamped the Artifacts home feed by combining Sanity CMS content with GraphQL queries to produce a sorted, filterable list of expert work examples
-      - Consolidated a standalone Next.js app (Artifacts) into the main React + Ruby on Rails app, homogenizing the tech stack for all app features
+      - Led full-stack development of the Artifacts home feed redesign, integrating Sanity CMS and GraphQL to introduce sorting and filtering capabilities that improved content discovery
+      - Collaborated on consolidating the standalone Artifacts Next.js application into Reforge's primary React/Rails application, simplifying deployments, reducing maintenance overhead, and improving integration with courses and other product content
+      - Implemented a responsive redesign of the Artifacts commenting interface, improving usability across desktop and mobile
 
   - title: Senior Software Engineer (Consultant)
     company: CreditKarma (Intuit)
@@ -97,10 +104,9 @@ experience:
       - Microservices (Thrift)
       - Design system UI component library
     bullets:
-      - Implemented green-field web and mobile experience to help millions track their income and better understand their taxes
-      - Extended multiple frontend React apps and TS/JS libraries, supporting both infrastructure and product changes
-      - Improved accessibility in site navigation, including keyboard navigation support
-      - "Evaluated Apollo vs. URQL; URQL was adopted as the default GraphQL client across the org for its smaller API and bundle size"
+      - Contributed to the zero-to-one launch of Credit Karma's integrated tax and income tracking experience, including a feature displaying users' TurboTax filing status
+      - Improved keyboard accessibility across all Credit Karma web products by implementing focus management, focus traps, and ARIA attributes in the shared site navigation
+      - Benchmarked Apollo and URQL for bundle size and page load performance, informing organization-wide adoption of the lighter URQL client without unnecessary caching complexity
 
   - title: Senior Software Engineer (Consultant)
     company: Syncari
@@ -133,9 +139,9 @@ experience:
       - AWS DynamoDB
       - AWS Lambda
     bullets:
-      - Rapidly iterated on product concepts for a creator social network targeting writers, supporting a fast-moving founder in PMF exploration
-      - Built out writing tools and game-like experiences that encouraged good storytelling and cross-user engagement
-      - Mentored junior engineer in React, GraphQL, and AWS infrastructure
+      - Led full-stack development of a zero-to-one social platform for writers, rapidly iterating on user management, content feeds, and gamified writing experiences to support product-market fit exploration
+      - Built and maintained serverless backend infrastructure using AWS AppSync, DynamoDB, Lambda, and Cognito to support authentication, data management, and application APIs
+      - Mentored a junior engineer through onboarding, code reviews, pair programming, and architectural guidance across React, GraphQL, and AWS
 
   - title: Senior Software Engineer
     company: Duo Security
@@ -148,9 +154,8 @@ experience:
       - jQuery
       - Python
     bullets:
-      - Led the migration of shared table and filter UI across the admin interface from a jQuery-based implementation to React
-      - Built a testing framework for validating the new table infrastructure, accelerating UI development
-      - Modified internal and customer-facing backend APIs in Python
+      - Led migration of shared table and filtering infrastructure from jQuery to reusable React components, modernizing Duo's admin interface and improving maintainability
+      - Built a testing framework for the new table infrastructure, accelerating UI development and supporting the migration to React
 
   - title: Senior Software Engineer
     company: "Spredfast\u2122"
@@ -169,10 +174,10 @@ experience:
       - SocketIO
       - Jasmine
     bullets:
-      - Maintained and extended a support-over-social-media application, integrating React and social streams into the UI
-      - Improved code quality and developer tooling while sustaining 95% test coverage and strong static typing with Flow
-      - Maintained the shared UI component library used across multiple products, ensuring consistency and reusability across the organization
-      - Mentored engineers on architecture, feature development, and typed JavaScript best practices
+      - Developed and maintained a social media customer support application, integrating social media streams into a React-based interface
+      - Improved code quality and developer tooling while maintaining 95% test coverage and enforcing static typing with Flow
+      - Maintained and enhanced a shared UI component library used across multiple products, promoting consistency and component reuse
+      - Mentored engineers on software architecture, feature development, and typed JavaScript best practices
 
   - title: Software Engineer
     company: Skybound Digital
@@ -231,7 +236,7 @@ experience:
       - RequireJS / r.js
     bullets:
       - Built and unit tested a partner-facing AngularJS dashboard for managing store and widget products
-      - Architected an internal JSON-to-HTML system that enabled product ops to draft and publish bundle promotion pages without recurring engineering support
+      - Eliminated recurring engineering involvement in promotional page publishing by architecting a self-service content generation system for product operations.
       - Modernized the front-end workflow with SASS, Grunt, RequireJS / r.js, and component-based architecture
 
   - title: Software Engineer
