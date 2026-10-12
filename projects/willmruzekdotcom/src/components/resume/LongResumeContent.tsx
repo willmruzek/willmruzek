@@ -29,32 +29,30 @@ export function LongResumeContent({ resume }: { resume: Resume }) {
                 </em>
               </span>
             </h1>
-            <div className="x:mt-(--resume-baseline-step) x:space-y-0 x:print:mt-(--resume-baseline-step)">
-              <p className={resumeMetaLineClassName}>{headline}</p>
-            </div>
           </div>
           <div className="x:shrink-0 x:text-right x:text-sm x:leading-(--resume-baseline-step) x:text-gray-500 x:dark:text-gray-400 x:print:text-xs">
             <div>{email}</div>
             <div>{location}</div>
-            <div className="x:mt-(--resume-baseline-step) x:hidden x:space-y-0 x:print:block">
-              <p className={resumeMetaLineClassName}>
-                Side-project details at{" "}
-                <a
-                  href="https://willmruzek.com/projects"
-                  className="x:text-gray-600 x:underline x:underline-offset-2 x:dark:text-gray-300"
-                >
-                  willmruzek.com/projects
-                </a>
-              </p>
-            </div>
           </div>
         </div>
-        <div className="x:mt-(--resume-baseline-step) x:flex x:justify-end x:gap-2 x:print:hidden">
+        <div className="x:mt-2 x:flex x:items-center x:justify-between x:gap-4">
+          <p className={resumeMetaLineClassName}>{headline}</p>
+          <div className="x:hidden x:text-right x:print:block">
+            <p className={resumeMetaLineClassName}>
+              Side-project details at{" "}
+              <a
+                href="https://willmruzek.com/projects"
+                className="x:text-gray-600 x:underline x:underline-offset-2 x:dark:text-gray-300"
+              >
+                willmruzek.com/projects
+              </a>
+            </p>
+          </div>
           <a
             href="/static/WillMruzekResume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="x:rounded x:bg-gray-800 x:px-3 x:py-1 x:text-xs x:font-semibold x:text-white x:shadow-sm x:hover:bg-gray-700 x:dark:bg-gray-200 x:dark:text-gray-800 x:dark:hover:bg-gray-300"
+            className="x:shrink-0 x:rounded x:bg-gray-800 x:px-3 x:py-1 x:text-xs x:font-semibold x:text-white x:shadow-sm x:hover:bg-gray-700 x:dark:bg-gray-200 x:dark:text-gray-800 x:dark:hover:bg-gray-300 x:print:hidden"
           >
             View PDF
           </a>
