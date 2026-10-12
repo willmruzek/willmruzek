@@ -1,5 +1,5 @@
 import {
-  faTwitter,
+  faXTwitter,
   faGithub,
   faStackOverflow,
   faLinkedin,
@@ -121,7 +121,7 @@ function HomePage() {
         icons={[
           [faGithub, "https://github.com/willmruzek"],
           [faLinkedin, "https://www.linkedin.com/in/willmruzek/"],
-          [faTwitter, "https://twitter.com/willmruzek"],
+          [faXTwitter, "https://twitter.com/willmruzek"],
           [faStackOverflow, "https://stackoverflow.com/users/243673/will-m"],
         ]}
       />
