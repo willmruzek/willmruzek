@@ -76,7 +76,7 @@ export const AskSiteChat: React.FC = () => {
   return (
     <div
       ref={chatRef}
-      className="x:pointer-events-none x:fixed x:bottom-0 x:left-1/2 x:z-50 x:flex x:w-full x:max-w-[40.8rem] x:-translate-x-1/2 x:flex-col x:items-center x:px-4 x:pb-6 x:print:hidden"
+      className="x:pointer-events-none x:fixed x:bottom-0 x:left-1/2 x:z-50 x:flex x:w-full x:max-w-[40.8rem] x:-translate-x-1/2 x:flex-col x:items-center x:px-4 x:pb-11 x:print:hidden"
     >
       {/* Message panel — kept mounted once messages appear so exit animation plays */}
       {hasMessages && (
