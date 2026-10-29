@@ -16,7 +16,7 @@ A modern, personal website and blog built with Next.js 15 and Nextra.
 - Runtime type checking ensures no invalid metadata reaches production
 - TypeScript end-to-end for complete type safety
 - [Homepage biography](data/homepage.md) is shared Markdown, rendered on the homepage and included verbatim in AI chat context. Edit it to update both; the header, photograph, obfuscated email, and social icons remain React components.
-- [Resume data](data/resume.yaml) supplies the site-wide metadata description, author, keywords, and default title. The resume page inherits that description. Keep shared facts in the homepage and [GitHub profile](../../README.md) aligned when editing the resume; GitHub may also feature tooling projects not listed on the website.
+- [Resume data](data/resume.yaml) supplies the site-wide metadata author, keywords, and default title; its name and headline form the metadata description. The resume page inherits that description. Keep shared facts in the homepage and [GitHub profile](../../README.md) aligned when editing the resume; GitHub may also feature tooling projects not listed on the website.
 
 ### Modern Next.js Architecture
 

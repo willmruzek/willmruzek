@@ -78,7 +78,7 @@ export function ExperienceEntry({ exp }: { exp: ResumeExperience }) {
   );
 
   return (
-    <div className={clsx(exp.pageBreak && "x:break-before-page")}>
+    <div>
       <div className="x:flex x:flex-wrap x:items-baseline x:justify-between x:gap-x-4 x:leading-(--resume-baseline-step)">
         <div className="x:leading-(--resume-baseline-step)">
           <span className="x:leading-(--resume-baseline-step) x:font-semibold x:text-gray-900 x:dark:text-gray-100">
@@ -108,7 +108,7 @@ export function ExperienceEntry({ exp }: { exp: ResumeExperience }) {
         </p>
       )}
 
-      {exp.tech && exp.tech.length > 0 && (
+      {exp.showDetails && exp.tech && exp.tech.length > 0 && (
         <p className={resumeTechStackSurroundClassName}>
           {exp.tech.map((technology) => (
             <TechBadge key={technology}>{technology}</TechBadge>
@@ -116,7 +116,7 @@ export function ExperienceEntry({ exp }: { exp: ResumeExperience }) {
         </p>
       )}
 
-      {exp.bullets && (
+      {exp.showDetails && exp.bullets && (
         <ul
           className={clsx(
             "x:ml-8 x:list-disc x:space-y-0 x:pl-4 x:text-sm x:leading-(--resume-baseline-step) x:text-gray-900 x:dark:text-gray-100",

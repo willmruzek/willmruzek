@@ -3,26 +3,15 @@ headline: Senior Full-Stack Software Engineer
 email: hello@willmruzek.com
 location: Bloomington, Indiana, USA (Eastern Time)
 
-summary: >-
-  Senior full-stack software engineer with 13+ years of experience building
-  web applications for startups and established companies. Experienced in
-  0-to-1 product development, application architecture, and modernizing
-  existing systems. Combines strong product and UX sensibilities with a
-  principled approach to software engineering, emphasizing code that's easy
-  to reason about, developer experience, and simplicity over unnecessary
-  complexity.
-
 top_skills:
   - React
   - TypeScript
   - Next.js
   - Node.js
-  - Python
   - SQL
   - Postgres
   - GraphQL
   - Tailwind
-  - Automated Testing
 
 # you can see my set up [here](https://willmruzek.com/setup)
 
@@ -75,7 +64,7 @@ experience:
       - Independently migrated Credit Karma's user profile application from React Router and custom SSR infrastructure to Next.js, aligning it with organization-wide frameworks and deployment tooling
       - Built shared API mocking infrastructure using Mock Service Worker (MSW), enabling Jest and Cypress tests to simulate different backend states and cover previously untestable scenarios
 
-  - title: Senior Software Engineer (Front-End)
+  - title: Senior Software Engineer
     company: Reforge
     employment_type: Consulting & Full-time
     start_date: Apr 2023
@@ -117,6 +106,7 @@ experience:
 
   - title: Senior Software Engineer (Consultant)
     company: Syncari
+    show_details: false
     employment_type: Consulting
     start_date: Jan 2021
     end_date: Mar 2021
@@ -130,6 +120,7 @@ experience:
 
   - title: Senior Software Engineer (Consultant)
     company: Zathom
+    show_details: false
     employment_type: Consulting
     start_date: Jun 2019
     end_date: Nov 2020
@@ -153,6 +144,7 @@ experience:
 
   - title: Senior Software Engineer
     company: Duo Security (Cisco)
+    show_details: false
     employment_type: Full-time
     start_date: Nov 2018
     end_date: Jun 2019
@@ -166,8 +158,9 @@ experience:
       - Led migration of shared table and filtering infrastructure from jQuery to reusable React components, modernizing Duo's admin interface and improving maintainability
       - Built a testing framework for the new table infrastructure, accelerating UI development and supporting the migration to React
 
-  - title: Senior Software Engineer
+  - title: Senior Software Engineer (Front-End)
     company: "Spredfast\u2122"
+    show_details: false
     employment_type: Full-time
     start_date: Jun 2017
     end_date: Nov 2018
@@ -191,6 +184,7 @@ experience:
 
   - title: Software Engineer (Consultant)
     company: Skybound Digital
+    show_details: false
     employment_type: Consulting
     start_date: Dec 2015
     end_date: Jun 2017
@@ -210,6 +204,7 @@ experience:
 
   - title: Front-End Software Engineer
     company: CloudPassage
+    show_details: false
     employment_type: Full-time
     start_date: Sep 2014
     end_date: Jul 2015
@@ -232,7 +227,7 @@ experience:
 
   - title: Software Engineer
     company: Humble Bundle
-    page_break: true
+    show_details: false
     employment_type: Full-time
     start_date: Dec 2013
     end_date: Sep 2014
@@ -252,28 +247,6 @@ experience:
       - Eliminated recurring engineering involvement in promotional page publishing by architecting a self-service content generation system for product operations
       - Built and unit tested a partner-facing AngularJS dashboard for managing store and widget products
       - Modernized the front-end workflow with SASS, Grunt, RequireJS / r.js, and component-based architecture
-
-  - title: Software Engineer
-    company: Glerb
-    employment_type: Full-time
-    start_date: May 2013
-    end_date: Dec 2013
-    location: Bloomington, IN
-    company_size: <10 employees
-    tech:
-      - JavaScript
-      - BackboneJS
-      - MarionetteJS
-      - jQuery
-      - PHP
-      - CakePHP
-      - MySQL
-      - HTML
-      - CSS
-    bullets:
-      - Built a spaced-repetition application for helping users memorize information efficiently
-      - Migrated front-end Javascript to a modular architecture with MarionetteJS maintaining current functionality
-      - Implemented deploy pipeline to AppFog PaaS, streamlining and easing the release process
 
 education:
   school: Indiana University - Bloomington

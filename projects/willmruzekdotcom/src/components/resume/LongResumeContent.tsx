@@ -5,16 +5,8 @@ import { ExperienceEntry } from "./ExperienceEntry";
 import { resumeMetaLineClassName } from "./resumeMetaLine";
 
 export function LongResumeContent({ resume }: { resume: Resume }) {
-  const {
-    name,
-    headline,
-    email,
-    location,
-    summary,
-    topSkills,
-    experience,
-    education,
-  } = resume;
+  const { name, headline, email, location, topSkills, experience, education } =
+    resume;
 
   return (
     <div className="resume-rhythm-root x:mt-[calc(var(--resume-baseline-step)*3)] x:print:mt-0">
@@ -58,15 +50,6 @@ export function LongResumeContent({ resume }: { resume: Resume }) {
           </a>
         </div>
       </header>
-
-      <section className="x:mb-(--resume-baseline-step)">
-        <h2 className="x:mb-(--resume-baseline-step) x:text-xs x:leading-(--resume-baseline-step) x:font-semibold x:tracking-widest x:text-gray-500 x:uppercase x:dark:text-gray-400">
-          Summary
-        </h2>
-        <p className="x:text-base x:leading-(--resume-baseline-step) x:whitespace-pre-line x:text-gray-900 x:dark:text-gray-100 x:print:text-sm">
-          {summary.trim()}
-        </p>
-      </section>
 
       <section className="x:mb-(--resume-baseline-step)">
         <h2 className="x:mb-(--resume-baseline-step) x:text-xs x:leading-(--resume-baseline-step) x:font-semibold x:tracking-widest x:text-gray-500 x:uppercase x:dark:text-gray-400">

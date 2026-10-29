@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
       default: resume.name,
       template: `%s | ${resume.name}`,
     },
-    description: resume.summary,
+    description: `${resume.name} — ${resume.headline}`,
     authors: [{ name: resume.name, url: siteUrl }],
     keywords: resume.topSkills,
   };

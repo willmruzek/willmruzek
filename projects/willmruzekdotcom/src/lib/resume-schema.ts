@@ -18,13 +18,13 @@ export const ExperienceSchema = z
     location: z.string().min(1).optional(),
     tech: z.array(z.string().min(1)).optional(),
     bullets: z.array(z.string().min(1)).optional(),
-    page_break: z.boolean().optional(),
+    show_details: z.boolean().optional(),
   })
   .transform(
     ({
       start_date,
       end_date,
-      page_break,
+      show_details,
       employment_type,
       company_size,
       ...rest
@@ -34,7 +34,7 @@ export const ExperienceSchema = z
       employmentType: employment_type,
       startDate: start_date,
       endDate: end_date,
-      pageBreak: page_break ?? false,
+      showDetails: show_details ?? true,
     }),
   );
 
@@ -50,7 +50,6 @@ export const ResumeSchema = z
     headline: z.string().min(1),
     email: z.string().min(1),
     location: z.string().min(1),
-    summary: z.string().min(1),
     top_skills: z.array(z.string().min(1)),
     experience: z.array(ExperienceSchema),
     education: EducationSchema,
