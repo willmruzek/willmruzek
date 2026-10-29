@@ -30,20 +30,20 @@ export default async function Page(
 ) {
   const params = await props.params;
 
-  try {
-    const { default: MDXContent, metadata } = await importBlogPost(params);
+  const { default: MDXContent, metadata } = await importBlogPost(params).catch(
+    (error: unknown) => {
+      console.error(
+        `Failed to load blog post: /${params.year}/${params.slug}`,
+        error,
+      );
 
-    return (
-      <BlogPostWrapper metadata={metadata}>
-        <MDXContent {...props} params={params} />
-      </BlogPostWrapper>
-    );
-  } catch (error) {
-    console.error(
-      `Failed to load blog post: /${params.year}/${params.slug}`,
-      error,
-    );
+      notFound();
+    },
+  );
 
-    notFound();
-  }
+  return (
+    <BlogPostWrapper metadata={metadata}>
+      <MDXContent {...props} params={params} />
+    </BlogPostWrapper>
+  );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 // Popular Google Fonts to start with
 const POPULAR_FONTS = [
@@ -38,28 +38,25 @@ type FontPickerProps = {
 export function FontPicker({ onFontChange }: FontPickerProps) {
   const [selectedFont, setSelectedFont] = useState("Inter");
   const [customFont, setCustomFont] = useState("");
-  const [loadedFonts, setLoadedFonts] = useState<Set<string>>(new Set());
+  const loadedFonts = useRef(new Set<string>());
 
-  const loadGoogleFont = useCallback(
-    (fontName: string) => {
-      if (loadedFonts.has(fontName)) return;
+  const loadGoogleFont = useCallback((fontName: string) => {
+    if (loadedFonts.current.has(fontName)) return;
 
-      // Remove existing font links to avoid conflicts
-      const existingLinks = document.querySelectorAll("link[data-font-picker]");
-      existingLinks.forEach((link) => link.remove());
+    // Remove existing font links to avoid conflicts
+    const existingLinks = document.querySelectorAll("link[data-font-picker]");
+    existingLinks.forEach((link) => link.remove());
 
-      // Create new font link
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.setAttribute("data-font-picker", "true");
-      const googleFontName = fontName.replace(/\s+/g, "+");
-      link.href = `https://fonts.googleapis.com/css2?family=${googleFontName}:wght@300;400;500;600;700&display=swap`;
+    // Create new font link
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.setAttribute("data-font-picker", "true");
+    const googleFontName = fontName.replace(/\s+/g, "+");
+    link.href = `https://fonts.googleapis.com/css2?family=${googleFontName}:wght@300;400;500;600;700&display=swap`;
 
-      document.head.appendChild(link);
-      setLoadedFonts((prev) => new Set(prev).add(fontName));
-    },
-    [loadedFonts],
-  );
+    document.head.appendChild(link);
+    loadedFonts.current.add(fontName);
+  }, []);
 
   const applyFont = (fontName: string) => {
     loadGoogleFont(fontName);
@@ -83,7 +80,7 @@ export function FontPicker({ onFontChange }: FontPickerProps) {
     const fontLinks = document.querySelectorAll("link[data-font-picker]");
     fontLinks.forEach((link) => link.remove());
     setSelectedFont("");
-    setLoadedFonts(new Set());
+    loadedFonts.current.clear();
   };
 
   useEffect(() => {

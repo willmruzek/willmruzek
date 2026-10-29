@@ -2,7 +2,7 @@
 
 ## Overview
 
-- Stack: Next.js App Router (v15) with the Nextra v4 blog theme and MDX content.
+- Stack: Next.js App Router (v16) with the Nextra v4 blog theme and MDX content.
 - Package manager: `pnpm` (use `pnpm` for all install/run commands).
 - Content lives under `content/thoughts/**` grouped by year; routes live in `src/app/**`.
 - Path alias `@/*` maps to `src/*` (see `tsconfig.json`).
@@ -37,7 +37,7 @@
 
 ## Feature toggles
 
-- `src/lib/feature-config.ts` controls whether the blog is enabled (e.g., via environment or config). The middleware guards routes accordingly. Respect this toggle when adding routes or APIs around blog content.
+- `src/lib/feature-config.ts` controls whether the blog is enabled (e.g., via environment or config). `src/proxy.ts` guards routes accordingly. Respect this toggle when adding routes or APIs around blog content.
 
 ## Styling and components
 

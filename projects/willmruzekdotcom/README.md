@@ -1,6 +1,6 @@
 # willmruzek.com
 
-A modern, personal website and blog built with Next.js 15 and Nextra.
+A modern, personal website and blog built with Next.js 16 and Nextra.
 
 ## Technical Highlights
 
@@ -20,7 +20,7 @@ A modern, personal website and blog built with Next.js 15 and Nextra.
 
 ### Modern Next.js Architecture
 
-- **Next.js 15** with App Router and React Server Components
+- **Next.js 16** with App Router and React Server Components
 - **Turbopack** for fast dev builds
 - Static generation for optimal performance
 - Feature flags for conditional rendering
@@ -51,7 +51,7 @@ Closing the panel does not delete history. Remove the storage key or clear the s
 
 ### Core
 
-- **Next.js 15.4.1** - React framework with App Router
+- **Next.js 16.4.3** - React framework with App Router
 - **React 18.3.1** - UI library
 - **TypeScript 5.8.3** - Type safety
 - **pnpm** - Fast package manager

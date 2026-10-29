@@ -6,6 +6,7 @@ import { useChat } from "@ai-sdk/react";
 import { safeValidateUIMessages } from "ai";
 import clsx from "clsx";
 import Markdown from "react-markdown";
+import { useHydrated } from "@/lib/use-hydrated";
 
 const CHAT_HISTORY_KEY = "willmruzek:chat-history:v1";
 const SAMPLE_QUESTIONS = [
@@ -21,7 +22,11 @@ export const AskSiteChat: React.FC = () => {
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isHistoryLoaded, setIsHistoryLoaded] = useState(false);
-  const [sampleQuestionIndex, setSampleQuestionIndex] = useState(0);
+  const [randomQuestionIndex] = useState(() =>
+    Math.floor(Math.random() * SAMPLE_QUESTIONS.length),
+  );
+  const hydrated = useHydrated();
+  const sampleQuestionIndex = hydrated ? randomQuestionIndex : 0;
 
   const chatRef = useRef<HTMLDivElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -34,10 +39,6 @@ export const AskSiteChat: React.FC = () => {
     SAMPLE_QUESTIONS[sampleQuestionIndex],
     SAMPLE_QUESTIONS[(sampleQuestionIndex + 1) % SAMPLE_QUESTIONS.length],
   ];
-
-  useEffect(() => {
-    setSampleQuestionIndex(Math.floor(Math.random() * SAMPLE_QUESTIONS.length));
-  }, []);
 
   useEffect(() => {
     let cancelled = false;

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import { useHydrated } from "@/lib/use-hydrated";
 
 // SVG Icons as components
 const SunIcon = ({ className }: { className?: string }) => (
@@ -39,12 +39,8 @@ const MoonIcon = ({ className }: { className?: string }) => (
 );
 
 export function DarkModeToggle() {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useHydrated();
   const { theme, setTheme, systemTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Don't render anything until mounted to avoid hydration mismatch
   if (!mounted) {

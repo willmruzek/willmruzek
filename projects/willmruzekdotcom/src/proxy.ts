@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const blogEnabled = process.env.ENABLE_BLOG === "true";
   const isProduction = process.env.NODE_ENV === "production";
 
