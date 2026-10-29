@@ -23,7 +23,7 @@ export function LongResumeContent({ resume }: { resume: Resume }) {
             </h1>
           </div>
           <div className="x:shrink-0 x:text-right x:text-sm x:leading-(--resume-baseline-step) x:text-gray-500 x:dark:text-gray-400 x:print:text-xs">
-            <div>{email}</div>
+            <div data-resume-email>{email}</div>
             <div>{location}</div>
           </div>
         </div>

@@ -21,6 +21,9 @@ next-env.d.ts
 # production
 /build
 
+# Local private resume PDFs (never served by Next.js)
+/private/
+
 # misc
 .DS_Store
 *.pem

@@ -25,6 +25,14 @@ A modern, personal website and blog built with Next.js 15 and Nextra.
 - Static generation for optimal performance
 - Feature flags for conditional rendering
 
+### Resume PDFs
+
+Run `pnpm --filter @willmruzek/willmruzekdotcom run print` to regenerate the public resume PDF. Set `RESUME_PRIVATE_EMAIL` in `.env.local` (see [.env.local.example](.env.local.example)) to also generate `private/WillMruzekResume.pdf` on every print run, including the resume pre-commit hook. An exported environment variable takes precedence over the file.
+
+The private email is substituted only in the print browser after the public PDF is saved; the resume YAML and public page stay unchanged. Both `.env.local` and `private/` are Git-ignored, and private PDFs are outside the public web directory. Never place the private email in a `NEXT_PUBLIC_*` variable or copy the private PDF into `public/`.
+
+If the variable is missing or blank, printing warns and generates only the public PDF; an existing private PDF is not updated. An invalid email fails printing.
+
 ### AI Chat History
 
 Chat messages, including streamed updates, are saved in this browser's `localStorage` under `willmruzek:chat-history:v1`. History survives reloads and page navigation but is not synced across browsers or devices. Restored conversations stay closed until the chat input is focused; restoring history does not make an AI request. Sending a new prompt includes the restored conversation as context.
