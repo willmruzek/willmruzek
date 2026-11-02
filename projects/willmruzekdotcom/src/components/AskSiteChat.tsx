@@ -234,7 +234,7 @@ export const AskSiteChat: React.FC = () => {
           <div
             role="group"
             aria-label="Suggested questions"
-            className="x:mb-3 x:flex x:flex-col x:gap-2 x:sm:flex-row x:sm:flex-wrap"
+            className="x:hidden x:sm:mb-3 x:sm:flex x:sm:flex-row x:sm:flex-wrap x:sm:gap-2"
           >
             {suggestions.map((question) => (
               <button
