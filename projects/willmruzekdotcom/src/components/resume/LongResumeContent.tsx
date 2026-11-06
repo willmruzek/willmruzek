@@ -10,7 +10,7 @@ export function LongResumeContent({ resume }: { resume: Resume }) {
 
   return (
     <div className="resume-rhythm-root x:mt-[calc(var(--resume-baseline-step)*3)] x:print:mt-0">
-      <header className="x:mb-(--resume-baseline-step) x:border-b x:border-gray-300 x:pb-(--resume-baseline-step) x:dark:border-gray-600 x:print:border-b-0 x:print:shadow-[0_1px_0_#d1d5db]">
+      <header className="x:mb-(--resume-baseline-step) x:border-b x:border-gray-300 x:pb-(--resume-baseline-step) x:dark:border-gray-600 x:print:mb-2 x:print:border-b-0 x:print:pb-2 x:print:shadow-[0_1px_0_#d1d5db]">
         <div className="x:flex x:items-start x:justify-between x:gap-4">
           <div className="x:min-w-0 x:flex-1">
             <h1 className="x:text-4xl x:leading-[calc(var(--resume-baseline-step)*2)] x:font-bold x:tracking-tight x:text-gray-900 x:dark:text-gray-100 x:print:text-3xl">
@@ -29,17 +29,6 @@ export function LongResumeContent({ resume }: { resume: Resume }) {
         </div>
         <div className="x:mt-2 x:flex x:items-center x:justify-between x:gap-4">
           <p className={resumeMetaLineClassName}>{headline}</p>
-          <div className="x:hidden x:text-right x:print:block">
-            <p className={resumeMetaLineClassName}>
-              Side-project details at{" "}
-              <a
-                href="https://willmruzek.com/projects"
-                className="x:text-gray-600 x:underline x:underline-offset-2 x:dark:text-gray-300"
-              >
-                willmruzek.com/projects
-              </a>
-            </p>
-          </div>
           <a
             href="/static/WillMruzekResume.pdf"
             target="_blank"
@@ -89,6 +78,27 @@ export function LongResumeContent({ resume }: { resume: Resume }) {
           </div>
         </div>
       </section>
+      <footer className="x:mt-2 x:break-inside-avoid">
+        <p className={resumeMetaLineClassName}>
+          Side-project details at{" "}
+          <a
+            href="https://willmruzek.com/projects"
+            className="x:text-gray-600 x:underline x:underline-offset-2 x:dark:text-gray-300"
+          >
+            willmruzek.com/projects
+          </a>
+          ; full history at{" "}
+          <a
+            href="https://www.linkedin.com/in/willmruzek/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="x:text-gray-600 x:underline x:underline-offset-2 x:dark:text-gray-300"
+          >
+            linkedin.com/in/willmruzek
+          </a>
+          .
+        </p>
+      </footer>
     </div>
   );
 }
