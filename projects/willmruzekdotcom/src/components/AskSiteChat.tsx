@@ -6,15 +6,8 @@ import { useChat } from "@ai-sdk/react";
 import { safeValidateUIMessages } from "ai";
 import clsx from "clsx";
 import Markdown from "react-markdown";
-import { useHydrated } from "@/lib/use-hydrated";
 
 const CHAT_HISTORY_KEY = "willmruzek:chat-history:v1";
-const SAMPLE_QUESTIONS = [
-  "What's Will's React experience?",
-  "What did Will build at Reforge?",
-  "What has Will worked on recently?",
-  "What are Will's side projects?",
-];
 
 export const AskSiteChat: React.FC = () => {
   const { messages, sendMessage, status, setMessages } = useChat();
@@ -22,11 +15,6 @@ export const AskSiteChat: React.FC = () => {
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isHistoryLoaded, setIsHistoryLoaded] = useState(false);
-  const [randomQuestionIndex] = useState(() =>
-    Math.floor(Math.random() * SAMPLE_QUESTIONS.length),
-  );
-  const hydrated = useHydrated();
-  const sampleQuestionIndex = hydrated ? randomQuestionIndex : 0;
 
   const chatRef = useRef<HTMLDivElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -35,10 +23,6 @@ export const AskSiteChat: React.FC = () => {
 
   const isStreaming = status === "streaming" || status === "submitted";
   const hasMessages = messages.length > 0;
-  const suggestions = [
-    SAMPLE_QUESTIONS[sampleQuestionIndex],
-    SAMPLE_QUESTIONS[(sampleQuestionIndex + 1) % SAMPLE_QUESTIONS.length],
-  ];
 
   useEffect(() => {
     let cancelled = false;
@@ -225,31 +209,12 @@ export const AskSiteChat: React.FC = () => {
       <div className="x:pointer-events-auto x:relative x:z-10 x:w-full">
         <div
           className={clsx(
-            "x:relative x:isolate x:rounded-3xl x:border-4 x:border-transparent x:bg-zinc-100 x:p-4 x:shadow-[0_-4px_24px_rgba(0,0,0,0.12)] x:dark:bg-zinc-800 x:dark:shadow-[0_-4px_24px_rgba(0,0,0,0.35)]",
+            "x:relative x:isolate x:rounded-full x:border-4 x:border-transparent x:bg-zinc-100 x:p-4 x:shadow-[0_-4px_24px_rgba(0,0,0,0.12)] x:dark:bg-zinc-800 x:dark:shadow-[0_-4px_24px_rgba(0,0,0,0.35)]",
             "x:before:pointer-events-none x:before:absolute x:before:-inset-1.25 x:before:z-[-2] x:before:rounded-[inherit] x:before:bg-[conic-gradient(from_var(--dock-angle,0deg),var(--dock-teal),var(--dock-blue),var(--dock-rose),var(--dock-amber),var(--dock-teal))] x:before:opacity-85 x:before:blur-[3px] x:before:content-[''] x:motion-safe:before:animate-dock-border",
             "x:after:pointer-events-none x:after:absolute x:after:-inset-1 x:after:-z-1 x:after:rounded-[inherit] x:after:bg-inherit x:after:content-['']",
             "x:[--dock-amber:#d5ad61] x:[--dock-blue:#719ddd] x:[--dock-rose:#d786a1] x:[--dock-teal:#45b8a7] x:focus-within:[--dock-amber:#c89435] x:focus-within:[--dock-blue:#477fcd] x:focus-within:[--dock-rose:#c85d83] x:focus-within:[--dock-teal:#239b88]",
           )}
         >
-          <div
-            role="group"
-            aria-label="Suggested questions"
-            className="x:hidden x:sm:mb-3 x:sm:flex x:sm:flex-row x:sm:flex-wrap x:sm:gap-2"
-          >
-            {suggestions.map((question) => (
-              <button
-                key={question}
-                type="button"
-                onClick={() => submitQuestion(question)}
-                disabled={isStreaming || !isHistoryLoaded}
-                className={clsx(
-                  "x:min-w-0 x:cursor-pointer x:rounded-full x:border x:border-zinc-300 x:bg-white x:px-3 x:py-2 x:text-left x:text-xs x:wrap-break-word x:text-zinc-700 x:transition-colors x:hover:border-zinc-400 x:hover:bg-zinc-50 x:focus-visible:outline-2 x:focus-visible:outline-offset-2 x:focus-visible:outline-zinc-500 x:disabled:cursor-not-allowed x:disabled:opacity-50 x:dark:border-zinc-600 x:dark:bg-zinc-900 x:dark:text-zinc-200 x:dark:hover:bg-zinc-700",
-                )}
-              >
-                {question}
-              </button>
-            ))}
-          </div>
           <form
             onSubmit={handleSubmit}
             className="x:flex x:items-center x:gap-3"
@@ -260,7 +225,7 @@ export const AskSiteChat: React.FC = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               aria-label="Ask about Will Mruzek"
-              placeholder="Ask about Will…"
+              placeholder="What has Will built recently?"
               onFocus={() => {
                 if (hasMessages) setIsOpen(true);
               }}
