@@ -1,4 +1,4 @@
-I'm a **senior full-stack software engineer** with **13+ years of experience** helping startups and established companies turn business goals into well-crafted applications. I've worked with teams at **[Luma AI](https://lumalabs.ai/)**, **[Intuit Credit Karma](https://www.creditkarma.com/)**, **[Reforge](https://www.reforge.com/)**, **[Duo Security (Cisco)](https://duo.com/)**, and **[Humble Bundle](https://www.humblebundle.com/)**, among others.
+I'm a **full-stack software engineer** with **13+ years of experience** helping startups and established companies turn business goals into well-crafted applications. I've worked with teams at **[Luma AI](https://lumalabs.ai/)**, **[Intuit Credit Karma](https://www.creditkarma.com/)**, **[Reforge](https://www.reforge.com/)**, **[Duo Security (Cisco)](https://duo.com/)**, and **[Humble Bundle](https://www.humblebundle.com/)**, among others.
 
 I work primarily with **React**, **TypeScript**, **Next.js**, **Node.js**, **Postgres**, and **GraphQL**. My experience spans 0-to-1 product development, application architecture, and modernizing existing systems.
 
