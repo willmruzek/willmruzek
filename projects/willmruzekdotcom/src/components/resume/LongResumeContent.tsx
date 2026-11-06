@@ -31,11 +31,10 @@ export function LongResumeContent({ resume }: { resume: Resume }) {
           <p className={resumeMetaLineClassName}>{headline}</p>
           <a
             href="/static/WillMruzekResume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            download="WillMruzekResume.pdf"
             className="x:shrink-0 x:rounded x:bg-gray-800 x:px-3 x:py-1 x:text-xs x:font-semibold x:text-white x:shadow-sm x:hover:bg-gray-700 x:dark:bg-gray-200 x:dark:text-gray-800 x:dark:hover:bg-gray-300 x:print:hidden"
           >
-            View PDF
+            Download PDF
           </a>
         </div>
       </header>
